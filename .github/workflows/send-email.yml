@@ -1,0 +1,21 @@
+name: Send Failure Email Report
+
+on:
+  workflow_dispatch:
+
+jobs:
+  email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - run: npm ci
+      - name: Send email from latest dashboard data
+        env:
+          EMAIL_WEB_APP_URL: ${{ secrets.EMAIL_WEB_APP_URL }}
+          REPORT_RECIPIENTS: ${{ secrets.REPORT_RECIPIENTS }}
+          DASHBOARD_PAGES_URL: ${{ secrets.DASHBOARD_PAGES_URL }}
+          GOOGLE_SHEETS_URL: ${{ secrets.GOOGLE_SHEETS_URL }}
+        run: node scripts/send-email-report.js

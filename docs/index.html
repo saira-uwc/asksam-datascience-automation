@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>AskSam DS Automation Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+/* ── Reset & Variables ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0c0d14;--panel:#141522;--panel-soft:#1a1b2a;--panel-border:#26283a;
+  --text:#f8fafc;--muted:#9ca3af;--accent:#8b5cf6;--accent-soft:rgba(139,92,246,.2);
+  --pass:#22c55e;--fail:#ef4444;--warn:#f59e0b;
+  --shadow:0 10px 30px rgba(0,0,0,.35);--radius:16px;
+}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:radial-gradient(circle at top,#1a1830 0%,#0c0d14 45%,#090a10 100%);color:var(--text);min-height:100vh;line-height:1.5}
+a{color:var(--accent);text-decoration:none}
+
+/* ── Header ── */
+header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:rgba(20,21,34,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--panel-border)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand-logo{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#fff}
+.brand h1{font-size:17px;font-weight:700;letter-spacing:-.3px}
+.brand p{font-size:12px;color:var(--muted)}
+.header-actions{display:flex;align-items:center;gap:12px}
+#lastRunLabel{font-size:12px;color:var(--muted)}
+
+/* ── Buttons ── */
+.btn{padding:7px 14px;border-radius:8px;border:1px solid var(--panel-border);background:var(--panel);color:var(--text);font-size:13px;cursor:pointer;transition:.15s}
+.btn:hover{border-color:var(--accent);background:var(--accent-soft)}
+.btn-accent{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn-accent:hover{opacity:.85}
+
+/* ── Dropdown ── */
+.dropdown{position:relative}
+.dropdown-menu{display:none;position:absolute;right:0;top:110%;min-width:200px;background:var(--panel);border:1px solid var(--panel-border);border-radius:12px;padding:6px;box-shadow:var(--shadow);z-index:60}
+.dropdown.open .dropdown-menu{display:block}
+.dropdown-item{padding:8px 12px;border-radius:8px;font-size:13px;cursor:pointer;transition:.12s;color:var(--text)}
+.dropdown-item:hover{background:var(--accent-soft)}
+
+/* ── Tabs ── */
+.tabs{display:flex;gap:4px;padding:20px 28px 0;border-bottom:1px solid var(--panel-border);margin-bottom:24px}
+.tab{padding:10px 20px;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:.15s;background:none;border-top:none;border-left:none;border-right:none}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--text)}
+.tab-content{display:none;padding:0 28px 40px}
+.tab-content.active{display:block}
+
+/* ── Grid ── */
+.grid{display:grid;gap:18px}
+.grid.stats{grid-template-columns:repeat(4,1fr)}
+.grid.chart-grid{grid-template-columns:1fr 1.5fr 1fr}
+
+/* ── Cards ── */
+.card{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.stat-card .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.stat-card .value{font-size:28px;font-weight:700}
+.stat-card .sub{font-size:12px;color:var(--muted);margin-top:4px}
+.chart-card{padding:18px}
+.chart-card h3{font-size:14px;color:var(--muted);margin-bottom:14px}
+.chart-wrap{position:relative;height:220px}
+
+/* ── Pills / Badges ── */
+.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:11px;font-weight:600}
+.pill-pass{background:rgba(34,197,94,.15);color:var(--pass)}
+.pill-fail{background:rgba(239,68,68,.15);color:var(--fail)}
+.pill-skip{background:rgba(245,158,11,.15);color:var(--warn)}
+
+/* ── Module Cards ── */
+.module-list{margin-top:24px}
+.module-list h2{font-size:18px;margin-bottom:16px}
+.module-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.module-card{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius);overflow:hidden}
+.module-header{padding:16px 18px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--panel-border)}
+.module-header h3{font-size:15px;font-weight:600}
+.module-header .badges{display:flex;gap:6px}
+.module-tests{padding:10px 18px;max-height:300px;overflow-y:auto}
+.test-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid rgba(38,40,58,.5);font-size:13px}
+.test-row:last-child{border-bottom:none}
+.status-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.status-dot.passed{background:var(--pass)}
+.status-dot.failed{background:var(--fail)}
+.status-dot.timedOut{background:var(--warn)}
+.status-dot.skipped{background:var(--muted)}
+.test-title{flex:1;color:var(--text);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.test-duration{color:var(--muted);font-size:12px;flex-shrink:0}
+
+/* ── History Tab ── */
+.history-group{margin-bottom:28px}
+.history-group h3{font-size:14px;color:var(--muted);margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--panel-border)}
+.history-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.history-card{background:var(--panel);border:1px solid var(--panel-border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:.15s}
+.history-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.history-card .time{font-size:13px;font-weight:600;margin-bottom:6px}
+.history-card .run-id{font-size:11px;color:var(--muted);margin-bottom:8px}
+.history-card .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+
+/* ── Calendar ── */
+.calendar-nav{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+.calendar-nav h3{font-size:16px;min-width:180px;text-align:center}
+.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:24px}
+.cal-head{font-size:12px;color:var(--muted);text-align:center;padding:8px 0;font-weight:600;text-transform:capitalize}
+.cal-cell{min-height:100px;background:var(--panel);border:1px solid var(--panel-border);border-radius:10px;padding:10px 12px;cursor:pointer;transition:.15s;position:relative;display:flex;flex-direction:column}
+.cal-cell.empty{background:transparent;border-color:transparent;cursor:default}
+.cal-cell:not(.empty):hover{border-color:var(--accent);transform:translateY(-1px)}
+.cal-cell.has-runs{border-color:var(--warn);border-width:1.5px}
+.cal-cell.today{background:var(--accent-soft);border-color:var(--accent);border-width:2px}
+.cal-cell.selected{border-color:var(--accent);background:var(--accent-soft)}
+.cal-cell .day{font-size:18px;font-weight:700;margin-bottom:auto}
+.cal-cell .cal-runs{font-size:12px;color:var(--muted);margin-top:6px}
+.cal-cell .cal-rate{font-size:12px;font-weight:600;margin-top:2px}
+.calendar-footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0;border-top:1px solid var(--panel-border);margin-top:8px}
+#calendarRuns{margin-top:8px}
+
+/* ── Modal ── */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:100;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:var(--panel);border:1px solid var(--panel-border);border-radius:var(--radius);max-width:860px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:var(--shadow)}
+.modal-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid var(--panel-border)}
+.modal-head h2{font-size:17px}
+.modal-close{width:32px;height:32px;border-radius:8px;border:1px solid var(--panel-border);background:var(--panel-soft);color:var(--text);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center}
+.modal-body{padding:20px 24px}
+.modal-filters{display:flex;gap:6px;margin:16px 0;align-items:center}
+.modal-filters .filter-label{font-size:13px;color:var(--muted);margin-right:4px}
+.modal-filters .btn.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.modal-filters .btn.active-pass{background:var(--pass);border-color:var(--pass);color:#fff}
+.modal-filters .btn.active-fail{background:var(--fail);border-color:var(--fail);color:#fff}
+.modal-test{background:var(--panel-soft);border:1px solid var(--panel-border);border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.modal-test .mt-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.modal-test .mt-title{font-weight:600;font-size:14px;flex:1;margin-right:8px}
+.modal-test .mt-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.modal-test .mt-tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:500;background:var(--panel);border:1px solid var(--panel-border);color:var(--muted)}
+.modal-test .mt-error{margin-top:10px;padding:10px 14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;font-size:12px;color:#fca5a5;font-family:'Fira Code',monospace;white-space:pre-wrap;max-height:180px;overflow-y:auto;line-height:1.6}
+.modal-test .mt-attachments{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.modal-test .attach-link{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;transition:.15s;border:1px solid var(--panel-border);background:var(--panel);color:var(--muted);text-decoration:none}
+.modal-test .attach-link:hover{border-color:var(--accent);color:var(--accent)}
+.modal-test .attach-link svg{width:13px;height:13px;fill:currentColor}
+.modal-actions{display:flex;gap:8px;padding:16px 24px;border-top:1px solid var(--panel-border);align-items:center}
+.modal-actions .spacer{flex:1}
+
+/* ── Print ── */
+@media print{header,.tabs,.modal-overlay{display:none!important}.tab-content{display:block!important;padding:10px}.card{break-inside:avoid;box-shadow:none;border:1px solid #333}}
+
+/* ── Responsive ── */
+@media(max-width:900px){.grid.stats{grid-template-columns:repeat(2,1fr)}.grid.chart-grid{grid-template-columns:1fr}}
+@media(max-width:600px){.grid.stats{grid-template-columns:1fr}.module-grid{grid-template-columns:1fr}}
+
+/* ── Loading ── */
+.loading{text-align:center;padding:60px;color:var(--muted);font-size:15px}
+.loading .spinner{width:40px;height:40px;border:3px solid var(--panel-border);border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── Empty State ── */
+.empty-state{text-align:center;padding:60px;color:var(--muted)}
+.empty-state h3{font-size:18px;color:var(--text);margin-bottom:8px}
+</style>
+</head>
+<body>
+
+<!-- ────── Header ────── -->
+<header>
+  <div class="brand">
+    <div class="brand-logo">SL</div>
+    <div>
+      <h1>AskSam DS Automation Dashboard</h1>
+      <p>Test Automation Report Dashboard</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <span id="runCountLabel" style="font-size:12px;color:var(--accent);font-weight:600;background:var(--accent-soft);padding:4px 10px;border-radius:6px"></span>
+    <span id="lastRunLabel"></span>
+    <div class="dropdown" id="exportDropdown">
+      <button class="btn" onclick="toggleDropdown()">Export &#9662;</button>
+      <div class="dropdown-menu">
+        <div class="dropdown-item" onclick="exportFile('all-summary-csv')">All runs summary (CSV)</div>
+        <div class="dropdown-item" onclick="exportFile('all-full-json')">All runs full data (JSON)</div>
+        <div class="dropdown-item" onclick="exportFile('current-csv')">Current run (CSV)</div>
+        <div class="dropdown-item" onclick="exportFile('current-json')">Current run (JSON)</div>
+      </div>
+    </div>
+    <button class="btn" onclick="window.print()">Print</button>
+  </div>
+</header>
+
+<!-- ────── Tabs ────── -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('current')">Current Run</button>
+  <button class="tab" onclick="switchTab('history')">Run History</button>
+  <button class="tab" onclick="switchTab('calendar')">Calendar View</button>
+</div>
+
+<!-- ────── Current Run Tab ────── -->
+<div class="tab-content active" id="currentTab">
+  <div id="loadingCurrent" class="loading"><div class="spinner"></div>Loading dashboard data...</div>
+</div>
+
+<!-- ────── History Tab ────── -->
+<div class="tab-content" id="historyTab">
+  <div id="loadingHistory" class="loading"><div class="spinner"></div>Loading run history...</div>
+</div>
+
+<!-- ────── Calendar Tab ────── -->
+<div class="tab-content" id="calendarTab">
+  <div id="loadingCalendar" class="loading"><div class="spinner"></div>Loading calendar data...</div>
+</div>
+
+<!-- ────── Modal ────── -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modalTitle">Run Details</h2>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-actions">
+      <button class="btn" id="modalExportBtn">Export This Run</button>
+      <button class="btn" onclick="window.print()">Print as Proof</button>
+      <div class="spacer"></div>
+      <button class="btn" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════
+   DATA & STATE
+   ══════════════════════════════════════════════════════════ */
+let latestData = null;
+let historyData = [];
+let chartInstances = {};
+let calMonth, calYear;
+
+const now = new Date();
+calMonth = now.getMonth();
+calYear = now.getFullYear();
+
+/* ══════════════════════════════════════════════════════════
+   INIT — fetch data and render
+   ══════════════════════════════════════════════════════════ */
+const cacheBust = '?t=' + Date.now();
+Promise.all([
+  fetch('./data/latest.json' + cacheBust).then(r => r.ok ? r.json() : null).catch(() => null),
+  fetch('./history/runs.json' + cacheBust).then(r => r.ok ? r.json() : []).catch(() => []),
+]).then(([latest, history]) => {
+  latestData = latest;
+  historyData = history || [];
+
+  if (latestData) {
+    renderCurrentRun(latestData);
+    document.getElementById('lastRunLabel').textContent =
+      'Last run: ' + formatDate(latestData.startedAt);
+    document.getElementById('runCountLabel').textContent =
+      'Total Runs: ' + historyData.length;
+  } else {
+    document.getElementById('currentTab').innerHTML =
+      '<div class="empty-state"><h3>No Data Yet</h3><p>Run your tests first: <code>npm run dashboard:run</code></p></div>';
+  }
+
+  renderHistory(historyData);
+  renderCalendar(historyData);
+});
+
+/* ══════════════════════════════════════════════════════════
+   CURRENT RUN
+   ══════════════════════════════════════════════════════════ */
+function renderCurrentRun(data) {
+  const s = data.summary;
+  const tab = document.getElementById('currentTab');
+
+  tab.innerHTML = `
+    <!-- Stats -->
+    <div class="grid stats">
+      <div class="card stat-card">
+        <div class="label">Total Tests</div>
+        <div class="value">${s.total}</div>
+        <div class="sub">${formatDuration(data.durationMs)} total</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Passed</div>
+        <div class="value" style="color:var(--pass)">${s.passed}</div>
+        <div class="sub">${s.total > 0 ? Math.round(s.passed/s.total*100) : 0}% of total</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Failed</div>
+        <div class="value" style="color:var(--fail)">${s.failed + (s.timedOut||0)}</div>
+        <div class="sub">${s.timedOut ? s.timedOut + ' timed out' : 'None timed out'}</div>
+      </div>
+      <div class="card stat-card">
+        <div class="label">Pass Rate</div>
+        <div class="value" style="color:${data.passRate >= 80 ? 'var(--pass)' : data.passRate >= 50 ? 'var(--warn)' : 'var(--fail)'}">${data.passRate}%</div>
+        <div class="sub">${data.passRate === 100 ? 'Perfect run!' : data.passRate >= 80 ? 'Looking good' : 'Needs attention'}</div>
+      </div>
+    </div>
+
+    <!-- Charts -->
+    <div class="grid chart-grid" style="margin-top:18px">
+      <div class="card chart-card">
+        <h3>Status Distribution</h3>
+        <div class="chart-wrap"><canvas id="statusChart"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <h3>Pass Rate Trend (Last 12 Runs)</h3>
+        <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+      </div>
+      <div class="card chart-card">
+        <h3>Module Pass Rates</h3>
+        <div class="chart-wrap"><canvas id="moduleChart"></canvas></div>
+      </div>
+    </div>
+
+    <!-- Module Results -->
+    <div class="module-list">
+      <h2>Module Results</h2>
+      <div class="module-grid" id="moduleGrid"></div>
+    </div>
+  `;
+
+  renderCharts(data);
+  renderModules(data);
+}
+
+/* ══════════════════════════════════════════════════════════
+   CHARTS
+   ══════════════════════════════════════════════════════════ */
+function renderCharts(data) {
+  const s = data.summary;
+  const chartOpts = { responsive: true, maintainAspectRatio: false };
+  const tickColor = '#9ca3af';
+
+  // Destroy old charts
+  Object.values(chartInstances).forEach(c => c.destroy());
+  chartInstances = {};
+
+  // ── Doughnut: Status ──
+  chartInstances.status = new Chart(document.getElementById('statusChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Passed', 'Failed', 'Timed Out', 'Skipped'],
+      datasets: [{
+        data: [s.passed, s.failed, s.timedOut||0, s.skipped||0],
+        backgroundColor: ['#22c55e', '#ef4444', '#f59e0b', '#6b7280'],
+        borderWidth: 0,
+      }]
+    },
+    options: { ...chartOpts, cutout: '70%', plugins: { legend: { position: 'bottom', labels: { color: tickColor, padding: 12, font: { size: 11 } } } } }
+  });
+
+  // ── Line: Trend ──
+  const trendRuns = historyData.slice(0, 12).reverse();
+  chartInstances.trend = new Chart(document.getElementById('trendChart'), {
+    type: 'line',
+    data: {
+      labels: trendRuns.map(r => formatShortDate(r.startedAt)),
+      datasets: [{
+        label: 'Pass Rate %',
+        data: trendRuns.map(r => r.passRate),
+        borderColor: '#8b5cf6',
+        backgroundColor: 'rgba(139,92,246,.15)',
+        fill: true, tension: .35, pointRadius: 4, pointBackgroundColor: '#8b5cf6',
+      }]
+    },
+    options: {
+      ...chartOpts,
+      scales: {
+        y: { min: 0, max: 100, ticks: { color: tickColor, callback: v => v + '%' }, grid: { color: 'rgba(38,40,58,.5)' } },
+        x: { ticks: { color: tickColor, maxRotation: 45 }, grid: { display: false } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+
+  // ── Bar: Module rates ──
+  const mods = Object.entries(data.modules);
+  chartInstances.module = new Chart(document.getElementById('moduleChart'), {
+    type: 'bar',
+    data: {
+      labels: mods.map(([,m]) => m.label),
+      datasets: [{
+        label: 'Pass Rate %',
+        data: mods.map(([,m]) => m.total > 0 ? Math.round(m.passed/m.total*100) : 0),
+        backgroundColor: 'rgba(34,197,94,.6)',
+        borderRadius: 8,
+      }]
+    },
+    options: {
+      ...chartOpts, indexAxis: 'y',
+      scales: {
+        x: { min: 0, max: 100, ticks: { color: tickColor, callback: v => v + '%' }, grid: { color: 'rgba(38,40,58,.5)' } },
+        y: { ticks: { color: tickColor }, grid: { display: false } }
+      },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+/* ══════════════════════════════════════════════════════════
+   MODULE CARDS
+   ══════════════════════════════════════════════════════════ */
+function renderModules(data) {
+  const grid = document.getElementById('moduleGrid');
+  const grouped = {};
+  for (const t of data.tests) {
+    if (!grouped[t.module]) grouped[t.module] = { label: t.moduleLabel, tests: [] };
+    grouped[t.module].tests.push(t);
+  }
+
+  grid.innerHTML = Object.entries(grouped).map(([key, mod]) => {
+    const passed = mod.tests.filter(t => t.status === 'passed').length;
+    const failed = mod.tests.filter(t => t.status !== 'passed').length;
+    const testRows = mod.tests.map(t => `
+      <div class="test-row">
+        <div class="status-dot ${t.status}"></div>
+        <div class="test-title" title="${esc(t.title)}">${esc(t.title)}</div>
+        <div class="test-duration">${formatDuration(t.durationMs)}</div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="module-card">
+        <div class="module-header">
+          <h3>${mod.label}</h3>
+          <div class="badges">
+            ${passed > 0 ? `<span class="pill pill-pass">${passed} passed</span>` : ''}
+            ${failed > 0 ? `<span class="pill pill-fail">${failed} failed</span>` : ''}
+          </div>
+        </div>
+        <div class="module-tests">${testRows}</div>
+      </div>
+    `;
+  }).join('');
+}
+
+/* ══════════════════════════════════════════════════════════
+   HISTORY TAB
+   ══════════════════════════════════════════════════════════ */
+function renderHistory(runs) {
+  const tab = document.getElementById('historyTab');
+  if (!runs.length) {
+    tab.innerHTML = '<div class="empty-state"><h3>No History Yet</h3><p>Run tests multiple times to see history.</p></div>';
+    return;
+  }
+
+  // Summary stats
+  const totalRuns = runs.length;
+  const perfectRuns = runs.filter(r => r.passRate === 100).length;
+  const avgPassRate = totalRuns > 0 ? Math.round(runs.reduce((s, r) => s + r.passRate, 0) / totalRuns) : 0;
+  const uniqueDays = new Set(runs.map(r => new Date(r.startedAt).toDateString())).size;
+
+  // Group by date
+  const groups = {};
+  for (const r of runs) {
+    const dateKey = new Date(r.startedAt).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+    if (!groups[dateKey]) groups[dateKey] = [];
+    groups[dateKey].push(r);
+  }
+
+  tab.innerHTML = `
+    <div class="grid stats" style="margin-bottom:24px">
+      <div class="card stat-card"><div class="label">Total Runs</div><div class="value" style="color:var(--accent)">${totalRuns}</div><div class="sub">across ${uniqueDays} day${uniqueDays !== 1 ? 's' : ''}</div></div>
+      <div class="card stat-card"><div class="label">Perfect Runs</div><div class="value" style="color:var(--pass)">${perfectRuns}</div><div class="sub">${totalRuns > 0 ? Math.round(perfectRuns/totalRuns*100) : 0}% of all runs</div></div>
+      <div class="card stat-card"><div class="label">Avg Pass Rate</div><div class="value" style="color:${avgPassRate >= 80 ? 'var(--pass)' : avgPassRate >= 50 ? 'var(--warn)' : 'var(--fail)'}">${avgPassRate}%</div><div class="sub">across all runs</div></div>
+      <div class="card stat-card"><div class="label">Latest Result</div><div class="value" style="color:${runs[0].passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}">${runs[0].passRate}%</div><div class="sub">${runs[0].summary.passed}/${runs[0].summary.total} passed</div></div>
+    </div>
+  ` + Object.entries(groups).map(([date, dateRuns]) => `
+    <div class="history-group">
+      <h3>${date}</h3>
+      <div class="history-cards">
+        ${dateRuns.map(r => `
+          <div class="history-card" onclick="openRunModal('${r.id}')">
+            <div class="time">${formatTime(r.startedAt)}</div>
+            <div class="run-id">Run ${r.id.substring(0, 8)}</div>
+            <div class="meta">
+              <span class="pill pill-pass">${r.summary.passed} passed</span>
+              ${r.summary.failed > 0 ? `<span class="pill pill-fail">${r.summary.failed} failed</span>` : ''}
+              <span style="color:${r.passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}; font-size:13px; font-weight:600">${r.passRate}%</span>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+/* ══════════════════════════════════════════════════════════
+   CALENDAR TAB
+   ══════════════════════════════════════════════════════════ */
+function renderCalendar(runs) {
+  const tab = document.getElementById('calendarTab');
+  const dayNames = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+  // Build run map by date
+  const runsByDate = {};
+  for (const r of runs) {
+    const d = new Date(r.startedAt);
+    const key = `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+    if (!runsByDate[key]) runsByDate[key] = [];
+    runsByDate[key].push(r);
+  }
+
+  const firstDay = new Date(calYear, calMonth, 1).getDay();
+  const daysInMonth = new Date(calYear, calMonth + 1, 0).getDate();
+  const monthName = new Date(calYear, calMonth).toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+  const today = new Date();
+  const isCurrentMonth = today.getFullYear() === calYear && today.getMonth() === calMonth;
+
+  let cells = dayNames.map(d => `<div class="cal-head">${d}</div>`).join('');
+  for (let i = 0; i < firstDay; i++) cells += '<div class="cal-cell empty"></div>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const key = `${calYear}-${calMonth}-${d}`;
+    const dayRuns = runsByDate[key] || [];
+    const count = dayRuns.length;
+    const avgRate = count > 0 ? Math.round(dayRuns.reduce((s, r) => s + r.passRate, 0) / count) : -1;
+    const rateColor = avgRate >= 80 ? 'var(--pass)' : avgRate >= 50 ? 'var(--warn)' : 'var(--fail)';
+    const isToday = isCurrentMonth && today.getDate() === d;
+    const classes = ['cal-cell'];
+    if (count > 0) classes.push('has-runs');
+    if (isToday) classes.push('today');
+
+    cells += `
+      <div class="${classes.join(' ')}" onclick="selectCalDay(${d})" data-day="${d}">
+        <div class="day">${d}</div>
+        ${count > 0 ? `<div class="cal-runs">${count} run${count > 1 ? 's' : ''}</div><div class="cal-rate" style="color:${rateColor}">${avgRate}% pass</div>` : ''}
+      </div>
+    `;
+  }
+
+  tab.innerHTML = `
+    <div class="calendar-nav">
+      <button class="btn" onclick="changeMonth(-1)">&laquo; Prev</button>
+      <h3>${monthName}</h3>
+      <button class="btn" onclick="changeMonth(1)">Next &raquo;</button>
+    </div>
+    <div class="calendar-grid">${cells}</div>
+    <div id="calendarRuns"></div>
+    <div class="calendar-footer">Total runs stored: ${runs.length} | History retention: Last 100 runs</div>
+  `;
+}
+
+function changeMonth(delta) {
+  calMonth += delta;
+  if (calMonth > 11) { calMonth = 0; calYear++; }
+  if (calMonth < 0) { calMonth = 11; calYear--; }
+  renderCalendar(historyData);
+}
+
+function selectCalDay(day) {
+  // Highlight selected
+  document.querySelectorAll('.cal-cell').forEach(c => c.classList.remove('selected'));
+  const cell = document.querySelector(`.cal-cell[data-day="${day}"]`);
+  if (cell) cell.classList.add('selected');
+
+  const key = `${calYear}-${calMonth}-${day}`;
+  const dayRuns = historyData.filter(r => {
+    const d = new Date(r.startedAt);
+    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}` === key;
+  });
+
+  const container = document.getElementById('calendarRuns');
+  if (!dayRuns.length) {
+    container.innerHTML = '<p style="color:var(--muted);padding:12px">No runs on this day.</p>';
+    return;
+  }
+
+  container.innerHTML = `
+    <h3 style="font-size:15px;margin-bottom:12px">Runs for ${new Date(calYear, calMonth, day).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</h3>
+    <div class="history-cards">
+      ${dayRuns.map(r => `
+        <div class="history-card" onclick="openRunModal('${r.id}')">
+          <div class="time">${formatTime(r.startedAt)}</div>
+          <div class="meta">
+            <span class="pill pill-pass">${r.summary.passed} passed</span>
+            ${r.summary.failed > 0 ? `<span class="pill pill-fail">${r.summary.failed} failed</span>` : ''}
+            <span style="color:${r.passRate >= 80 ? 'var(--pass)' : 'var(--warn)'}; font-size:13px; font-weight:600">${r.passRate}%</span>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+/* ══════════════════════════════════════════════════════════
+   MODAL
+   ══════════════════════════════════════════════════════════ */
+let modalRunData = null;
+let modalFilter = 'all';
+
+function openRunModal(runId) {
+  // For history runs, we only have summary data (not individual tests)
+  // If it's the latest run, use full data; otherwise show summary
+  const run = historyData.find(r => r.id === runId);
+  if (!run) return;
+
+  modalRunData = run;
+  const isLatest = latestData && latestData.id === runId;
+  const s = run.summary;
+
+  let body = `
+    <div class="grid stats" style="margin-bottom:16px">
+      <div class="card stat-card"><div class="label">Total</div><div class="value">${s.total}</div></div>
+      <div class="card stat-card"><div class="label">Passed</div><div class="value" style="color:var(--pass)">${s.passed}</div></div>
+      <div class="card stat-card"><div class="label">Failed</div><div class="value" style="color:var(--fail)">${s.failed + (s.timedOut||0)}</div></div>
+      <div class="card stat-card"><div class="label">Pass Rate</div><div class="value" style="color:${run.passRate>=80?'var(--pass)':'var(--warn)'}">${run.passRate}%</div></div>
+    </div>
+  `;
+
+  if (isLatest && latestData.tests) {
+    const failCount = s.failed + (s.timedOut||0);
+    body += `
+      <div class="modal-filters">
+        <span class="filter-label">Filter:</span>
+        <button class="btn active" onclick="filterModal('all',this)">All (${s.total})</button>
+        <button class="btn" onclick="filterModal('passed',this)">Passed (${s.passed})</button>
+        <button class="btn" onclick="filterModal('failed',this)">Failed (${failCount})</button>
+      </div>
+      <div id="modalTests">${renderModalTests(latestData.tests, 'all')}</div>
+    `;
+  } else {
+    // Show module breakdown for non-latest runs
+    body += '<h3 style="margin:12px 0 8px;font-size:14px;color:var(--muted)">Module Breakdown</h3>';
+    body += Object.entries(run.modules).map(([, m]) => `
+      <div class="modal-test">
+        <div class="mt-head">
+          <div class="mt-title">${m.label}</div>
+          <div class="mt-meta">${m.passed}/${m.total} passed</div>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  document.getElementById('modalTitle').textContent = `Test Run – ${formatModalDate(run.startedAt)}`;
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalOverlay').classList.add('open');
+
+  document.getElementById('modalExportBtn').onclick = () => {
+    if (isLatest) downloadJSON(latestData, `run-${run.id.substring(0,8)}.json`);
+    else downloadJSON(run, `run-${run.id.substring(0,8)}.json`);
+  };
+}
+
+function renderModalTests(tests, filter) {
+  const filtered = filter === 'all' ? tests :
+    filter === 'passed' ? tests.filter(t => t.status === 'passed') :
+    tests.filter(t => t.status !== 'passed');
+
+  if (!filtered.length) return '<p style="color:var(--muted);padding:12px">No tests match this filter.</p>';
+
+  return filtered.map(t => {
+    const statusClass = t.status === 'passed' ? 'pill-pass' : 'pill-fail';
+
+    // Build attachment links
+    let attachHtml = '';
+    if (t.attachments && t.attachments.length > 0) {
+      const links = t.attachments.filter(a => a.webPath).map(a => {
+        const icon = getAttachIcon(a.name, a.contentType);
+        const label = getAttachLabel(a.name, a.contentType);
+        return `<a class="attach-link" href="${a.webPath}" target="_blank" title="${esc(a.name)}">${icon} ${label}</a>`;
+      }).join('');
+      if (links) attachHtml = `<div class="mt-attachments">${links}</div>`;
+    }
+
+    return `
+      <div class="modal-test">
+        <div class="mt-head">
+          <div class="mt-title">${esc(t.title)}</div>
+          <span class="pill ${statusClass}">${t.status}</span>
+        </div>
+        <div class="mt-meta">
+          <span class="mt-tag">Playwright &middot; ${t.moduleLabel}</span>
+          <span>${formatDuration(t.durationMs)}</span>
+        </div>
+        ${t.error ? `<div class="mt-error">${esc(t.error)}</div>` : ''}
+        ${attachHtml}
+      </div>
+    `;
+  }).join('');
+}
+
+// SVG icons for attachment links
+const svgScreenshot = '<svg viewBox="0 0 24 24"><path d="M21 19V5a2 2 0 00-2-2H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2zM8.5 13.5l2.5 3 3.5-4.5 4.5 6H5l3.5-5z"/></svg>';
+const svgVideo = '<svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg>';
+const svgAttach = '<svg viewBox="0 0 24 24"><path d="M16.5 6v11.5a4 4 0 01-8 0V5a2.5 2.5 0 015 0v10.5a1 1 0 01-2 0V6h-1.5v9.5a2.5 2.5 0 005 0V5a4 4 0 00-8 0v12.5a5.5 5.5 0 0011 0V6H16.5z"/></svg>';
+
+function getAttachIcon(name, contentType) {
+  if (contentType && contentType.startsWith('image/')) return svgScreenshot;
+  if (contentType && contentType.startsWith('video/')) return svgVideo;
+  if (name && name.toLowerCase().includes('screenshot')) return svgScreenshot;
+  if (name && name.toLowerCase().includes('video')) return svgVideo;
+  return svgAttach;
+}
+
+function getAttachLabel(name, contentType) {
+  if (contentType && contentType.startsWith('image/')) return 'Screenshot';
+  if (contentType && contentType.startsWith('video/')) return 'Video';
+  if (name && name.toLowerCase().includes('screenshot')) return 'Screenshot';
+  if (name && name.toLowerCase().includes('video')) return 'Video';
+  if (name && name.toLowerCase().includes('trace')) return 'Trace';
+  return 'Attachment';
+}
+
+function filterModal(filter, btn) {
+  modalFilter = filter;
+  document.querySelectorAll('.modal-filters .btn').forEach(b => {
+    b.classList.remove('active', 'active-pass', 'active-fail');
+  });
+  if (filter === 'passed') btn.classList.add('active-pass');
+  else if (filter === 'failed') btn.classList.add('active-fail');
+  else btn.classList.add('active');
+  document.getElementById('modalTests').innerHTML = renderModalTests(latestData.tests, filter);
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+/* ══════════════════════════════════════════════════════════
+   TABS
+   ══════════════════════════════════════════════════════════ */
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById(name + 'Tab').classList.add('active');
+}
+
+/* ══════════════════════════════════════════════════════════
+   EXPORT
+   ══════════════════════════════════════════════════════════ */
+function toggleDropdown() {
+  document.getElementById('exportDropdown').classList.toggle('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('#exportDropdown')) document.getElementById('exportDropdown').classList.remove('open');
+});
+
+function exportFile(type) {
+  document.getElementById('exportDropdown').classList.remove('open');
+  switch(type) {
+    case 'all-summary-csv': downloadHref('./exports/all-runs-summary.csv'); break;
+    case 'all-full-json': downloadJSON(historyData, 'all-runs.json'); break;
+    case 'current-csv': downloadHref('./exports/current-run.csv'); break;
+    case 'current-json': if (latestData) downloadJSON(latestData, 'current-run.json'); break;
+  }
+}
+
+function downloadHref(url) {
+  const a = document.createElement('a');
+  a.href = url; a.download = ''; a.click();
+}
+
+function downloadJSON(data, filename) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = filename; a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+/* ══════════════════════════════════════════════════════════
+   HELPERS
+   ══════════════════════════════════════════════════════════ */
+function formatDate(iso) {
+  return new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+}
+function formatModalDate(iso) {
+  const d = new Date(iso);
+  const dd = String(d.getDate()).padStart(2, '0');
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const yyyy = d.getFullYear();
+  const time = d.toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true }).toLowerCase();
+  return `${dd}/${mm}/${yyyy}, ${time}`;
+}
+function formatShortDate(iso) {
+  return new Date(iso).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true });
+}
+function formatTime(iso) {
+  return new Date(iso).toLocaleString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+}
+function formatDuration(ms) {
+  if (ms < 1000) return ms + 'ms';
+  if (ms < 60000) return (ms / 1000).toFixed(1) + 's';
+  const m = Math.floor(ms / 60000);
+  const s = Math.round((ms % 60000) / 1000);
+  return m + 'm ' + s + 's';
+}
+function esc(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+</script>
+</body>
+</html>

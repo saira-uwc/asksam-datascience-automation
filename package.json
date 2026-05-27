@@ -1,0 +1,41 @@
+{
+  "name": "asksam-datascience-automation",
+  "version": "1.0.0",
+  "description": "Playwright E2E automation for AskSam DS (Expert Dashboard + CCOP)",
+  "scripts": {
+    "test": "playwright test; node scripts/generate-dashboard.js && node scripts/send-email-report.js",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "test:expert-dashboard-navigation": "playwright test tests/expert-dashboard-navigation.spec.ts",
+    "test:expert-appointment-booking": "playwright test tests/appointment-booking.spec.ts",
+    "test:expert-appointment-create-with-new-patient": "playwright test tests/expert-appointment-create-with-new-patient.spec.ts",
+    "test:expert-appointment-create-and-reschedule": "playwright test tests/appointment-create-and-reschedule.spec.ts",
+    "test:expert-appointment-session-management": "playwright test tests/appointment-session-management.spec.ts",
+    "test:appointment-z-cancel": "playwright test tests/appointment-z-cancel.spec.ts",
+    "test:patient-create-and-view": "playwright test tests/patient-create-and-view.spec.ts",
+    "test:expert-helpcenter-ticket": "playwright test tests/expert-helpcenter-ticket.spec.ts",
+    "test:clinical-note": "playwright test tests/clinical-note.spec.ts",
+    "test:create-patient-clinical-note": "playwright test tests/create-patient-clinical-note.spec.ts",
+    "test:voice-transcription": "playwright test tests/voice-transcription.spec.ts",
+    "test:ai-assistant-panel": "playwright test tests/ai-assistant-panel.spec.ts",
+    "test:letter-template": "playwright test tests/letter-template.spec.ts",
+    "test:ccop-helpcenter-ticket": "playwright test tests/ccop-helpcenter-ticket.spec.ts",
+    "test:ccop-clinician-signup": "playwright test tests/ccop-clinician-signup.spec.ts",
+    "dashboard:generate": "node scripts/generate-dashboard.js",
+    "dashboard:run": "npx playwright test && node scripts/generate-dashboard.js",
+    "dashboard:preview": "npx playwright test && node scripts/generate-dashboard.js && open docs/index.html",
+    "automation:run": "bash scripts/run-automation-machine.sh"
+  },
+  "keywords": ["playwright", "asksam", "e2e"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.13.10",
+    "dotenv": "^17.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

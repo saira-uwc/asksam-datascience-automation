@@ -47,16 +47,29 @@ Requires `TEST_EMAIL` in `.env` and Playwright Chromium.
 
 ---
 
+## Auto pull — no manual `git pull` needed
+
+Every cron run uses `npm run automation:run-rag-api` (or `automation:run`), which **automatically**:
+
+1. `git fetch origin main`
+2. `git reset --hard origin/main` — always runs latest code from GitHub
+3. `npm ci` — reinstall deps to match that commit
+4. Run tests → dashboard → push
+
+You only need `git pull` manually if you run tests **outside** the automation script (e.g. `npm run test:rag-api` alone).
+
+Check the log for: `Running commit: abc1234 — ...` to confirm which version ran.
+
 ## Manual run
 
 ```bash
 cd ~/asksam-datascience-automation
 
-# RAG API only
+# RAG API only (includes auto pull)
 AUTOMATION_SKIP_GIT_PUSH=true npm run automation:run-rag-api   # trial
 npm run automation:run-rag-api                                 # + push dashboard
 
-# Full UI + API
+# Full UI + API (includes auto pull)
 AUTOMATION_SKIP_GIT_PUSH=true npm run automation:run
 npm run automation:run
 ```

@@ -32,9 +32,10 @@ if [[ "$BRANCH" != "main" ]]; then
   git checkout main
 fi
 
-echo "==> Sync to latest origin/main (discard accidental local edits on this clone)"
+echo "==> Pull latest code from origin/main (auto-sync before every run)"
 git fetch origin main
 git reset --hard origin/main
+echo "==> Running commit: $(git rev-parse --short HEAD) — $(git log -1 --format='%ci %s')"
 
 export CI=true
 

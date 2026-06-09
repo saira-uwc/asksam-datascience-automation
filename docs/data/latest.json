@@ -1,1 +1,65 @@
-{"id":"initial","startedAt":"1970-01-01T00:00:00.000Z","durationMs":0,"summary":{"total":0,"passed":0,"failed":0,"skipped":0,"timedOut":0},"passRate":0,"modules":{},"tests":[]}
+{
+  "id": "c418a56e-68b8-4952-8809-a327ffd291d3",
+  "startedAt": "2026-06-09T09:57:57.914Z",
+  "durationMs": 2190.059,
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0,
+    "timedOut": 0
+  },
+  "passRate": 100,
+  "modules": {
+    "rag-api-smoke": {
+      "label": "RAG API — Smoke Tests",
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    }
+  },
+  "tests": [
+    {
+      "title": "TC_API_01 - GET /health returns application healthy",
+      "status": "passed",
+      "durationMs": 753,
+      "file": "rag-api-smoke.spec.ts",
+      "module": "rag-api-smoke",
+      "moduleLabel": "RAG API — Smoke Tests",
+      "attachments": [],
+      "error": ""
+    },
+    {
+      "title": "TC_API_02 - GET /redis/health returns Redis healthy",
+      "status": "passed",
+      "durationMs": 241,
+      "file": "rag-api-smoke.spec.ts",
+      "module": "rag-api-smoke",
+      "moduleLabel": "RAG API — Smoke Tests",
+      "attachments": [],
+      "error": ""
+    },
+    {
+      "title": "TC_API_03 - GET /vectorstore/health returns vector store healthy",
+      "status": "passed",
+      "durationMs": 244,
+      "file": "rag-api-smoke.spec.ts",
+      "module": "rag-api-smoke",
+      "moduleLabel": "RAG API — Smoke Tests",
+      "attachments": [],
+      "error": ""
+    },
+    {
+      "title": "TC_API_04 - POST /gen-chat returns LLM response",
+      "status": "passed",
+      "durationMs": 650,
+      "file": "rag-api-smoke.spec.ts",
+      "module": "rag-api-smoke",
+      "moduleLabel": "RAG API — Smoke Tests",
+      "attachments": [],
+      "error": ""
+    }
+  ]
+}

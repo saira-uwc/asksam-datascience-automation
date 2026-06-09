@@ -1,5 +1,28 @@
 [
   {
+    "id": "d54cce9c-a1a9-4479-bd46-10d1af60a1ef",
+    "startedAt": "2026-06-09T14:15:04.759Z",
+    "durationMs": 1386.214,
+    "summary": {
+      "total": 4,
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "a1d455b2-de06-4527-a546-866a3f36ba6e",
     "startedAt": "2026-06-09T12:15:04.282Z",
     "durationMs": 1439.8049999999998,

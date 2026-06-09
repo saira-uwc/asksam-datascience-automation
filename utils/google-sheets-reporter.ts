@@ -4,8 +4,10 @@ import type {
   TestCase,
   TestResult,
 } from '@playwright/test/reporter';
+import * as fs from 'fs';
 import * as path from 'path';
 import * as dotenv from 'dotenv';
+import { truncateForSheet } from './ragApi';
 
 dotenv.config();
 
@@ -55,13 +57,18 @@ class GoogleSheetsReporter implements Reporter {
     }
 
     let comment = '';
+    const apiProof = this.getApiProofComment(result);
     if (status === 'PASS') {
-      comment = 'Test passed successfully';
+      comment = apiProof || 'Test passed successfully';
     } else if (status === 'FAIL') {
-      const screenshot = result.attachments?.find((a) => a.name === 'screenshot');
-      comment = screenshot?.path
-        ? `Screenshot: ${path.basename(screenshot.path)}`
-        : 'No screenshot captured';
+      if (apiProof) {
+        comment = apiProof;
+      } else {
+        const screenshot = result.attachments?.find((a) => a.name === 'screenshot');
+        comment = screenshot?.path
+          ? `Screenshot: ${path.basename(screenshot.path)}`
+          : 'No screenshot captured';
+      }
     } else if (status === 'SKIP') {
       comment = 'Test was skipped';
     }
@@ -127,6 +134,25 @@ class GoogleSheetsReporter implements Reporter {
     }
 
     throw new Error(`HTTP ${postResponse.status}: ${postResponse.statusText}`);
+  }
+
+  private getApiProofComment(result: TestResult): string | null {
+    const attachment = result.attachments?.find((a) => a.name === 'api-response');
+    if (!attachment) return null;
+
+    let raw = '';
+    if (attachment.body) {
+      raw = attachment.body.toString();
+    } else if (attachment.path) {
+      const filePath = path.isAbsolute(attachment.path)
+        ? attachment.path
+        : path.join(process.cwd(), attachment.path);
+      if (fs.existsSync(filePath)) {
+        raw = fs.readFileSync(filePath, 'utf8');
+      }
+    }
+
+    return raw ? truncateForSheet(raw) : null;
   }
 
   private simplifyError(rawError: string): string {

@@ -1,5 +1,5 @@
-Test ID,Test Name,Module,Status,Duration (ms),Error
-"TC_API_01","GET /health returns application healthy","RAG API — Smoke Tests","passed",753,""
-"TC_API_02","GET /redis/health returns Redis healthy","RAG API — Smoke Tests","passed",241,""
-"TC_API_03","GET /vectorstore/health returns vector store healthy","RAG API — Smoke Tests","passed",244,""
-"TC_API_04","POST /gen-chat returns LLM response","RAG API — Smoke Tests","passed",650,""
+Test ID,Test Name,Module,Status,Duration (ms),API Response Proof,Error
+"TC_API_01","GET /health returns application healthy","RAG API — Smoke Tests","passed",915,"{   ""endpoint"": ""/health"",   ""method"": ""GET"",   ""status"": 200,   ""timestamp"": ""2026-06-09T11:21:19.539Z"",   ""body"": {     ""Health"": ""Ok""   } }",""
+"TC_API_02","GET /redis/health returns Redis healthy","RAG API — Smoke Tests","passed",249,"{   ""endpoint"": ""/redis/health"",   ""method"": ""GET"",   ""status"": 200,   ""timestamp"": ""2026-06-09T11:21:19.804Z"",   ""body"": {     ""status"": ""healthy"",     ""detail"": ""Redis is running""   } }",""
+"TC_API_03","GET /vectorstore/health returns vector store healthy","RAG API — Smoke Tests","passed",242,"{   ""endpoint"": ""/vectorstore/health"",   ""method"": ""GET"",   ""status"": 200,   ""timestamp"": ""2026-06-09T11:21:20.054Z"",   ""body"": {     ""Health"": ""Ok""   } }",""
+"TC_API_04","POST /gen-chat returns LLM response","RAG API — Smoke Tests","passed",581,"{   ""endpoint"": ""/gen-chat"",   ""method"": ""POST"",   ""status"": 200,   ""timestamp"": ""2026-06-09T11:21:20.638Z"",   ""user_id"": ""automation-smoke"",   ""response_id"": ""automation-smoke_smoke-session"",   ""llm_response"": ""You've pinged me. How can I assist you today?"" }",""

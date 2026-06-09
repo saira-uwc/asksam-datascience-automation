@@ -135,6 +135,8 @@ header{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-
 .modal-test .mt-meta{font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
 .modal-test .mt-tag{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:6px;font-size:11px;font-weight:500;background:var(--panel);border:1px solid var(--panel-border);color:var(--muted)}
 .modal-test .mt-error{margin-top:10px;padding:10px 14px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:8px;font-size:12px;color:#fca5a5;font-family:'Fira Code',monospace;white-space:pre-wrap;max-height:180px;overflow-y:auto;line-height:1.6}
+.modal-test .mt-proof{margin-top:10px;padding:10px 14px;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;font-size:12px;color:#86efac;font-family:'Fira Code',monospace;white-space:pre-wrap;max-height:220px;overflow-y:auto;line-height:1.6}
+.modal-test .mt-proof-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
 .modal-test .mt-attachments{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
 .modal-test .attach-link{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:6px;font-size:11px;font-weight:500;cursor:pointer;transition:.15s;border:1px solid var(--panel-border);background:var(--panel);color:var(--muted);text-decoration:none}
 .modal-test .attach-link:hover{border-color:var(--accent);color:var(--accent)}
@@ -675,6 +677,7 @@ function renderModalTests(tests, filter) {
           <span>${formatDuration(t.durationMs)}</span>
         </div>
         ${t.error ? `<div class="mt-error">${esc(t.error)}</div>` : ''}
+        ${t.apiProof ? `<div class="mt-proof"><div class="mt-proof-label">API response proof</div>${esc(t.apiProof)}</div>` : ''}
         ${attachHtml}
       </div>
     `;
@@ -697,6 +700,7 @@ function getAttachIcon(name, contentType) {
 function getAttachLabel(name, contentType) {
   if (contentType && contentType.startsWith('image/')) return 'Screenshot';
   if (contentType && contentType.startsWith('video/')) return 'Video';
+  if (name === 'api-response') return 'API Proof';
   if (name && name.toLowerCase().includes('screenshot')) return 'Screenshot';
   if (name && name.toLowerCase().includes('video')) return 'Video';
   if (name && name.toLowerCase().includes('trace')) return 'Trace';

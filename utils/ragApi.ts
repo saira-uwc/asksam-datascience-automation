@@ -41,3 +41,34 @@ export function extractGenChatContent(body: unknown): string {
   }
   return '';
 }
+
+/** Build a compact proof object stored in reports, Sheets, and dashboard. */
+export function formatApiProof(opts: {
+  endpoint: string;
+  method: string;
+  status: number;
+  body: unknown;
+}): Record<string, unknown> {
+  const proof: Record<string, unknown> = {
+    endpoint: opts.endpoint,
+    method: opts.method,
+    status: opts.status,
+    timestamp: new Date().toISOString(),
+  };
+
+  if (opts.endpoint === '/gen-chat' && opts.body && typeof opts.body === 'object') {
+    const record = opts.body as Record<string, unknown>;
+    proof.user_id = record.user_id;
+    proof.response_id = record.response_id;
+    proof.llm_response = extractGenChatContent(opts.body);
+  } else {
+    proof.body = opts.body;
+  }
+
+  return proof;
+}
+
+export function truncateForSheet(text: string, max = 1500): string {
+  const trimmed = text.trim();
+  return trimmed.length > max ? `${trimmed.substring(0, max)}...` : trimmed;
+}

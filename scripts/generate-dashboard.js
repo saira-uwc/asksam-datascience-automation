@@ -62,6 +62,42 @@ function getModuleKey(filePath) {
   return getSpecBasename(filePath);
 }
 
+function resolveAttachmentPath(attachmentPath) {
+  if (!attachmentPath) return null;
+  if (path.isAbsolute(attachmentPath) && fs.existsSync(attachmentPath)) {
+    return attachmentPath;
+  }
+  const fromRoot = path.join(ROOT, attachmentPath);
+  if (fs.existsSync(fromRoot)) return fromRoot;
+  return fs.existsSync(attachmentPath) ? attachmentPath : null;
+}
+
+function readApiProofAttachment(result) {
+  const apiAtt = (result.attachments || []).find((a) => a.name === 'api-response');
+  if (!apiAtt) return { proof: '', body: '' };
+
+  let raw = '';
+  if (apiAtt.body) {
+    try {
+      raw = Buffer.from(apiAtt.body, 'base64').toString('utf8');
+    } catch {
+      raw = '';
+    }
+  } else {
+    const filePath = resolveAttachmentPath(apiAtt.path);
+    if (filePath) {
+      try {
+        raw = fs.readFileSync(filePath, 'utf8');
+      } catch {
+        raw = '';
+      }
+    }
+  }
+
+  const proof = raw.length > 3000 ? `${raw.substring(0, 3000)}...` : raw;
+  return { proof, body: raw };
+}
+
 // ── Recursively extract tests from Playwright suite tree ──
 function extractTests(suite, tests = []) {
   if (suite.specs) {
@@ -87,6 +123,8 @@ function extractTests(suite, tests = []) {
             contentType: a.contentType || '',
           }));
 
+          const { proof: apiProof, body: apiProofBody } = readApiProofAttachment(result);
+
           tests.push({
             title: spec.title,
             status,
@@ -95,6 +133,8 @@ function extractTests(suite, tests = []) {
             module: getModuleKey(spec.file || ''),
             moduleLabel: getModuleFromFile(spec.file || ''),
             attachments,
+            apiProof,
+            apiProofBody,
             error: errorMsg,
             retry: result.retry || 0,
           });
@@ -168,15 +208,23 @@ function main() {
 
   let artifactCount = 0;
   for (const t of tests) {
-    if (t.status === 'passed') continue;
     const slug = t.title.replace(/[^a-zA-Z0-9_-]/g, '_').substring(0, 50).toLowerCase();
     for (const a of t.attachments) {
-      if (!a.sourcePath || !fs.existsSync(a.sourcePath)) continue;
-      const ext = path.extname(a.path) || '';
+      const isApiProof = a.name === 'api-response';
+      if (!isApiProof && t.status === 'passed') continue;
+
+      const ext = path.extname(a.path) || (isApiProof ? '.json' : '');
       const destName = `${slug}-${a.name}${ext}`;
       const destPath = path.join(ARTIFACTS_DIR, destName);
+
       try {
-        fs.copyFileSync(a.sourcePath, destPath);
+        if (isApiProof && t.apiProofBody) {
+          fs.writeFileSync(destPath, t.apiProofBody);
+        } else {
+          const sourcePath = resolveAttachmentPath(a.sourcePath);
+          if (!sourcePath) continue;
+          fs.copyFileSync(sourcePath, destPath);
+        }
         a.webPath = `./artifacts/${destName}`;
         artifactCount++;
       } catch { /* skip if copy fails */ }
@@ -193,7 +241,7 @@ function main() {
     summary: { total, passed, failed, skipped, timedOut },
     passRate,
     modules,
-    tests: tests.map(({ retry, ...rest }) => ({
+    tests: tests.map(({ retry, apiProofBody, ...rest }) => ({
       ...rest,
       attachments: rest.attachments.map(({ sourcePath, ...a }) => a), // remove sourcePath from output
     })),
@@ -235,13 +283,14 @@ function main() {
   console.log('Written:', HISTORY_PATH);
 
   // Write current-run.csv
-  const csvHeader = 'Test ID,Test Name,Module,Status,Duration (ms),Error\n';
+  const csvHeader = 'Test ID,Test Name,Module,Status,Duration (ms),API Response Proof,Error\n';
   const csvRows = tests.map(t => {
     const titleMatch = t.title.match(/^(TC_\w+_\d+)\s*-\s*(.+)$/);
     const id = titleMatch ? titleMatch[1] : '';
     const name = titleMatch ? titleMatch[2].trim() : t.title;
+    const proof = (t.apiProof || '').replace(/"/g, '""').replace(/\n/g, ' ');
     const error = t.error.replace(/"/g, '""').replace(/\n/g, ' ');
-    return `"${id}","${name}","${t.moduleLabel}","${t.status}",${t.durationMs},"${error}"`;
+    return `"${id}","${name}","${t.moduleLabel}","${t.status}",${t.durationMs},"${proof}","${error}"`;
   }).join('\n');
 
   fs.mkdirSync(path.dirname(CSV_CURRENT), { recursive: true });

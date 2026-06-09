@@ -1,54 +1,8 @@
 [
   {
-    "id": "c0aedb94-79a2-4afd-8556-7892fdb746ac",
-    "startedAt": "2026-06-09T11:21:18.358Z",
-    "durationMs": 2307.31,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "52789296-8708-4917-aa0f-d0f8a0f4bb47",
-    "startedAt": "2026-06-09T11:21:18.358Z",
-    "durationMs": 2307.31,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "c418a56e-68b8-4952-8809-a327ffd291d3",
-    "startedAt": "2026-06-09T09:57:57.914Z",
-    "durationMs": 2190.059,
+    "id": "f3837637-c79a-47c3-a8e2-3022f1348083",
+    "startedAt": "2026-06-09T11:22:06.313Z",
+    "durationMs": 2178.4030000000002,
     "summary": {
       "total": 4,
       "passed": 4,

@@ -26,7 +26,7 @@ This guide moves Playwright automation from GitHub Actions (optional) to a **ded
 ### 1) SSH
 
 ```bash
-ssh YOUR_USER@YOUR_SERVER_IP
+ssh saira@136.119.127.72
 cd ~
 ```
 
@@ -118,15 +118,23 @@ npm run automation:run
 
 ### 11) Cron
 
+**Option A — RAG API only (recommended first)** — no browser, no `TEST_EMAIL`:
+
 ```bash
 crontab -e
 ```
 
-Add:
+```bash
+15 */2 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run-rag-api' >> "$HOME/automation-cron-asksam-rag-api.log" 2>&1
+```
+
+**Option B — Full UI + API** — requires `TEST_EMAIL` + Chromium:
 
 ```bash
-0 */2 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run' >> "$HOME/automation-cron-asksam-datascience-automation.log" 2>&1
+45 */2 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run' >> "$HOME/automation-cron-asksam-datascience-automation.log" 2>&1
 ```
+
+You can run **both** (staggered minutes) or **only Option A** to start.
 
 ---
 

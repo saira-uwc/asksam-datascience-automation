@@ -21,6 +21,7 @@ npm test                    # run tests + generate dashboard + email (if configu
 | Appointment booking | `npm run test:expert-appointment-booking` |
 | Clinical note | `npm run test:clinical-note` |
 | AI assistant panel | `npm run test:ai-assistant-panel` |
+| RAG API smoke (health + LLM) | `npm run test:rag-api` |
 | All modules | `npm test` |
 
 See `package.json` for the full list of `test:<module>` scripts.

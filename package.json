@@ -23,6 +23,7 @@
     "test:letter-template": "playwright test tests/letter-template.spec.ts",
     "test:ccop-helpcenter-ticket": "playwright test tests/ccop-helpcenter-ticket.spec.ts",
     "test:ccop-clinician-signup": "playwright test tests/ccop-clinician-signup.spec.ts",
+    "test:rag-api": "playwright test tests/rag-api-smoke.spec.ts --project=api",
     "dashboard:generate": "node scripts/generate-dashboard.js",
     "dashboard:run": "npx playwright test && node scripts/generate-dashboard.js",
     "dashboard:preview": "npx playwright test && node scripts/generate-dashboard.js && open docs/index.html",

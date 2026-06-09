@@ -45,6 +45,7 @@ const MODULE_MAP = {
   'letter-template': 'CCOP — Letter Templates',
   'ccop-helpcenter-ticket': 'CCOP — Help Center',
   'ccop-clinician-signup': 'CCOP — Clinician Signup',
+  'rag-api-smoke': 'RAG API — Smoke Tests',
   'z-logout': 'Logout',
 };
 

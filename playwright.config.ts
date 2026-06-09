@@ -34,9 +34,17 @@ export default defineConfig({
       testMatch: '**/auth.setup.ts',
     },
     {
+      name: 'api',
+      testMatch: /rag-api-smoke\.spec\.ts/,
+    },
+    {
       name: 'chromium',
       testMatch: /.*\.spec\.ts/,
-      testIgnore: [/ccop-clinician-signup\.spec\.ts/, /letter-template\.spec\.ts/],
+      testIgnore: [
+        /ccop-clinician-signup\.spec\.ts/,
+        /letter-template\.spec\.ts/,
+        /rag-api-smoke\.spec\.ts/,
+      ],
       use: {
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',

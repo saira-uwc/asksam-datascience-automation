@@ -1,5 +1,5 @@
 Test ID,Test Name,Module,Status,Duration (ms),Error
-"TC_API_01","GET /health returns application healthy","RAG API — Smoke Tests","passed",174,""
-"TC_API_02","GET /redis/health returns Redis healthy","RAG API — Smoke Tests","passed",44,""
+"TC_API_01","GET /health returns application healthy","RAG API — Smoke Tests","passed",207,""
+"TC_API_02","GET /redis/health returns Redis healthy","RAG API — Smoke Tests","passed",42,""
 "TC_API_03","GET /vectorstore/health returns vector store healthy","RAG API — Smoke Tests","passed",42,""
-"TC_API_04","POST /gen-chat returns LLM response","RAG API — Smoke Tests","passed",326,""
+"TC_API_04","POST /gen-chat returns LLM response","RAG API — Smoke Tests","passed",498,""

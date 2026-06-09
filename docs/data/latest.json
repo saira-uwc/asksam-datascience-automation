@@ -1,7 +1,7 @@
 {
-  "id": "c418a56e-68b8-4952-8809-a327ffd291d3",
-  "startedAt": "2026-06-09T09:57:57.914Z",
-  "durationMs": 2190.059,
+  "id": "f045e402-9806-4652-bba7-76ed1a144322",
+  "startedAt": "2026-06-09T10:49:06.460Z",
+  "durationMs": 1164.039,
   "summary": {
     "total": 4,
     "passed": 4,
@@ -24,7 +24,7 @@
     {
       "title": "TC_API_01 - GET /health returns application healthy",
       "status": "passed",
-      "durationMs": 753,
+      "durationMs": 174,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -34,7 +34,7 @@
     {
       "title": "TC_API_02 - GET /redis/health returns Redis healthy",
       "status": "passed",
-      "durationMs": 241,
+      "durationMs": 44,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -44,7 +44,7 @@
     {
       "title": "TC_API_03 - GET /vectorstore/health returns vector store healthy",
       "status": "passed",
-      "durationMs": 244,
+      "durationMs": 42,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -54,7 +54,7 @@
     {
       "title": "TC_API_04 - POST /gen-chat returns LLM response",
       "status": "passed",
-      "durationMs": 650,
+      "durationMs": 326,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",

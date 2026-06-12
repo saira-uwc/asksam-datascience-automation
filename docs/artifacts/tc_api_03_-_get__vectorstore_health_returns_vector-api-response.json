@@ -2,7 +2,7 @@
   "endpoint": "/vectorstore/health",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-12T04:15:05.496Z",
+  "timestamp": "2026-06-12T06:15:05.420Z",
   "body": {
     "Health": "Ok"
   }

@@ -2,7 +2,7 @@
   "endpoint": "/gen-chat",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-12T04:15:06.141Z",
+  "timestamp": "2026-06-12T06:15:06.045Z",
   "user_id": "automation-smoke",
   "response_id": "automation-smoke_smoke-session",
   "llm_response": "You've pinged me. How can I assist you today?"

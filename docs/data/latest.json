@@ -1,7 +1,7 @@
 {
-  "id": "f21049f2-015d-40e1-8609-eb7040e47484",
-  "startedAt": "2026-06-13T14:15:04.443Z",
-  "durationMs": 1282.011,
+  "id": "02913dfe-46c3-43ee-9af0-d0faebee41dd",
+  "startedAt": "2026-06-13T16:15:03.806Z",
+  "durationMs": 1526.473,
   "summary": {
     "total": 4,
     "passed": 4,
@@ -24,7 +24,7 @@
     {
       "title": "TC_API_01 - GET /health returns application healthy",
       "status": "passed",
-      "durationMs": 210,
+      "durationMs": 237,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -36,13 +36,13 @@
           "webPath": "./artifacts/tc_api_01_-_get__health_returns_application_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T14:15:05.137Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T16:15:04.550Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_02 - GET /redis/health returns Redis healthy",
       "status": "passed",
-      "durationMs": 42,
+      "durationMs": 43,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -54,7 +54,7 @@
           "webPath": "./artifacts/tc_api_02_-_get__redis_health_returns_redis_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T14:15:05.197Z\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T16:15:04.612Z\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
       "error": ""
     },
     {
@@ -72,13 +72,13 @@
           "webPath": "./artifacts/tc_api_03_-_get__vectorstore_health_returns_vector-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T14:15:05.255Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T16:15:04.671Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_04 - POST /gen-chat returns LLM response",
       "status": "passed",
-      "durationMs": 430,
+      "durationMs": 623,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -90,7 +90,7 @@
           "webPath": "./artifacts/tc_api_04_-_post__gen-chat_returns_llm_response-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T14:15:05.694Z\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-13T16:15:05.303Z\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
       "error": ""
     }
   ]

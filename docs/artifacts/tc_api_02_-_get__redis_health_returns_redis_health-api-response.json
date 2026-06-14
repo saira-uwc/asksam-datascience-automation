@@ -2,7 +2,7 @@
   "endpoint": "/redis/health",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-14T14:15:05.019Z",
+  "timestamp": "2026-06-14T16:15:04.932Z",
   "body": {
     "status": "healthy",
     "detail": "Redis is running"

@@ -1,0 +1,15 @@
+{
+  "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions",
+  "method": "GET",
+  "status": 200,
+  "timestamp": "2026-06-15T08:18:35.314Z",
+  "body": {
+    "success": true,
+    "data": {
+      "flag_name": "ask_sam_interactions",
+      "value": true,
+      "completed": true
+    }
+  },
+  "tab": "asksam"
+}

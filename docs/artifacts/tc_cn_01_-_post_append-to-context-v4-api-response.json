@@ -2,8 +2,11 @@
   "endpoint": "https://on-append.uwc.world/append-to-context-v4",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-15T08:38:10.653Z",
+  "timestamp": "2026-06-15T08:44:49.195Z",
+  "url": "https://on-append.uwc.world/append-to-context-v4",
   "body": {
     "message": "Transcript is processing."
-  }
+  },
+  "id": "TC_CN_01",
+  "name": "append-to-context-v4"
 }

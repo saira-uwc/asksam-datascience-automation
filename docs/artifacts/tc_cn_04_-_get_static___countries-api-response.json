@@ -2,7 +2,8 @@
   "endpoint": "https://session-note.uwc.world/static/countries",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-15T08:38:14.520Z",
+  "timestamp": "2026-06-15T08:44:52.706Z",
+  "url": "https://session-note.uwc.world/static/countries",
   "body": {
     "status": "success",
     "countries": [
@@ -1217,5 +1218,7 @@
         "dial_code": "+263"
       }
     ]
-  }
+  },
+  "id": "TC_CN_04",
+  "name": "static / countries"
 }

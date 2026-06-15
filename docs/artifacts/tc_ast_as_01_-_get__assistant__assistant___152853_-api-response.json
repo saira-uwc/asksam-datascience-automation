@@ -2,7 +2,8 @@
   "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-15T08:38:28.552Z",
+  "timestamp": "2026-06-15T08:45:02.757Z",
+  "url": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts",
   "body": {
     "success": true,
     "data": {
@@ -11,5 +12,7 @@
       "completed": true
     }
   },
-  "tab": "assistant"
+  "id": "TC_AST_AS_01",
+  "tab": "assistant",
+  "name": "Assistant — 152853 / drug_drug_interaction_alerts"
 }

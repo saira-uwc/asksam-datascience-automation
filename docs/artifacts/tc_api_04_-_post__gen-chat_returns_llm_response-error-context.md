@@ -7,96 +7,86 @@
 # Test info
 
 - Name: rag-api-smoke.spec.ts >> RAG API smoke >> TC_API_04 - POST /gen-chat returns LLM response
-- Location: tests/rag-api-smoke.spec.ts:63:7
+- Location: tests/rag-api-smoke.spec.ts:49:7
 
 # Error details
 
 ```
-SyntaxError: Unexpected token '<', "<html>
-<h"... is not valid JSON
+Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 200
+Received: 502
 ```
 
 # Test source
 
 ```ts
   1  | import { test, expect } from '@playwright/test';
-  2  | import type { APIResponse, TestInfo } from '@playwright/test';
-  3  | import {
-  4  |   ragUrl,
-  5  |   buildGenChatPayload,
-  6  |   extractGenChatContent,
-  7  |   formatApiProof,
-  8  | } from '../utils/ragApi';
-  9  | 
-  10 | async function attachApiProof(
-  11 |   testInfo: TestInfo,
-  12 |   endpoint: string,
-  13 |   method: string,
-  14 |   response: APIResponse,
-  15 |   body: unknown,
-  16 | ) {
-  17 |   const proof = formatApiProof({
-  18 |     endpoint,
-  19 |     method,
-  20 |     status: response.status(),
-  21 |     body,
-  22 |   });
-  23 |   await testInfo.attach('api-response', {
-  24 |     body: JSON.stringify(proof, null, 2),
-  25 |     contentType: 'application/json',
-  26 |   });
-  27 | }
-  28 | 
-  29 | test.describe('RAG API smoke', () => {
-  30 |   test('TC_API_01 - GET /health returns application healthy', async ({ request }, testInfo) => {
-  31 |     const endpoint = '/health';
-  32 |     const response = await request.get(ragUrl(endpoint));
-  33 |     const body = await response.json();
+  2  | import {
+  3  |   ragUrl,
+  4  |   buildGenChatPayload,
+  5  |   extractGenChatContent,
+  6  | } from '../utils/ragApi';
+  7  | import { readResponseBody, attachApiProof } from '../utils/apiProof';
+  8  | 
+  9  | test.describe('RAG API smoke', () => {
+  10 |   test('TC_API_01 - GET /health returns application healthy', async ({ request }, testInfo) => {
+  11 |     const endpoint = '/health';
+  12 |     const url = ragUrl(endpoint);
+  13 |     const response = await request.get(url);
+  14 |     const body = await readResponseBody(response);
+  15 | 
+  16 |     await attachApiProof(testInfo, { endpoint, method: 'GET', status: response.status(), body, url });
+  17 | 
+  18 |     expect(response.status()).toBe(200);
+  19 |     expect(body).toMatchObject({ Health: 'Ok' });
+  20 |   });
+  21 | 
+  22 |   test('TC_API_02 - GET /redis/health returns Redis healthy', async ({ request }, testInfo) => {
+  23 |     const endpoint = '/redis/health';
+  24 |     const url = ragUrl(endpoint);
+  25 |     const response = await request.get(url);
+  26 |     const body = await readResponseBody(response);
+  27 | 
+  28 |     await attachApiProof(testInfo, { endpoint, method: 'GET', status: response.status(), body, url });
+  29 | 
+  30 |     expect(response.status()).toBe(200);
+  31 |     expect(body).toMatchObject({ status: 'healthy' });
+  32 |     expect(String((body as Record<string, unknown>).detail || '')).toMatch(/redis/i);
+  33 |   });
   34 | 
-  35 |     expect(response.status()).toBe(200);
-  36 |     expect(body).toMatchObject({ Health: 'Ok' });
-  37 |     await attachApiProof(testInfo, endpoint, 'GET', response, body);
-  38 |   });
-  39 | 
-  40 |   test('TC_API_02 - GET /redis/health returns Redis healthy', async ({ request }, testInfo) => {
-  41 |     const endpoint = '/redis/health';
-  42 |     const response = await request.get(ragUrl(endpoint));
-  43 |     const body = await response.json();
+  35 |   test('TC_API_03 - GET /vectorstore/health returns vector store healthy', async ({
+  36 |     request,
+  37 |   }, testInfo) => {
+  38 |     const endpoint = '/vectorstore/health';
+  39 |     const url = ragUrl(endpoint);
+  40 |     const response = await request.get(url);
+  41 |     const body = await readResponseBody(response);
+  42 | 
+  43 |     await attachApiProof(testInfo, { endpoint, method: 'GET', status: response.status(), body, url });
   44 | 
   45 |     expect(response.status()).toBe(200);
-  46 |     expect(body.status).toBe('healthy');
-  47 |     expect(String(body.detail || '')).toMatch(/redis/i);
-  48 |     await attachApiProof(testInfo, endpoint, 'GET', response, body);
-  49 |   });
-  50 | 
-  51 |   test('TC_API_03 - GET /vectorstore/health returns vector store healthy', async ({
-  52 |     request,
-  53 |   }, testInfo) => {
-  54 |     const endpoint = '/vectorstore/health';
-  55 |     const response = await request.get(ragUrl(endpoint));
-  56 |     const body = await response.json();
-  57 | 
-  58 |     expect(response.status()).toBe(200);
-  59 |     expect(body).toMatchObject({ Health: 'Ok' });
-  60 |     await attachApiProof(testInfo, endpoint, 'GET', response, body);
-  61 |   });
-  62 | 
-  63 |   test('TC_API_04 - POST /gen-chat returns LLM response', async ({ request }, testInfo) => {
-  64 |     test.setTimeout(120000);
-  65 | 
-  66 |     const endpoint = '/gen-chat';
-  67 |     const response = await request.post(ragUrl(endpoint), {
-  68 |       data: buildGenChatPayload(),
-  69 |     });
-> 70 |     const body = await response.json();
-     |                  ^ SyntaxError: Unexpected token '<', "<html>
-  71 | 
-  72 |     expect(response.status()).toBe(200);
-  73 |     const content = extractGenChatContent(body);
-  74 |     expect(content.length).toBeGreaterThan(0);
-  75 |     expect(body).toHaveProperty('user_id');
-  76 |     await attachApiProof(testInfo, endpoint, 'POST', response, body);
-  77 |   });
-  78 | });
-  79 | 
+  46 |     expect(body).toMatchObject({ Health: 'Ok' });
+  47 |   });
+  48 | 
+  49 |   test('TC_API_04 - POST /gen-chat returns LLM response', async ({ request }, testInfo) => {
+  50 |     test.setTimeout(120000);
+  51 | 
+  52 |     const endpoint = '/gen-chat';
+  53 |     const url = ragUrl(endpoint);
+  54 |     const response = await request.post(url, {
+  55 |       data: buildGenChatPayload(),
+  56 |     });
+  57 |     const body = await readResponseBody(response);
+  58 | 
+  59 |     await attachApiProof(testInfo, { endpoint, method: 'POST', status: response.status(), body, url });
+  60 | 
+> 61 |     expect(response.status()).toBe(200);
+     |                               ^ Error: expect(received).toBe(expected) // Object.is equality
+  62 |     const content = extractGenChatContent(body);
+  63 |     expect(content.length).toBeGreaterThan(0);
+  64 |     expect(body).toHaveProperty('user_id');
+  65 |   });
+  66 | });
+  67 | 
 ```

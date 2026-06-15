@@ -2,7 +2,8 @@
   "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-15T08:38:28.606Z",
+  "timestamp": "2026-06-15T08:45:02.814Z",
+  "url": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions",
   "body": {
     "success": true,
     "data": {
@@ -11,5 +12,7 @@
       "completed": true
     }
   },
-  "tab": "asksam"
+  "id": "TC_AST_AK_01",
+  "tab": "asksam",
+  "name": "Asksam — 152853 / ask_sam_interactions"
 }

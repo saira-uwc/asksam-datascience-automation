@@ -1,10 +1,10 @@
 {
-  "id": "5f7152b0-2066-4179-a959-f74e667530c3",
-  "startedAt": "2026-06-15T06:15:04.137Z",
-  "durationMs": 1505.6039999999998,
+  "id": "7299c8af-d153-40c5-a9a2-58974a92d612",
+  "startedAt": "2026-06-15T07:33:24.224Z",
+  "durationMs": 11504.66,
   "summary": {
-    "total": 4,
-    "passed": 4,
+    "total": 9,
+    "passed": 9,
     "failed": 0,
     "skipped": 0,
     "timedOut": 0
@@ -18,13 +18,21 @@
       "failed": 0,
       "skipped": 0,
       "timedOut": 0
+    },
+    "clinical-notes-api-smoke": {
+      "label": "Clinical Notes API — Smoke Tests",
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
     }
   },
   "tests": [
     {
       "title": "TC_API_01 - GET /health returns application healthy",
       "status": "passed",
-      "durationMs": 199,
+      "durationMs": 206,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -36,13 +44,13 @@
           "webPath": "./artifacts/tc_api_01_-_get__health_returns_application_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T06:15:04.825Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:24.922Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_02 - GET /redis/health returns Redis healthy",
       "status": "passed",
-      "durationMs": 42,
+      "durationMs": 44,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -54,13 +62,13 @@
           "webPath": "./artifacts/tc_api_02_-_get__redis_health_returns_redis_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T06:15:04.885Z\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:24.985Z\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_03 - GET /vectorstore/health returns vector store healthy",
       "status": "passed",
-      "durationMs": 41,
+      "durationMs": 44,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -72,13 +80,13 @@
           "webPath": "./artifacts/tc_api_03_-_get__vectorstore_health_returns_vector-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T06:15:04.942Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:25.044Z\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_04 - POST /gen-chat returns LLM response",
       "status": "passed",
-      "durationMs": 662,
+      "durationMs": 281,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -90,7 +98,97 @@
           "webPath": "./artifacts/tc_api_04_-_post__gen-chat_returns_llm_response-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T06:15:05.613Z\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:25.334Z\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
+      "error": ""
+    },
+    {
+      "title": "TC_CN_01 - POST append-to-context-v4",
+      "status": "passed",
+      "durationMs": 249,
+      "file": "clinical-notes-api-smoke.spec.ts",
+      "module": "clinical-notes-api-smoke",
+      "moduleLabel": "Clinical Notes API — Smoke Tests",
+      "attachments": [
+        {
+          "name": "api-response",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/tc_cn_01_-_post_append-to-context-v4-api-response.json"
+        }
+      ],
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:26.101Z\",\n  \"body\": {\n    \"message\": \"Transcript is processing.\"\n  }\n}",
+      "error": ""
+    },
+    {
+      "title": "TC_CN_02 - POST insert-into-context",
+      "status": "passed",
+      "durationMs": 1304,
+      "file": "clinical-notes-api-smoke.spec.ts",
+      "module": "clinical-notes-api-smoke",
+      "moduleLabel": "Clinical Notes API — Smoke Tests",
+      "attachments": [
+        {
+          "name": "api-response",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/tc_cn_02_-_post_insert-into-context-api-response.json"
+        }
+      ],
+      "apiProof": "{\n  \"endpoint\": \"https://rag.uwc.world/insert-into-context\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:27.423Z\",\n  \"body\": {\n    \"message\": \"644938 inserted\"\n  }\n}",
+      "error": ""
+    },
+    {
+      "title": "TC_CN_03 - GET jwt-clinicalnotes / list-clients?professional_id=152853&count=200",
+      "status": "passed",
+      "durationMs": 1800,
+      "file": "clinical-notes-api-smoke.spec.ts",
+      "module": "clinical-notes-api-smoke",
+      "moduleLabel": "Clinical Notes API — Smoke Tests",
+      "attachments": [
+        {
+          "name": "api-response",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/tc_cn_03_-_get_jwt-clinicalnotes___list-clients_pr-api-response.json"
+        }
+      ],
+      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:29.239Z\",\n  \"body\": {\n    \"status\": \"success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.W3sidXNlcl9pZCI6ICI2NDQ5MzgiLCAibmFtZSI6ICJZYW1pbmkgU2luZ2ggMTkxIiwgImVtYWlsIjogInlzMTkxX2F1c0B5b3BtYWlsLmNvbSIsICJwaG9uZSI6ICIiLCAiaGlzX251bWJlciI6ICIiLCAiaW1hZ2UiOiAiaHR0cHM6Ly9pbWcuY2xlcmsuY29tL2V5SjBlWEJsSWpvaVpHVm1ZWFZzZENJc0ltbHBaQ0k2SW1sdWMxOHlkazlwWlZwSGFuSmhRWFZLY2tKWk1WaGxSekkzY0ZKTFVtNGlMQ0p5YVdRaU9pSjFjMlZ5WHpNMlltRlZkMGRZVFdSRmVXWnhZalk1VUhaeE5XVk5RbWR2WnlJc0ltbHVhWFJwWVd4eklqb2lXVk1pZlEiLCAic2Vzc2lvbl9jb3VudCI6IDczNn0sIHsidXNlcl9pZCI6ICI3MDYwNjgiLCAibmFtZSI6ICJUZXN0IHVzZXItMzMwMDM4IiwgImVtYWlsIjogInRlc3R1c2VyLTMzMDAzOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjciLCAibmFtZSI6ICJUZXN0IHVzZXItMTQ1MDc3IiwgImVtYWlsIjogInRlc3R1c2VyLTE0NTA3N0B0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjEiLCAibmFtZSI6ICJUZXN0IHVzZXItNjA3ODM5IiwgImVtYWlsIjogInRlc3R1c2VyLTYwNzgzOUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNTYiLCAibmFtZSI6ICJUZXN0IHVzZXItOTk4ODI2IiwgImVtYWlsIjogInRlc3R1c2VyLTk5ODgyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDkiLCAibmFtZSI6ICJUZXN0IHVzZXItNDE4MzAxIiwgImVtYWlsIjogInRlc3R1c2VyLTQxODMwMUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDMiLCAibmFtZSI6ICJUZXN0IHVzZXItODA0NjA4IiwgImVtYWlsIjogInRlc3R1c2VyLTgwNDYwOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjAwNjk0IiwgImVtYWlsIjogInRlc3R1c2VyLTIwMDY5NEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzUiLCAibmFtZSI6ICJUZXN0IHVzZXItNTQzNjI2IiwgImVtYWlsIjogInRlc3R1c2VyLTU0MzYyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMjkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjMyMzI4IiwgImVtYWlsIjogInRlc3R1c2VyLTIzMjMyOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMjgiLCAibmFtZSI6ICJUZXN0IHVzZXItMDQ3NjAzIiwgImVtYWlsIjogInRlc3R1c2VyLTA0NzYwM0B0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMjQiLCAibmFtZSI6ICJUZXN0IHVzZXItMzgxMjEzIiwgImVtYWlsIjogInRlc3R1c2VyLTM4MTIxM0B0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50Ijog...",
+      "error": ""
+    },
+    {
+      "title": "TC_CN_04 - GET static / countries",
+      "status": "passed",
+      "durationMs": 46,
+      "file": "clinical-notes-api-smoke.spec.ts",
+      "module": "clinical-notes-api-smoke",
+      "moduleLabel": "Clinical Notes API — Smoke Tests",
+      "attachments": [
+        {
+          "name": "api-response",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/tc_cn_04_-_get_static___countries-api-response.json"
+        }
+      ],
+      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/static/countries\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:29.294Z\",\n  \"body\": {\n    \"status\": \"success\",\n    \"countries\": [\n      {\n        \"name\": \"Afghanistan\",\n        \"code\": \"AF\",\n        \"dial_code\": \"+93\"\n      },\n      {\n        \"name\": \"Albania\",\n        \"code\": \"AL\",\n        \"dial_code\": \"+355\"\n      },\n      {\n        \"name\": \"Algeria\",\n        \"code\": \"DZ\",\n        \"dial_code\": \"+213\"\n      },\n      {\n        \"name\": \"AmericanSamoa\",\n        \"code\": \"AS\",\n        \"dial_code\": \"+1 684\"\n      },\n      {\n        \"name\": \"Andorra\",\n        \"code\": \"AD\",\n        \"dial_code\": \"+376\"\n      },\n      {\n        \"name\": \"Angola\",\n        \"code\": \"AO\",\n        \"dial_code\": \"+244\"\n      },\n      {\n        \"name\": \"Anguilla\",\n        \"code\": \"AI\",\n        \"dial_code\": \"+1 264\"\n      },\n      {\n        \"name\": \"Antarctica\",\n        \"code\": \"AQ\",\n        \"dial_code\": \"+672\"\n      },\n      {\n        \"name\": \"Antigua and Barbuda\",\n        \"code\": \"AG\",\n        \"dial_code\": \"+1268\"\n      },\n      {\n        \"name\": \"Argentina\",\n        \"code\": \"AR\",\n        \"dial_code\": \"+54\"\n      },\n      {\n        \"name\": \"Armenia\",\n        \"code\": \"AM\",\n        \"dial_code\": \"+374\"\n      },\n      {\n        \"name\": \"Aruba\",\n        \"code\": \"AW\",\n        \"dial_code\": \"+297\"\n      },\n      {\n        \"name\": \"Australia\",\n        \"code\": \"AU\",\n        \"dial_code\": \"+61\"\n      },\n      {\n        \"name\": \"Austria\",\n        \"code\": \"AT\",\n        \"dial_code\": \"+43\"\n      },\n      {\n        \"name\": \"Azerbaijan\",\n        \"code\": \"AZ\",\n        \"dial_code\": \"+994\"\n      },\n      {\n        \"name\": \"Bahamas\",\n        \"code\": \"BS\",\n        \"dial_code\": \"+1 242\"\n      },\n      {\n        \"name\": \"Bahrain\",\n        \"code\": \"BH\",\n        \"dial_code\": \"+973\"\n      },\n      {\n        \"name\": \"Bangladesh\",\n        \"code\": \"BD\",\n        \"dial_code\": \"+880\"\n      },\n      {\n        \"name\": \"Barbados\",\n        \"code\": \"BB\",\n        \"dial_code\": \"+1 246\"\n      },\n      {\n        \"name\": \"Belarus\",\n        \"code\": \"BY\",\n        \"dial_code\": \"+375\"\n      },\n      {\n        \"name\": \"Belgium\",\n        \"code\": \"BE\",\n        \"dial_code\": \"+32\"\n      },\n      {\n        \"name\": \"Belize\",\n        \"code\": \"BZ\",\n        \"dial_code\": \"+501\"\n      },\n      {\n        \"name\": \"Benin\",\n        \"code\": \"BJ\",\n        \"dial_code\": \"+229\"\n      },\n      {\n        \"name\": \"Bermuda\",\n        \"code\": \"BM\",\n        \"dial_code\": \"+1 441\"\n      },\n      {\n        \"name\": \"Bhutan\",\n        \"code\": \"BT\",\n        \"dial_code\": \"+975\"\n      },\n      {\n        \"name\": \"Bolivia, Plurinational State of Bolivia\",\n        \"code\": \"BO\",\n        \"dial_code\": \"+591\"\n      },\n      {\n        \"name\": \"Bosnia and Herzegovina\",\n        \"code\": \"BA\",\n        \"dial_code\": \"+387\"\n      },\n      {\n        \"name\": \"Botswana\",\n        \"code\": \"BW\",\n        \"dial_code\": \"+267\"\n      },\n      {\n        \"name\": \"Bouvet Island\",\n        \"code\": \"BV\",\n        \"dial_code\"...",
+      "error": ""
+    },
+    {
+      "title": "TC_CN_05 - POST transcription-file-analyzer / process-document",
+      "status": "passed",
+      "durationMs": 6397,
+      "file": "clinical-notes-api-smoke.spec.ts",
+      "module": "clinical-notes-api-smoke",
+      "moduleLabel": "Clinical Notes API — Smoke Tests",
+      "attachments": [
+        {
+          "name": "api-response",
+          "path": "",
+          "contentType": "application/json",
+          "webPath": "./artifacts/tc_cn_05_-_post_transcription-file-analyzer___proc-api-response.json"
+        }
+      ],
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-15T07:33:35.699Z\",\n  \"body\": {\n    \"id\": \"de1c8284-e874-4f1f-b32c-2b47b947f93b\",\n    \"response\": \"The document provides a comprehensive overview of Yamini Singh's medical and psychosocial history, current treatment, and prognosis. Here are the key points:\\n\\n### Personal Information\\n- **Name:** Yamini Singh\\n- **Age:** 33 years old\\n- **Occupation:** Unemployed, previously worked in a multinational company's sales team\\n- **Marital Status:** Separated, Divorced\\n- **Family:** \\n  - Father (deceased, alcoholic)\\n  - Sister (deceased)\\n  - Mother (schizophrenia, liver cirrhosis)\\n- **Education:** Bachelor’s Degree in Computer Science\\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\\n\\n### Medical History\\n- **2020:** Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\\n- **2016:** Manic episode, diagnosed with Bipolar Disorder, hospitalized for three weeks, treated with Lithium and Valproate.\\n- **2015:** Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received Electroconvulsive Therapy (ECT).\\n\\n### Current Hospitalization\\n- **Reason for Admission:** Suicide attempt involving an overdose of prescribed medications.\\n- **Symptoms:** Severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\\n- **Length of Stay:** Currently in her third week of hospitalization in a psychiatric unit.\\n\\n### Current Medications\\n- **Fluoxetine (Prozac)**\\n- **Sertraline (Zoloft)**\\n- **Lithium**\\n- **Valproate**\\n- **Olanzapine (Zyprexa)**\\n- **Lorazepam (Ativan)**\\n\\n### Past Medications\\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\\n\\n### Therapies\\n- **Past Therapies:** Cognitive Behavioural Therapy (CBT), Dialectical Behaviour Therapy (DBT), Group Therapy, Grief counseling.\\n- **Current Therapies:** Intensive CBT, Mindfulness-Based Stress Reduction (MBSR), Individual Psychotherapy, Occupational Therapy.\\n\\n### Psychosocial Factors\\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained due to mental health issues.\\n- **Hobbies and Interests:** Reading, playing the guitar, hiking (neglected due to mental health).\\n- **Substance Use:** Occasional social alcohol consumption.\\n\\n### Current Treatment Goals\\n- Stabilize mood\\n- Reduce symptoms of depression and anxiety\\n- Improve sleep\\n- Enhance coping mechanisms\\n- Improve work-life balance\\n- Consider family therapy\\n- Develop a reintegration plan\\n\\n### Prognosis\\n- **Prognosis:** Cautiously optimistic with adherence to treatment, regular fo...",
       "error": ""
     }
   ]

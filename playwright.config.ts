@@ -38,12 +38,31 @@ export default defineConfig({
       testMatch: /rag-api-smoke\.spec\.ts/,
     },
     {
+      name: 'clinical-notes-api',
+      testMatch: /clinical-notes-api-smoke\.spec\.ts/,
+      dependencies: ['setup'],
+      use: {
+        storageState: 'playwright/.auth/user.json',
+      },
+    },
+    {
+      name: 'discover',
+      testMatch: /discover-clinical-notes-apis\.spec\.ts/,
+      dependencies: ['setup'],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+      },
+    },
+    {
       name: 'chromium',
       testMatch: /.*\.spec\.ts/,
       testIgnore: [
         /ccop-clinician-signup\.spec\.ts/,
         /letter-template\.spec\.ts/,
         /rag-api-smoke\.spec\.ts/,
+        /clinical-notes-api-smoke\.spec\.ts/,
+        /discover-clinical-notes-apis\.spec\.ts/,
       ],
       use: {
         ...devices['Desktop Chrome'],

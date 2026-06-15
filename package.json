@@ -24,11 +24,14 @@
     "test:ccop-helpcenter-ticket": "playwright test tests/ccop-helpcenter-ticket.spec.ts",
     "test:ccop-clinician-signup": "playwright test tests/ccop-clinician-signup.spec.ts",
     "test:rag-api": "playwright test tests/rag-api-smoke.spec.ts --project=api",
+    "discover:clinical-notes-apis": "playwright test tests/discover-clinical-notes-apis.spec.ts --project=discover",
+    "test:clinical-notes-api": "playwright test tests/clinical-notes-api-smoke.spec.ts --project=clinical-notes-api",
     "dashboard:generate": "node scripts/generate-dashboard.js",
     "dashboard:run": "npx playwright test && node scripts/generate-dashboard.js",
     "dashboard:preview": "npx playwright test && node scripts/generate-dashboard.js && open docs/index.html",
     "automation:run": "bash scripts/run-automation-machine.sh",
-    "automation:run-rag-api": "bash scripts/run-rag-api-machine.sh"
+    "automation:run-rag-api": "bash scripts/run-rag-api-machine.sh",
+    "automation:run-clinical-notes-api": "bash scripts/run-clinical-notes-api-machine.sh"
   },
   "keywords": ["playwright", "asksam", "e2e"],
   "author": "",

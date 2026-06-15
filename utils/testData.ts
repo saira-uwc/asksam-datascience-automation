@@ -5,7 +5,7 @@ dotenv.config();
 export const TEST_CONFIG = {
   urls: {
     base: process.env.BASE_URL || 'https://copilot.asksam.com.au',
-    login: process.env.LOGIN_URL || 'https://account.asksam.com.au/register',
+    login: process.env.LOGIN_URL || 'https://copilot.asksam.com.au/sign-in',
     dashboard: process.env.DASHBOARD_URL || 'https://dashboard.asksam.com.au',
     expertDashboard:
       process.env.EXPERT_DASHBOARD_URL || 'https://dashboard.asksam.com.au/expert/dashboard',

@@ -25,19 +25,21 @@ export class LoginPage extends BasePage {
     });
     await this.page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
 
+    // Legacy account register page still needs role selection; prod Copilot /sign-in goes straight to email.
     const loginHere = this.page.getByRole('button', { name: 'Log in here' });
-    await loginHere.waitFor({ state: 'visible', timeout: 30000 });
-    await loginHere.click();
-    await this.page.waitForTimeout(800);
+    if (await loginHere.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await loginHere.click();
+      await this.page.waitForTimeout(800);
 
-    const clinicianOption = this.page.getByText('Clinician', { exact: true }).first();
-    await clinicianOption.waitFor({ state: 'visible', timeout: 30000 });
-    await clinicianOption.click();
-    await this.page.waitForTimeout(800);
+      const clinicianOption = this.page.getByText('Clinician', { exact: true }).first();
+      await clinicianOption.waitFor({ state: 'visible', timeout: 30000 });
+      await clinicianOption.click();
+      await this.page.waitForTimeout(800);
 
-    await this.continueBtn.first().waitFor({ state: 'visible', timeout: 30000 });
-    await this.continueBtn.first().click();
-    await this.page.waitForTimeout(800);
+      await this.continueBtn.first().waitFor({ state: 'visible', timeout: 30000 });
+      await this.continueBtn.first().click();
+      await this.page.waitForTimeout(800);
+    }
 
     await this.emailInput.waitFor({ state: 'visible', timeout: 30000 });
     await this.emailInput.fill(clinicianEmail);

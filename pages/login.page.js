@@ -8,32 +8,26 @@ export class LoginPage {
   }
 
   async loginAsClinician(email = 'testing_clinician_aus+clerk_test@tmail.com') {
-    // Navigate to the registration/login page and wait for it to settle.
-    // Without networkidle the immediate "Log in here" click can land on a
-    // not-yet-rendered button, leaving the flow stuck before the email step.
-    await this.page.goto('https://account.asksam.com.au/register', {
+    await this.page.goto('https://copilot.asksam.com.au/sign-in', {
       waitUntil: 'domcontentloaded',
       timeout: 60000,
     });
     await this.page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
 
-    // Each step waits for its target to be visible before clicking — eliminates
-    // the race where one click-to-next-render sequence stalls and the following
-    // locator times out at 30s with no diagnostic. Small post-click pauses give
-    // Clerk's React app time to mount the next form before we interact with it.
     const loginHere = this.page.getByRole('button', { name: 'Log in here' });
-    await loginHere.waitFor({ state: 'visible', timeout: 30000 });
-    await loginHere.click();
-    await this.page.waitForTimeout(800);
+    if (await loginHere.isVisible({ timeout: 3000 }).catch(() => false)) {
+      await loginHere.click();
+      await this.page.waitForTimeout(800);
 
-    const clinicianOption = this.page.getByText('Clinician', { exact: true }).first();
-    await clinicianOption.waitFor({ state: 'visible', timeout: 30000 });
-    await clinicianOption.click();
-    await this.page.waitForTimeout(800);
+      const clinicianOption = this.page.getByText('Clinician', { exact: true }).first();
+      await clinicianOption.waitFor({ state: 'visible', timeout: 30000 });
+      await clinicianOption.click();
+      await this.page.waitForTimeout(800);
 
-    await this.continueBtn.first().waitFor({ state: 'visible', timeout: 30000 });
-    await this.continueBtn.first().click();
-    await this.page.waitForTimeout(800);
+      await this.continueBtn.first().waitFor({ state: 'visible', timeout: 30000 });
+      await this.continueBtn.first().click();
+      await this.page.waitForTimeout(800);
+    }
 
     await this.emailInput.waitFor({ state: 'visible', timeout: 30000 });
     await this.emailInput.fill(email);

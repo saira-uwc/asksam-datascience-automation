@@ -1,0 +1,765 @@
+{
+  "version": 1,
+  "discoveredAt": "2026-06-15T06:36:08.330Z",
+  "discoverySource": "prod-copilot-ui",
+  "baseUrl": "https://session-note.uwc.world",
+  "endpoints": [
+    {
+      "id": "TC_CN_01",
+      "name": "append-to-context-v4",
+      "method": "POST",
+      "path": "/append-to-context-v4",
+      "fullUrl": "https://on-append.uwc.world/append-to-context-v4",
+      "host": "on-append.uwc.world",
+      "via": "direct",
+      "smoke": true,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "x-api-key": "<redacted>",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "text": " The document provides a comprehensive overview of Yamini Singh's medical and psychosocial history, current treatment, and prognosis. Here are the key points:\n\n### Personal Information\n- **Name:** Yamini Singh\n- **Age:** 33 years old\n- **Occupation:** Unemployed, previously worked in a multinational company's sales team\n- **Marital Status:** Separated, Divorced\n- **Family:** \n  - Father (deceased, alcoholic)\n  - Sister (deceased)\n  - Mother (schizophrenia, liver cirrhosis)\n- **Education:** Bachelor’s Degree in Computer Science\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\n\n### Medical History\n- **2020:** Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\n- **2016:** Manic episode, hospitalized for three weeks, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\n- **2015:** Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received intensive psychotherapy and Electroconvulsive Therapy (ECT).\n\n### Current Hospitalization\n- **Reason for Admission:** Suicide attempt involving an overdose of prescribed medications.\n- **Symptoms:** Worsening depression and anxiety, severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\n- **Length of Stay:** Currently in her third week of hospitalization in a psychiatric unit.\n\n### Current Medications\n- **Fluoxetine (Prozac)**\n- **Sertraline (Zoloft)**\n- **Lithium**\n- **Valproate**\n- **Olanzapine (Zyprexa)**\n- **Lorazepam (Ativan)**\n\n### Past Medications\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\n\n### Past Therapies\n- **2017:** Cognitive Behavioural Therapy (CBT)\n- **2016-2017:** Dialectical Behaviour Therapy (DBT)\n- **2020:** Group Therapy, Grief counseling\n\n### Current Therapies\n- **Intensive CBT**\n- **Mindfulness-Based Stress Reduction (MBSR)**\n- **Individual Psychotherapy**\n- **Occupational Therapy**\n\n### Family History\n- **Father:** Alcoholic, passed away at age 45 from liver cirrhosis.\n- **Brother:** Died in a car accident when Yamini was 18, triggering her first major depressive episode.\n\n### Psychosocial Factors\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained due to mental health issues.\n- **Hobbies and Interests:** Reading, playing the guitar, hiking (neglected due to mental health deterioration).\n- **Substance Use:** Occasionally consumes alcohol socially, avoids excessive drinking.\n\n### Current Treatment Goals\n- Stabilize mood\n- Reduce symptoms of depression and anxiety\n- Improve sleep\n- Enhance coping mechanisms\n- Improve work-life balance\n- Consider family therapy\n- Develop a reintegration plan\n\n### Prognosis\n- **Cautiously optimistic:** Adheres to treatment and engages in therapeutic interventions. Regular follow-ups, a robust support system, and a balanced approach to work and self-care are essential for sustained improvement.\n\n### Current Vitals\n- **Height:** 5 feet 10 inches (178 cm)\n- **Weight:** 150 pounds (68 kg)\n- **BMI:** 21.5 (Normal weight)\n- **Blood Pressure:** 130/85 mmHg (Slightly elevated)\n- **Heart Rate:** 78 beats per minute (Normal)\n- **Respiratory Rate:** 16 breaths per minute (Normal)\n- **Temperature:** 98.6°F (37°C) (Normal)\n- **Oxygen Saturation:** 98% on room air (Normal)\n\n### Laboratory Results\n- **Complete Blood Count (CBC):** Within normal limits\n- **Liver Function Tests (LFTs):** Slightly elevated ALT (likely due to medication)\n- **Renal Function:** Normal\n- **Thyroid Function Tests:** Normal\n- **Electrolytes:** Within normal limits\n- **Lipid Profile:** Slightly elevated LDL cholesterol\n\n### Psychiatric Assessment\n- **Appearance:** Well-groomed but fatigued\n- **Behaviour:** Cooperative, exhibits psychomotor retardation\n- **Speech:** Slow and soft\n- **Mood:** Depressed\n- **Affect:** Constricted\n- **Thought Process:** Logical but slowed\n- **Thought Content:** Feelings of hopelessness and worthlessness, denies current suicidal ideation\n- **Cognition:** Intact orientation, attention, and concentration mildly impaired\n- **Insight and Judgment:** Good insight, judgment affected by mood\n\n### Interventions\n- **Medication Management:** Various medications including antidepressants, mood stabilizers, and antipsychotics.\n- **Psychotherapy:** Intensive CBT, DBT, individual psychotherapy, group therapy, grief counseling.\n- **Behavioural Interventions:** MBSR, occupational therapy.\n- **Electroconvulsive Therapy (ECT):** Brief inpatient course during a major depressive episode in 2015.\n- **Hospitalisation:** Multiple admissions for severe depressive and manic episodes, current hospitalization following a suicide attempt.\n- **Supportive Therapies:** Family therapy consideration, structured plan for reintegration into daily life and work, encouragement of hobbies and interests.\n\nThis detailed information provides a comprehensive understanding of Yamini Singh's condition, treatment history, and current therapeutic approach.",
+        "session_id": "6a2f9ce2928ccdf4faddaf81",
+        "appointment_id": "6a2f9ce2928ccdf4faddaf81",
+        "user_id": "644938",
+        "expert_id": "152853",
+        "appointment_date": "2026-06-15",
+        "booking_date": "2026-06-15",
+        "ordered_fields_json": [
+          {
+            "name": "chief_complaints"
+          },
+          {
+            "name": "history_of_present_illness_hpi"
+          },
+          {
+            "name": "medicines"
+          },
+          {
+            "name": "lab_test"
+          },
+          {
+            "name": "notes_from_referring_clinician"
+          },
+          {
+            "name": "compliance"
+          },
+          {
+            "name": "treatment_plan_progress"
+          },
+          {
+            "name": "assessment_summary"
+          },
+          {
+            "name": "worksheet_journal_summary"
+          },
+          {
+            "name": "stella_sos_summary"
+          },
+          {
+            "name": "genetics"
+          },
+          {
+            "name": "family_history_of_mental_illness_or_substance_abuse_issues"
+          },
+          {
+            "name": "psychosocial_history"
+          },
+          {
+            "name": "dropdown"
+          },
+          {
+            "name": "dropdown"
+          },
+          {
+            "name": "dropdown"
+          },
+          {
+            "name": "dropdown"
+          },
+          {
+            "name": "dropdown"
+          },
+          {
+            "name": "lifestyle_history"
+          },
+          {
+            "name": "languages_spoken"
+          },
+          {
+            "name": "vitals"
+          },
+          {
+            "name": "mental_status_exam_results"
+          },
+          {
+            "name": "physical_exam_results"
+          },
+          {
+            "name": "medical_history"
+          },
+          {
+            "name": "history_of_self_harm_aggression"
+          },
+          {
+            "name": "history_of_trauma"
+          },
+          {
+            "name": "history_of_contagious_medical_conditions"
+          },
+          {
+            "name": "medication_history"
+          },
+          {
+            "name": "hospitalization_history"
+          },
+          {
+            "name": "surgical_history_shx"
+          },
+          {
+            "name": "histopathological_pathological_history"
+          },
+          {
+            "name": "allergy_history"
+          },
+          {
+            "name": "nutritional_history"
+          },
+          {
+            "name": "substance_use_issues"
+          },
+          {
+            "name": "developmental_history"
+          },
+          {
+            "name": "advise"
+          },
+          {
+            "name": "session_summary"
+          },
+          {
+            "name": "homework_assigned"
+          },
+          {
+            "name": "future_treatment_plan"
+          },
+          {
+            "name": "follow_up_date"
+          },
+          {
+            "name": "histopathological_pathological_diagnostics"
+          },
+          {
+            "name": "imaging_and_radiological_diagnostics"
+          },
+          {
+            "name": "biochemical_diagnostics"
+          },
+          {
+            "name": "microbiological_diagnostics"
+          },
+          {
+            "name": "cardiological_diagnostics"
+          },
+          {
+            "name": "pulmonary_diagnostics"
+          },
+          {
+            "name": "gastro_intestinal_hepatological_diagnostics"
+          },
+          {
+            "name": "neurological_diagnostics"
+          },
+          {
+            "name": "nephrological_diagnostics"
+          },
+          {
+            "name": "urological_diagnostics"
+          },
+          {
+            "name": "ophthalmological_diagnostics"
+          },
+          {
+            "name": "dermatological_diagnostics"
+          },
+          {
+            "name": "reproductive_diagnostics"
+          },
+          {
+            "name": "ent_diagnostics"
+          },
+          {
+            "name": "endocrinological_diagnostics"
+          },
+          {
+            "name": "orthopedic_diagnostics"
+          },
+          {
+            "name": "pediatric_diagnostics"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CAPTURED_clinicalnotes_add_prescription",
+      "name": "clinicalnotes / add-prescription",
+      "method": "POST",
+      "path": "/clinicalnotes/add-prescription",
+      "fullUrl": "https://session-note.uwc.world/clinicalnotes/add-prescription",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 201,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "lat": "1",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "devicetype": "web",
+        "deviceid": "123",
+        "x-email-id": "e.cliniciantestuser@asksam.com.au",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "*/*",
+        "content-type": "application/json",
+        "long": "1"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "uploaded_by": "expert",
+        "user_id": "644938",
+        "creator_id": "152853",
+        "clinical_note_id": null,
+        "doctor_names": "Anthony Smith",
+        "response": "The document provides a comprehensive overview of Yamini Singh's medical and psychosocial history, current treatment, and prognosis. Here are the key points:\n\n### Personal Information\n- **Name:** Yamini Singh\n- **Age:** 33 years old\n- **Occupation:** Unemployed, previously worked in a multinational company's sales team\n- **Marital Status:** Separated, Divorced\n- **Family:** \n  - Father (deceased, alcoholic)\n  - Sister (deceased)\n  - Mother (schizophrenia, liver cirrhosis)\n- **Education:** Bachelor’s Degree in Computer Science\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\n\n### Medical History\n- **2020:** Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\n- **2016:** Manic episode, hospitalized for three weeks, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\n- **2015:** Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received intensive psychotherapy and Electroconvulsive Therapy (ECT).\n\n### Current Hospitalization\n- **Reason for Admission:** Suicide attempt involving an overdose of prescribed medications.\n- **Symptoms:** Worsening depression and anxiety, severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\n- **Length of Stay:** Currently in her third week of hospitalization in a psychiatric unit.\n\n### Current Medications\n- **Fluoxetine (Prozac)**\n- **Sertraline (Zoloft)**\n- **Lithium**\n- **Valproate**\n- **Olanzapine (Zyprexa)**\n- **Lorazepam (Ativan)**\n\n### Past Medications\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\n\n### Past Therapies\n- **2017:** Cognitive Behavioural Therapy (CBT)\n- **2016-2017:** Dialectical Behaviour Therapy (DBT)\n- **2020:** Group Therapy, Grief counseling\n\n### Current Therapies\n- **Intensive CBT**\n- **Mindfulness-Based Stress Reduction (MBSR)**\n- **Individual Psychotherapy**\n- **Occupational Therapy**\n\n### Family History\n- **Father:** Alcoholic, passed away at age 45 from liver cirrhosis.\n- **Brother:** Died in a car accident when Yamini was 18, triggering her first major depressive episode.\n\n### Psychosocial Factors\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained due to mental health issues.\n- **Hobbies and Interests:** Reading, playing the guitar, hiking (neglected due to mental health deterioration).\n- **Substance Use:** Occasionally consumes alcohol socially, avoids excessive drinking.\n\n### Current Treatment Goals\n- Stabilize mood\n- Reduce symptoms of depression and anxiety\n- Improve sleep\n- Enhance coping mechanisms\n- Improve work-life balance\n- Consider family therapy\n- Develop a reintegration plan\n\n### Prognosis\n- **Cautiously optimistic:** Adheres to treatment and engages in therapeutic interventions. Regular follow-ups, a robust support system, and a balanced approach to work and self-care are essential for sustained improvement.\n\n### Current Vitals\n- **Height:** 5 feet 10 inches (178 cm)\n- **Weight:** 150 pounds (68 kg)\n- **BMI:** 21.5 (Normal weight)\n- **Blood Pressure:** 130/85 mmHg (Slightly elevated)\n- **Heart Rate:** 78 beats per minute (Normal)\n- **Respiratory Rate:** 16 breaths per minute (Normal)\n- **Temperature:** 98.6°F (37°C) (Normal)\n- **Oxygen Saturation:** 98% on room air (Normal)\n\n### Laboratory Results\n- **Complete Blood Count (CBC):** Within normal limits\n- **Liver Function Tests (LFTs):** Slightly elevated ALT (likely due to medication)\n- **Renal Function:** Normal\n- **Thyroid Function Tests:** Normal\n- **Electrolytes:** Within normal limits\n- **Lipid Profile:** Slightly elevated LDL cholesterol\n\n### Psychiatric Assessment\n- **Appearance:** Well-groomed but fatigued\n- **Behaviour:** Cooperative, exhibits psychomotor retardation\n- **Speech:** Slow and soft\n- **Mood:** Depressed\n- **Affect:** Constricted\n- **Thought Process:** Logical but slowed\n- **Thought Content:** Feelings of hopelessness and worthlessness, denies current suicidal ideation\n- **Cognition:** Intact orientation, attention, and concentration mildly impaired\n- **Insight and Judgment:** Good insight, judgment affected by mood\n\n### Interventions\n- **Medication Management:** Various medications including antidepressants, mood stabilizers, and antipsychotics.\n- **Psychotherapy:** Intensive CBT, DBT, individual psychotherapy, group therapy, grief counseling.\n- **Behavioural Interventions:** MBSR, occupational therapy.\n- **Electroconvulsive Therapy (ECT):** Brief inpatient course during a major depressive episode in 2015.\n- **Hospitalisation:** Multiple admissions for severe depressive and manic episodes, current hospitalization following a suicide attempt.\n- **Supportive Therapies:** Family therapy consideration, structured plan for reintegration into daily life and work, encouragement of hobbies and interests.\n\nThis detailed information provides a comprehensive understanding of Yamini Singh's condition, treatment history, and current therapeutic approach.",
+        "clinical_relevance": true,
+        "metadata": {
+          "image_url": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/clinic-data-storage%2Fclients%2FAustralia%2F2026-Jun-15_12%3A05%3A31_Yamini_Pal_Health_Summary.pdf?alt=media&token=14d219a1-ced1-4ba1-b887-26e60141d4e3",
+          "original_file_name": "2026-Jun-15_12:05:31_Yamini_Pal_Health_Summary.pdf",
+          "new_file_name": "case-history_2026-06-15T06:35:42Z.pdf",
+          "file_type": "pdf",
+          "file_size": "40.68KB",
+          "text": "",
+          "category_name": "case history",
+          "doctor_name": "N/A"
+        }
+      }
+    },
+    {
+      "id": "CAPTURED_clinicalnotes_list_client_details",
+      "name": "clinicalnotes / list-client-details",
+      "method": "POST",
+      "path": "/clinicalnotes/list-client-details",
+      "fullUrl": "https://session-note.uwc.world/clinicalnotes/list-client-details",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "lat": "1",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "devicetype": "web",
+        "deviceid": "123",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json, text/plain, */*",
+        "content-type": "application/json",
+        "long": "1"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "clinical_note_ids": [
+          "6a2f9c36928ccdf4faddaf7f",
+          "6a2f9c01928ccdf4faddaf7d",
+          "6a2f57a4928ccdf4faddaf54",
+          "6a2f028c928ccdf4faddaf48",
+          "6a2eae63928ccdf4faddaf43",
+          "6a2e59c4928ccdf4faddaf3e"
+        ]
+      }
+    },
+    {
+      "id": "CAPTURED_clinicalnotes_update_audit_logs",
+      "name": "clinicalnotes / update-audit-logs",
+      "method": "POST",
+      "path": "/clinicalnotes/update-audit-logs",
+      "fullUrl": "https://session-note.uwc.world/clinicalnotes/update-audit-logs",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 201,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "x-email-id": "e.cliniciantestuser@asksam.com.au",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "action_type": "uploaded",
+        "details": {
+          "name": "Yamini_Pal_Health_Summary.pdf",
+          "link": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/clinic-data-storage%2Fclients%2FAustralia%2F2026-Jun-15_12%3A05%3A31_Yamini_Pal_Health_Summary.pdf?alt=media&token=14d219a1-ced1-4ba1-b887-26e60141d4e3"
+        },
+        "user_id": "644938",
+        "expert_id": "152853",
+        "appointment_id": "pending"
+      }
+    },
+    {
+      "id": "CAPTURED_clinicalnotes_update_raw_data",
+      "name": "clinicalnotes / update-raw-data",
+      "method": "POST",
+      "path": "/clinicalnotes/update-raw-data",
+      "fullUrl": "https://session-note.uwc.world/clinicalnotes/update-raw-data",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "id": "6a2f9ce2928ccdf4faddaf81",
+        "user_id": "644938",
+        "expert_id": "152853",
+        "state": "In Progress",
+        "raw_data": " The document provides a comprehensive overview of Yamini Singh's medical and psychosocial history, current treatment, and prognosis. Here are the key points:\n\n### Personal Information\n- **Name:** Yamini Singh\n- **Age:** 33 years old\n- **Occupation:** Unemployed, previously worked in a multinational company's sales team\n- **Marital Status:** Separated, Divorced\n- **Family:** \n  - Father (deceased, alcoholic)\n  - Sister (deceased)\n  - Mother (schizophrenia, liver cirrhosis)\n- **Education:** Bachelor’s Degree in Computer Science\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\n\n### Medical History\n- **2020:** Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\n- **2016:** Manic episode, hospitalized for three weeks, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\n- **2015:** Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received intensive psychotherapy and Electroconvulsive Therapy (ECT).\n\n### Current Hospitalization\n- **Reason for Admission:** Suicide attempt involving an overdose of prescribed medications.\n- **Symptoms:** Worsening depression and anxiety, severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\n- **Length of Stay:** Currently in her third week of hospitalization in a psychiatric unit.\n\n### Current Medications\n- **Fluoxetine (Prozac)**\n- **Sertraline (Zoloft)**\n- **Lithium**\n- **Valproate**\n- **Olanzapine (Zyprexa)**\n- **Lorazepam (Ativan)**\n\n### Past Medications\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\n\n### Past Therapies\n- **2017:** Cognitive Behavioural Therapy (CBT)\n- **2016-2017:** Dialectical Behaviour Therapy (DBT)\n- **2020:** Group Therapy, Grief counseling\n\n### Current Therapies\n- **Intensive CBT**\n- **Mindfulness-Based Stress Reduction (MBSR)**\n- **Individual Psychotherapy**\n- **Occupational Therapy**\n\n### Family History\n- **Father:** Alcoholic, passed away at age 45 from liver cirrhosis.\n- **Brother:** Died in a car accident when Yamini was 18, triggering her first major depressive episode.\n\n### Psychosocial Factors\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained due to mental health issues.\n- **Hobbies and Interests:** Reading, playing the guitar, hiking (neglected due to mental health deterioration).\n- **Substance Use:** Occasionally consumes alcohol socially, avoids excessive drinking.\n\n### Current Treatment Goals\n- Stabilize mood\n- Reduce symptoms of depression and anxiety\n- Improve sleep\n- Enhance coping mechanisms\n- Improve work-life balance\n- Consider family therapy\n- Develop a reintegration plan\n\n### Prognosis\n- **Cautiously optimistic:** Adheres to treatment and engages in therapeutic interventions. Regular follow-ups, a robust support system, and a balanced approach to work and self-care are essential for sustained improvement.\n\n### Current Vitals\n- **Height:** 5 feet 10 inches (178 cm)\n- **Weight:** 150 pounds (68 kg)\n- **BMI:** 21.5 (Normal weight)\n- **Blood Pressure:** 130/85 mmHg (Slightly elevated)\n- **Heart Rate:** 78 beats per minute (Normal)\n- **Respiratory Rate:** 16 breaths per minute (Normal)\n- **Temperature:** 98.6°F (37°C) (Normal)\n- **Oxygen Saturation:** 98% on room air (Normal)\n\n### Laboratory Results\n- **Complete Blood Count (CBC):** Within normal limits\n- **Liver Function Tests (LFTs):** Slightly elevated ALT (likely due to medication)\n- **Renal Function:** Normal\n- **Thyroid Function Tests:** Normal\n- **Electrolytes:** Within normal limits\n- **Lipid Profile:** Slightly elevated LDL cholesterol\n\n### Psychiatric Assessment\n- **Appearance:** Well-groomed but fatigued\n- **Behaviour:** Cooperative, exhibits psychomotor retardation\n- **Speech:** Slow and soft\n- **Mood:** Depressed\n- **Affect:** Constricted\n- **Thought Process:** Logical but slowed\n- **Thought Content:** Feelings of hopelessness and worthlessness, denies current suicidal ideation\n- **Cognition:** Intact orientation, attention, and concentration mildly impaired\n- **Insight and Judgment:** Good insight, judgment affected by mood\n\n### Interventions\n- **Medication Management:** Various medications including antidepressants, mood stabilizers, and antipsychotics.\n- **Psychotherapy:** Intensive CBT, DBT, individual psychotherapy, group therapy, grief counseling.\n- **Behavioural Interventions:** MBSR, occupational therapy.\n- **Electroconvulsive Therapy (ECT):** Brief inpatient course during a major depressive episode in 2015.\n- **Hospitalisation:** Multiple admissions for severe depressive and manic episodes, current hospitalization following a suicide attempt.\n- **Supportive Therapies:** Family therapy consideration, structured plan for reintegration into daily life and work, encouragement of hobbies and interests.\n\nThis detailed information provides a comprehensive understanding of Yamini Singh's condition, treatment history, and current therapeutic approach."
+      }
+    },
+    {
+      "id": "CAPTURED_events_event_action_send_notification",
+      "name": "event_action / send-notification",
+      "method": "POST",
+      "path": "/events/event_action/send-notification",
+      "fullUrl": "https://notifications.uwc.world/events/event_action/send-notification",
+      "host": "notifications.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0",
+        "accept-language": "en-US"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "event": "ccop_register_australia",
+        "event_metadata": {
+          "timestamp": 1781505362
+        },
+        "user_id": "152853"
+      }
+    },
+    {
+      "id": "CAPTURED_events_event_action_send_notification_v7",
+      "name": "send-notification / v7",
+      "method": "POST",
+      "path": "/events/event_action/send-notification/v7",
+      "fullUrl": "https://notifications.uwc.world/events/event_action/send-notification/v7",
+      "host": "notifications.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0",
+        "accept-language": "en-US"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "event": "prescription_added",
+        "event_metadata": {
+          "timestamp": 1781505343,
+          "event_time": 1781505343,
+          "doctor": "Anthony Smith",
+          "appointmentdate": "2026-06-15",
+          "appointmenttime": "12:05 PM"
+        },
+        "user_id": "644938"
+      }
+    },
+    {
+      "id": "TC_CN_02",
+      "name": "insert-into-context",
+      "method": "POST",
+      "path": "/insert-into-context",
+      "fullUrl": "https://rag.uwc.world/insert-into-context",
+      "host": "rag.uwc.world",
+      "via": "direct",
+      "smoke": true,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "text": " The document provides a comprehensive overview of Yamini Singh's medical and psychosocial history, current treatment, and prognosis. Here are the key points:\n\n### Personal Information\n- **Name:** Yamini Singh\n- **Age:** 33 years old\n- **Occupation:** Unemployed, previously worked in a multinational company's sales team\n- **Marital Status:** Separated, Divorced\n- **Family:** \n  - Father (deceased, alcoholic)\n  - Sister (deceased)\n  - Mother (schizophrenia, liver cirrhosis)\n- **Education:** Bachelor’s Degree in Computer Science\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\n\n### Medical History\n- **2020:** Severe depression following her brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\n- **2016:** Manic episode, hospitalized for three weeks, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\n- **2015:** Major depressive episode triggered by her brother’s death anniversary, hospitalized for four weeks, received intensive psychotherapy and Electroconvulsive Therapy (ECT).\n\n### Current Hospitalization\n- **Reason for Admission:** Suicide attempt involving an overdose of prescribed medications.\n- **Symptoms:** Worsening depression and anxiety, severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\n- **Length of Stay:** Currently in her third week of hospitalization in a psychiatric unit.\n\n### Current Medications\n- **Fluoxetine (Prozac)**\n- **Sertraline (Zoloft)**\n- **Lithium**\n- **Valproate**\n- **Olanzapine (Zyprexa)**\n- **Lorazepam (Ativan)**\n\n### Past Medications\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\n\n### Past Therapies\n- **2017:** Cognitive Behavioural Therapy (CBT)\n- **2016-2017:** Dialectical Behaviour Therapy (DBT)\n- **2020:** Group Therapy, Grief counseling\n\n### Current Therapies\n- **Intensive CBT**\n- **Mindfulness-Based Stress Reduction (MBSR)**\n- **Individual Psychotherapy**\n- **Occupational Therapy**\n\n### Family History\n- **Father:** Alcoholic, passed away at age 45 from liver cirrhosis.\n- **Brother:** Died in a car accident when Yamini was 18, triggering her first major depressive episode.\n\n### Psychosocial Factors\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained due to mental health issues.\n- **Hobbies and Interests:** Reading, playing the guitar, hiking (neglected due to mental health deterioration).\n- **Substance Use:** Occasionally consumes alcohol socially, avoids excessive drinking.\n\n### Current Treatment Goals\n- Stabilize mood\n- Reduce symptoms of depression and anxiety\n- Improve sleep\n- Enhance coping mechanisms\n- Improve work-life balance\n- Consider family therapy\n- Develop a reintegration plan\n\n### Prognosis\n- **Cautiously optimistic:** Adheres to treatment and engages in therapeutic interventions. Regular follow-ups, a robust support system, and a balanced approach to work and self-care are essential for sustained improvement.\n\n### Current Vitals\n- **Height:** 5 feet 10 inches (178 cm)\n- **Weight:** 150 pounds (68 kg)\n- **BMI:** 21.5 (Normal weight)\n- **Blood Pressure:** 130/85 mmHg (Slightly elevated)\n- **Heart Rate:** 78 beats per minute (Normal)\n- **Respiratory Rate:** 16 breaths per minute (Normal)\n- **Temperature:** 98.6°F (37°C) (Normal)\n- **Oxygen Saturation:** 98% on room air (Normal)\n\n### Laboratory Results\n- **Complete Blood Count (CBC):** Within normal limits\n- **Liver Function Tests (LFTs):** Slightly elevated ALT (likely due to medication)\n- **Renal Function:** Normal\n- **Thyroid Function Tests:** Normal\n- **Electrolytes:** Within normal limits\n- **Lipid Profile:** Slightly elevated LDL cholesterol\n\n### Psychiatric Assessment\n- **Appearance:** Well-groomed but fatigued\n- **Behaviour:** Cooperative, exhibits psychomotor retardation\n- **Speech:** Slow and soft\n- **Mood:** Depressed\n- **Affect:** Constricted\n- **Thought Process:** Logical but slowed\n- **Thought Content:** Feelings of hopelessness and worthlessness, denies current suicidal ideation\n- **Cognition:** Intact orientation, attention, and concentration mildly impaired\n- **Insight and Judgment:** Good insight, judgment affected by mood\n\n### Interventions\n- **Medication Management:** Various medications including antidepressants, mood stabilizers, and antipsychotics.\n- **Psychotherapy:** Intensive CBT, DBT, individual psychotherapy, group therapy, grief counseling.\n- **Behavioural Interventions:** MBSR, occupational therapy.\n- **Electroconvulsive Therapy (ECT):** Brief inpatient course during a major depressive episode in 2015.\n- **Hospitalisation:** Multiple admissions for severe depressive and manic episodes, current hospitalization following a suicide attempt.\n- **Supportive Therapies:** Family therapy consideration, structured plan for reintegration into daily life and work, encouragement of hobbies and interests.\n\nThis detailed information provides a comprehensive understanding of Yamini Singh's condition, treatment history, and current therapeutic approach.",
+        "header": {
+          "session_id": "6a2f9ce2928ccdf4faddaf81",
+          "appointment_id": "6a2f9ce2928ccdf4faddaf81",
+          "user_id": "644938",
+          "expert_id": "152853",
+          "appointment_date": "2026-06-15",
+          "booking_date": "2026-06-15"
+        }
+      }
+    },
+    {
+      "id": "CAPTURED_jwt_clinicalnotes_create",
+      "name": "jwt-clinicalnotes / create",
+      "method": "POST",
+      "path": "/jwt-clinicalnotes/create",
+      "fullUrl": "https://session-note.uwc.world/jwt-clinicalnotes/create",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 201,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjbGllbnQiOnsidXNlcl9pZCI6IjY0NDkzOCIsIm5hbWUiOiJZYW1pbmkgU2luZ2ggMTkxIiwiZW1haWwiOiJ5czE5MV9hdXNAeW9wbWFpbC5jb20iLCJwaG9uZSI6IiIsImhpc19udW1iZXIiOiIiLCJpbWFnZSI6Imh0dHBzOi8vaW1nLmNsZXJrLmNvbS9leUowZVhCbElqb2laR1ZtWVhWc2RDSXNJbWxwWkNJNkltbHVjMTh5ZGs5cFpWcEhhbkpoUVhWS2NrSlpNVmhsUnpJM2NGSkxVbTRpTENKeWFXUWlPaUoxYzJWeVh6TTJZbUZWZDBkWVRXUkZlV1p4WWpZNVVIWnhOV1ZOUW1kdlp5SXNJbWx1YVhScFlXeHpJam9pV1ZNaWZRIn0sInNlc3Npb25fdHlwZSI6IkZvbGxvdy11cCIsInNlc3Npb25fZGF0ZSI6IjIwMjYtMDYtMTUiLCJleHBlcnQiOnsidXNlcl9pZCI6IjE1Mjg1MyIsIm5hbWUiOiJBbnRob255IFNtaXRoIiwiZW1haWwiOiJlLmNsaW5pY2lhbnRlc3R1c2VyQGFza3NhbS5jb20uYXUiLCJwaG9uZSI6Iis2MTQxMzgwMTM4NCIsImltYWdlIjoiaHR0cHM6Ly9pbWcuY2xlcmsuY29tL2V5SjBlWEJsSWpvaWNISnZlSGtpTENKemNtTWlPaUpvZEhSd2N6b3ZMMmx0WVdkbGN5NWpiR1Z5YXk1a1pYWXZkWEJzYjJGa1pXUXZhVzFuWHpNMVVGWm9NSGczUWsxeVdGcEdZM0E0VlVKV2NGSk9TVFJMWVNKOSIsImV4cGVydF90eXBlIjoidXNlciJ9fQ.vBfsskcjFPA_SVeqZCfMq7tMs67v2Efd1LSxfNUMx00"
+      }
+    },
+    {
+      "id": "CAPTURED_jwt_clinicalnotes_get_user_clinical_note_id_6a2f",
+      "name": "jwt-clinicalnotes / get-user?clinical_note_id=6a2f9ce2928ccdf4faddaf81",
+      "method": "GET",
+      "path": "/jwt-clinicalnotes/get-user?clinical_note_id=6a2f9ce2928ccdf4faddaf81",
+      "fullUrl": "https://session-note.uwc.world/jwt-clinicalnotes/get-user?clinical_note_id=6a2f9ce2928ccdf4faddaf81",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "TC_CN_03",
+      "name": "jwt-clinicalnotes / list-clients?professional_id=152853&count=200",
+      "method": "GET",
+      "path": "/jwt-clinicalnotes/list-clients?professional_id=152853&count=200",
+      "fullUrl": "https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": true,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "CAPTURED_jwt_clinicalnotes_list_professional_id_152853_st",
+      "name": "jwt-clinicalnotes / list?professional_id=152853&status=In%20Progress&count=8&page=1",
+      "method": "GET",
+      "path": "/jwt-clinicalnotes/list?professional_id=152853&status=In%20Progress&count=8&page=1",
+      "fullUrl": "https://session-note.uwc.world/jwt-clinicalnotes/list?professional_id=152853&status=In%20Progress&count=8&page=1",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "CAPTURED_new_uwc_country_all_true",
+      "name": "new-uwc / country?all=true",
+      "method": "GET",
+      "path": "/new-uwc/country?all=true",
+      "fullUrl": "https://us.uwc.world/new-uwc/country?all=true",
+      "host": "us.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "x-api-key": "<redacted>",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "CAPTURED_new_uwc_professionals_get",
+      "name": "professionals / get",
+      "method": "POST",
+      "path": "/new-uwc/professionals/get",
+      "fullUrl": "https://us.uwc.world/new-uwc/professionals/get",
+      "host": "us.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "*/*",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "user_id": "152853",
+        "email": "e.cliniciantestuser@asksam.com.au",
+        "screen": null
+      }
+    },
+    {
+      "id": "CAPTURED_new_uwc_state_au",
+      "name": "state / AU",
+      "method": "GET",
+      "path": "/new-uwc/state/AU",
+      "fullUrl": "https://us.uwc.world/new-uwc/state/AU",
+      "host": "us.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "x-api-key": "<redacted>",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "CAPTURED_new_uwc_subscription_plans_list_country_australi",
+      "name": "plans / list?country=Australia&user_id=152853&platform=copilot",
+      "method": "GET",
+      "path": "/new-uwc/subscription/plans/list?country=Australia&user_id=152853&platform=copilot",
+      "fullUrl": "https://us.uwc.world/new-uwc/subscription/plans/list?country=Australia&user_id=152853&platform=copilot",
+      "host": "us.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "CAPTURED_new_uwc_uwc_expert_copilot_get_sub_category_prof",
+      "name": "copilot / get-sub-category?professional_id=152853",
+      "method": "GET",
+      "path": "/new-uwc/uwc_expert/copilot/get-sub-category?professional_id=152853",
+      "fullUrl": "https://us.uwc.world/new-uwc/uwc_expert/copilot/get-sub-category?professional_id=152853",
+      "host": "us.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "lat": "1",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "devicetype": "web",
+        "deviceid": "123",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json",
+        "long": "1"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "TC_CN_04",
+      "name": "static / countries",
+      "method": "GET",
+      "path": "/static/countries",
+      "fullUrl": "https://session-note.uwc.world/static/countries",
+      "host": "session-note.uwc.world",
+      "via": "direct",
+      "smoke": true,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "x-api-key": "<redacted>",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui"
+    },
+    {
+      "id": "TC_CN_05",
+      "name": "transcription-file-analyzer / process-document",
+      "method": "POST",
+      "path": "/transcription-file-analyzer/process-document",
+      "fullUrl": "https://on-append.uwc.world/transcription-file-analyzer/process-document",
+      "host": "on-append.uwc.world",
+      "via": "direct",
+      "smoke": true,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "authorization": "<redacted>",
+        "referer": "https://copilot.asksam.com.au/",
+        "accept-language": "en-US",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "sec-ch-ua-mobile": "?0",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "firebase_url": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/clinic-data-storage%2Fclients%2FAustralia%2F2026-Jun-15_12%3A05%3A31_Yamini_Pal_Health_Summary.pdf?alt=media&token=14d219a1-ced1-4ba1-b887-26e60141d4e3",
+        "system_prompt": ""
+      }
+    },
+    {
+      "id": "CAPTURED_users_v2_152853_accept_tnc",
+      "name": "152853 / accept_tnc",
+      "method": "POST",
+      "path": "/users/v2/152853/accept_tnc",
+      "fullUrl": "https://integrations.uwc.world/users/v2/152853/accept_tnc",
+      "host": "integrations.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0",
+        "accept-language": "en-US"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "type": "copilot",
+        "status": true
+      }
+    },
+    {
+      "id": "CAPTURED_users_v2_644938_tnc_status",
+      "name": "644938 / tnc_status",
+      "method": "POST",
+      "path": "/users/v2/644938/tnc_status",
+      "fullUrl": "https://integrations.uwc.world/users/v2/644938/tnc_status",
+      "host": "integrations.uwc.world",
+      "via": "direct",
+      "smoke": false,
+      "expectedStatus": 200,
+      "requestHeaders": {
+        "sec-ch-ua-platform": "\"Windows\"",
+        "referer": "https://copilot.asksam.com.au/",
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.7778.96 Safari/537.36",
+        "sec-ch-ua": "\"Not/A)Brand\";v=\"99\", \"Chromium\";v=\"148\"",
+        "content-type": "application/json",
+        "sec-ch-ua-mobile": "?0",
+        "accept-language": "en-US"
+      },
+      "discoveredFrom": "prod-copilot-ui",
+      "samplePayload": {
+        "type": "copilot"
+      }
+    }
+  ]
+}

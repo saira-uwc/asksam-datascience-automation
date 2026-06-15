@@ -3,11 +3,17 @@ import * as fs from 'fs';
 import * as path from 'path';
 import type { CapturedApiCall } from './apiCapture';
 import { formatApiProof } from './ragApi';
+import {
+  DS_API_HEADERS_PATH,
+  loadDsApiHeaders,
+  saveDsApiHeaders,
+  resolveEndpointHeaders,
+} from './dsApiHeaders';
 
 dotenv.config();
 
 export const MANIFEST_PATH = path.join(__dirname, '../fixtures/clinical-notes-apis.json');
-export const DS_API_HEADERS_PATH = path.join(__dirname, '../playwright/.auth/ds-api-headers.json');
+export { DS_API_HEADERS_PATH, loadDsApiHeaders, saveDsApiHeaders, resolveEndpointHeaders };
 
 const SMOKE_PATH_PATTERNS = [
   '/health',
@@ -176,37 +182,6 @@ export function clinicalNotesUrl(manifest: ClinicalNotesApiManifest, endpoint: C
 
 export function getSmokeEndpoints(manifest: ClinicalNotesApiManifest): ClinicalNotesEndpoint[] {
   return manifest.endpoints.filter((endpoint) => endpoint.smoke);
-}
-
-export function saveDsApiHeaders(headersByHost: Record<string, Record<string, string>>) {
-  fs.mkdirSync(path.dirname(DS_API_HEADERS_PATH), { recursive: true });
-  fs.writeFileSync(DS_API_HEADERS_PATH, `${JSON.stringify(headersByHost, null, 2)}\n`, 'utf8');
-}
-
-export function loadDsApiHeaders(): Record<string, Record<string, string>> {
-  if (!fs.existsSync(DS_API_HEADERS_PATH)) return {};
-  try {
-    return JSON.parse(fs.readFileSync(DS_API_HEADERS_PATH, 'utf8')) as Record<string, Record<string, string>>;
-  } catch {
-    return {};
-  }
-}
-
-export function resolveEndpointHeaders(endpoint: ClinicalNotesEndpoint): Record<string, string> {
-  const headers: Record<string, string> = {};
-  for (const [key, value] of Object.entries(endpoint.requestHeaders || {})) {
-    if (value && value !== '<redacted>') headers[key] = value;
-  }
-
-  const saved = endpoint.host ? loadDsApiHeaders()[endpoint.host] : undefined;
-  if (saved) {
-    if (saved.authorization) headers.authorization = saved.authorization;
-    if (saved['x-api-key']) headers['x-api-key'] = saved['x-api-key'];
-  }
-
-  delete headers.cookie;
-  delete headers.Cookie;
-  return headers;
 }
 
 export function formatClinicalNotesApiProof(opts: {

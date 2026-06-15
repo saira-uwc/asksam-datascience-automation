@@ -42,12 +42,26 @@ export default defineConfig({
       testMatch: /clinical-notes-api-smoke\.spec\.ts/,
     },
     {
+      name: 'assistant-api',
+      testMatch: /assistant-api-smoke\.spec\.ts/,
+    },
+    {
       name: 'discover',
       testMatch: /discover-clinical-notes-apis\.spec\.ts/,
       dependencies: ['setup'],
       use: {
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
+      },
+    },
+    {
+      name: 'discover-assistant',
+      testMatch: /discover-assistant-apis\.spec\.ts/,
+      dependencies: ['setup'],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+        viewport: { width: 1440, height: 900 },
       },
     },
     {
@@ -58,7 +72,9 @@ export default defineConfig({
         /letter-template\.spec\.ts/,
         /rag-api-smoke\.spec\.ts/,
         /clinical-notes-api-smoke\.spec\.ts/,
+        /assistant-api-smoke\.spec\.ts/,
         /discover-clinical-notes-apis\.spec\.ts/,
+        /discover-assistant-apis\.spec\.ts/,
       ],
       use: {
         ...devices['Desktop Chrome'],

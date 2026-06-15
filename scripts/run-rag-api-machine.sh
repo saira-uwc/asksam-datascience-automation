@@ -27,6 +27,12 @@ if [[ ! -s fixtures/clinical-notes-apis.json ]] || ! grep -q '"smoke": true' fix
   exit 1
 fi
 
+if [[ ! -s fixtures/assistant-apis.json ]] || ! grep -q '"smoke": true' fixtures/assistant-apis.json 2>/dev/null; then
+  echo "Missing fixtures/assistant-apis.json with smoke endpoints."
+  echo "Run once locally: npm run discover:assistant-apis"
+  exit 1
+fi
+
 if [[ ! -s playwright/.auth/ds-api-headers.json ]]; then
   echo "Missing playwright/.auth/ds-api-headers.json (captured auth tokens for Clinical Notes)."
   exit 1
@@ -48,7 +54,7 @@ export CI=true
 echo "==> npm ci"
 npm ci
 
-echo "==> DS API smoke tests (RAG 4 + Clinical Notes 5, no browser login)"
+echo "==> DS API smoke tests (RAG 4 + Clinical Notes 5 + Assistant panel, no browser login)"
 set +e
 npm run test:ds-api
 set -e

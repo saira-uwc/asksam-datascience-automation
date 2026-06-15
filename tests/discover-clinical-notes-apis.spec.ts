@@ -5,45 +5,16 @@ import { DashboardPage } from '../pages/dashboard.page';
 import {
   attachDataScienceApiCapture,
   dedupeCapturedCalls,
-  isDataScienceApiUrl,
   type CapturedApiCall,
 } from '../utils/apiCapture';
 import {
   buildManifestFromCapture,
   saveClinicalNotesManifest,
-  saveDsApiHeaders,
   MANIFEST_PATH,
 } from '../utils/clinicalNotesApi';
+import { captureRawAuthHeaders, saveDsApiHeaders } from '../utils/dsApiHeaders';
 
 const PDF_PATH = path.resolve('uploads/Yamini_Pal_Health_Summary.pdf');
-
-function captureRawAuthHeaders(page: import('@playwright/test').Page) {
-  const headersByHost: Record<string, Record<string, string>> = {};
-
-  page.on('request', (request) => {
-    const url = request.url();
-    if (!isDataScienceApiUrl(url)) return;
-
-    let host = '';
-    try {
-      host = new URL(url).host;
-    } catch {
-      return;
-    }
-
-    const headers = request.headers();
-    const entry = headersByHost[host] || {};
-
-    if (headers.authorization) entry.authorization = headers.authorization;
-    if (headers['x-api-key']) entry['x-api-key'] = headers['x-api-key'];
-
-    if (Object.keys(entry).length > 0) {
-      headersByHost[host] = { ...headersByHost[host], ...entry };
-    }
-  });
-
-  return headersByHost;
-}
 
 test.describe('Discover Clinical Notes APIs (one-time)', () => {
   test('capture prod Copilot DS calls and write fixtures/clinical-notes-apis.json', async ({

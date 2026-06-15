@@ -47,6 +47,7 @@ const MODULE_MAP = {
   'ccop-clinician-signup': 'CCOP — Clinician Signup',
   'rag-api-smoke': 'RAG API — Smoke Tests',
   'clinical-notes-api-smoke': 'Clinical Notes API — Smoke Tests',
+  'assistant-api-smoke': 'Stella Assistant Panel API — Smoke Tests',
   'z-logout': 'Logout',
 };
 

@@ -4,12 +4,14 @@ const NOISE_HOSTS = [
   'clerk.',
   'stripe.',
   'google-analytics',
+  'analytics.google.com',
   'googletagmanager',
   'sentry.io',
   'hotjar',
   'segment.io',
   'facebook.net',
   'doubleclick',
+  'copilot.asksam.com.au/assets',
 ];
 
 const DS_HOST_HINTS = [
@@ -18,6 +20,16 @@ const DS_HOST_HINTS = [
   'on-append',
   'neograph',
   'rag.',
+  'stella',
+  'agentic',
+  'agentic-flow',
+  'unitedwecare',
+  '/gen-chat',
+  '/graph',
+  '/alerts',
+  '/association',
+  '/medication',
+  '/comorbid',
   'asksam.com.au/api',
   '/session-details/',
   '/progress-note/',
@@ -64,6 +76,7 @@ function redactHeaders(headers: Record<string, string>): Record<string, string> 
 export function isDataScienceApiUrl(url: string): boolean {
   const lower = url.toLowerCase();
   if (NOISE_HOSTS.some((hint) => lower.includes(hint))) return false;
+  if (/copilot\.asksam\.com\.au\/assets\//i.test(url)) return false;
   return DS_HOST_HINTS.some((hint) => lower.includes(hint));
 }
 
@@ -81,24 +94,27 @@ export function attachDataScienceApiCapture(
 
   page.on('request', (request) => {
     const fullUrl = request.url();
-    const isDs = isDataScienceApiUrl(fullUrl);
-    const isAsksamApi =
-      includeAsksamApi &&
-      /asksam\.com\.au/i.test(fullUrl) &&
-      /\/api\b|\/graphql|session-details|clinical-notes|transcrib|notetaker/i.test(fullUrl);
+    if (NOISE_HOSTS.some((hint) => fullUrl.toLowerCase().includes(hint))) return;
 
-    if (!isDs && !isAsksamApi) return;
-
+    let pathname = '';
     let host = '';
-    let path = '';
     try {
       const parsed = new URL(fullUrl);
       host = parsed.host;
-      path = `${parsed.pathname}${parsed.search}`;
+      pathname = parsed.pathname;
     } catch {
       return;
     }
 
+    const isDs = isDataScienceApiUrl(fullUrl);
+    const isAsksamApi =
+      includeAsksamApi &&
+      /asksam\.com\.au/i.test(host) &&
+      /\/api\b|\/graphql/i.test(pathname);
+
+    if (!isDs && !isAsksamApi) return;
+
+    const path = `${pathname}${new URL(fullUrl).search}`;
     const postData = request.postData();
     pending.set(request.url() + request.method(), {
       method: request.method(),

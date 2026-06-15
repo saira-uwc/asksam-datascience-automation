@@ -6,6 +6,8 @@ import {
   clinicalNotesUrl,
   formatClinicalNotesApiProof,
   resolveEndpointHeaders,
+  loadDsApiHeaders,
+  DS_API_HEADERS_PATH,
   type ClinicalNotesEndpoint,
 } from '../utils/clinicalNotesApi';
 
@@ -55,6 +57,17 @@ function assertBody(endpoint: ClinicalNotesEndpoint, body: unknown) {
 test.describe('Clinical Notes API smoke', () => {
   const manifest = loadClinicalNotesManifest();
   const smokeEndpoints = getSmokeEndpoints(manifest);
+  const dsApiHeaders = loadDsApiHeaders();
+
+  if (Object.keys(dsApiHeaders).length === 0) {
+    test('TC_CN_00 - auth headers pending', async () => {
+      test.skip(
+        true,
+        `Missing ${DS_API_HEADERS_PATH} — scp from discovery machine or run: npm run discover:clinical-notes-apis`,
+      );
+    });
+    return;
+  }
 
   if (smokeEndpoints.length === 0) {
     test('TC_CN_00 - manifest pending discovery', async () => {

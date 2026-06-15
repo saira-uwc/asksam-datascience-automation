@@ -40,10 +40,6 @@ export default defineConfig({
     {
       name: 'clinical-notes-api',
       testMatch: /clinical-notes-api-smoke\.spec\.ts/,
-      dependencies: ['setup'],
-      use: {
-        storageState: 'playwright/.auth/user.json',
-      },
     },
     {
       name: 'discover',

@@ -30,6 +30,13 @@ if [[ ! -s fixtures/clinical-notes-apis.json ]] || ! grep -q '"smoke": true' fix
   exit 1
 fi
 
+if [[ ! -s playwright/.auth/ds-api-headers.json ]]; then
+  echo "Missing playwright/.auth/ds-api-headers.json (captured auth tokens)."
+  echo "Copy from discovery machine:"
+  echo "  scp playwright/.auth/ds-api-headers.json saira@VM:~/asksam-datascience-automation/playwright/.auth/"
+  exit 1
+fi
+
 BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")"
 if [[ "$BRANCH" != "main" ]]; then
   echo "Checking out main (was on: $BRANCH)"
@@ -46,10 +53,7 @@ export CI=true
 echo "==> npm ci"
 npm ci
 
-echo "==> Playwright Chromium (auth setup for proxied Clinical Notes APIs)"
-npx playwright install chromium
-
-echo "==> Clinical Notes API smoke (manifest replay)"
+echo "==> Clinical Notes API smoke (manifest replay, no browser login)"
 set +e
 npm run test:clinical-notes-api
 set -e

@@ -1,9 +1,0 @@
-{
-  "endpoint": "/health",
-  "method": "GET",
-  "status": 200,
-  "timestamp": "2026-06-15T07:33:24.922Z",
-  "body": {
-    "Health": "Ok"
-  }
-}

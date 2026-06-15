@@ -1,9 +1,0 @@
-{
-  "endpoint": "/vectorstore/health",
-  "method": "GET",
-  "status": 200,
-  "timestamp": "2026-06-15T07:33:25.044Z",
-  "body": {
-    "Health": "Ok"
-  }
-}

@@ -46,6 +46,7 @@ const MODULE_MAP = {
   'ccop-helpcenter-ticket': 'CCOP — Help Center',
   'ccop-clinician-signup': 'CCOP — Clinician Signup',
   'rag-api-smoke': 'RAG API — Smoke Tests',
+  'clinical-notes-api-smoke': 'Clinical Notes API — Smoke Tests',
   'z-logout': 'Logout',
 };
 

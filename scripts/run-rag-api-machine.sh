@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #
-# RAG API-only pipeline — no browser, no Clerk login.
-# Faster cron option for rag.uwc.world health + LLM smoke checks.
+# Unified DS API pipeline — RAG + Clinical Notes in one Playwright run.
+# One cron → one JSON report → one Google Sheet update → one dashboard push.
 #
 # Optional env:
 #   AUTOMATION_SKIP_GIT_PUSH=true  — run tests + dashboard + email only
@@ -13,12 +13,22 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 if [[ ! -f .env ]]; then
-  echo "Missing .env in $ROOT — copy .env.example and fill in RAG_API_* vars."
+  echo "Missing .env in $ROOT — copy .env.example and fill in RAG_API_* + Sheets/email vars."
   exit 1
 fi
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   echo "Not a git repository — clone the repo first."
+  exit 1
+fi
+
+if [[ ! -s fixtures/clinical-notes-apis.json ]] || ! grep -q '"smoke": true' fixtures/clinical-notes-apis.json 2>/dev/null; then
+  echo "Missing fixtures/clinical-notes-apis.json with smoke endpoints."
+  exit 1
+fi
+
+if [[ ! -s playwright/.auth/ds-api-headers.json ]]; then
+  echo "Missing playwright/.auth/ds-api-headers.json (captured auth tokens for Clinical Notes)."
   exit 1
 fi
 
@@ -38,9 +48,9 @@ export CI=true
 echo "==> npm ci"
 npm ci
 
-echo "==> RAG API smoke tests (no Chromium required)"
+echo "==> DS API smoke tests (RAG 4 + Clinical Notes 5, no browser login)"
 set +e
-npm run test:rag-api
+npm run test:ds-api
 set -e
 
 echo "==> Generate dashboard data"
@@ -56,7 +66,7 @@ else
   if git diff --cached --quiet; then
     echo "No dashboard changes to commit."
   else
-    git commit -m "Update RAG API dashboard — $(TZ='Asia/Kolkata' date '+%b %d, %Y %I:%M %p IST')"
+    git commit -m "Update DS API dashboard — $(TZ='Asia/Kolkata' date '+%b %d, %Y %I:%M %p IST')"
     git push origin HEAD:main
     echo "Dashboard data pushed."
   fi
@@ -65,4 +75,4 @@ fi
 echo "==> Failure email (no-ops when all passed / env missing)"
 node scripts/send-email-report.js
 
-echo "==> Done (RAG API only)"
+echo "==> Done (DS API: RAG + Clinical Notes)"

@@ -142,7 +142,11 @@ class GoogleSheetsReporter implements Reporter {
 
     let raw = '';
     if (attachment.body) {
-      raw = attachment.body.toString();
+      try {
+        raw = Buffer.from(attachment.body).toString('utf8');
+      } catch {
+        raw = attachment.body.toString();
+      }
     } else if (attachment.path) {
       const filePath = path.isAbsolute(attachment.path)
         ? attachment.path

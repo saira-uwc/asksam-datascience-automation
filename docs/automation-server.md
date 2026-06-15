@@ -11,7 +11,28 @@ Repo: [asksam-datascience-automation](https://github.com/saira-uwc/asksam-datasc
 | Env file | `$HOME/asksam-datascience-automation/.env` |
 | Node version | 20 (via nvm) |
 
-## Two cron modes
+## Failure email recipients
+
+Set in `.env` as comma-separated addresses (`REPORT_RECIPIENTS`). Current list:
+
+1. arti@shunyalabs.ai  
+2. sumit@shunyalabs.ai  
+3. yamini@shunyalabs.ai  
+4. saira@unitedwecare.com  
+5. sb@shunyalabs.ai  
+6. ritu@shunyalabs.ai  
+7. ayushbar@shunyalabs.ai  
+
+```bash
+# On VM — update before next cron run
+cd ~/asksam-datascience-automation
+grep -q '^REPORT_RECIPIENTS=' .env \
+  && sed -i 's|^REPORT_RECIPIENTS=.*|REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai|' .env \
+  || echo 'REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai' >> .env
+```
+
+Requires `EMAIL_WEB_APP_URL` in the same `.env`. Email sends only when tests fail.
+
 
 | Mode | Command | Schedule suggestion | Log file |
 |------|---------|---------------------|----------|

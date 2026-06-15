@@ -1,46 +1,14 @@
 import { test, expect } from '@playwright/test';
-import type { APIResponse, TestInfo } from '@playwright/test';
 import {
   loadClinicalNotesManifest,
   getSmokeEndpoints,
   clinicalNotesUrl,
-  formatClinicalNotesApiProof,
   resolveEndpointHeaders,
   loadDsApiHeaders,
   DS_API_HEADERS_PATH,
   type ClinicalNotesEndpoint,
 } from '../utils/clinicalNotesApi';
-
-async function attachApiProof(
-  testInfo: TestInfo,
-  endpoint: ClinicalNotesEndpoint,
-  response: APIResponse,
-  body: unknown,
-) {
-  const proof = formatClinicalNotesApiProof({
-    endpoint,
-    status: response.status(),
-    body,
-  });
-  await testInfo.attach('api-response', {
-    body: JSON.stringify(proof, null, 2),
-    contentType: 'application/json',
-  });
-}
-
-async function readResponseBody(response: APIResponse): Promise<unknown> {
-  const contentType = response.headers()['content-type'] || '';
-  const text = await response.text();
-  if (!text) return '';
-  if (contentType.includes('application/json')) {
-    try {
-      return JSON.parse(text);
-    } catch {
-      return text;
-    }
-  }
-  return text;
-}
+import { readResponseBody, attachApiProof } from '../utils/apiProof';
 
 function assertBody(endpoint: ClinicalNotesEndpoint, body: unknown) {
   if (endpoint.bodyMatch && body && typeof body === 'object') {
@@ -106,10 +74,19 @@ test.describe('Clinical Notes API smoke', () => {
 
       const response = await request.fetch(targetUrl, options);
       const body = await readResponseBody(response);
+      const pathOrUrl = endpoint.fullUrl || endpoint.path;
+
+      await attachApiProof(testInfo, {
+        endpoint: pathOrUrl,
+        method: endpoint.method,
+        status: response.status(),
+        body,
+        url: targetUrl,
+        extra: { id: endpoint.id, name: endpoint.name },
+      });
 
       expect(response.status()).toBe(endpoint.expectedStatus);
       assertBody(endpoint, body);
-      await attachApiProof(testInfo, endpoint, response, body);
     });
   }
 });

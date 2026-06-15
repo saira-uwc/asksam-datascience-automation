@@ -48,6 +48,7 @@ export function formatApiProof(opts: {
   method: string;
   status: number;
   body: unknown;
+  url?: string;
 }): Record<string, unknown> {
   const proof: Record<string, unknown> = {
     endpoint: opts.endpoint,
@@ -56,11 +57,21 @@ export function formatApiProof(opts: {
     timestamp: new Date().toISOString(),
   };
 
-  if (opts.endpoint === '/gen-chat' && opts.body && typeof opts.body === 'object') {
+  if (opts.url) {
+    proof.url = opts.url;
+  }
+
+  const isGenChat =
+    opts.endpoint === '/gen-chat' || opts.endpoint.endsWith('/gen-chat');
+
+  if (isGenChat && opts.body && typeof opts.body === 'object') {
     const record = opts.body as Record<string, unknown>;
     proof.user_id = record.user_id;
     proof.response_id = record.response_id;
     proof.llm_response = extractGenChatContent(opts.body);
+  } else if (typeof opts.body === 'string') {
+    proof.contentType = 'text';
+    proof.body = opts.body;
   } else {
     proof.body = opts.body;
   }

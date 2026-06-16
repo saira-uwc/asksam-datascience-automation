@@ -2,7 +2,7 @@
   "endpoint": "/health",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-16T06:15:04.664Z",
+  "timestamp": "2026-06-16T08:15:05.001Z",
   "url": "https://rag.uwc.world/health",
   "body": {
     "Health": "Ok"

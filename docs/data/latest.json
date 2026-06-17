@@ -1,7 +1,7 @@
 {
-  "id": "15102b76-f580-4919-ab00-9bd9ffd0dff6",
-  "startedAt": "2026-06-17T04:15:03.779Z",
-  "durationMs": 18772.413999999997,
+  "id": "30809e31-764a-4bc8-86aa-73e783a2f2cf",
+  "startedAt": "2026-06-17T06:15:03.909Z",
+  "durationMs": 23079.868,
   "summary": {
     "total": 13,
     "passed": 13,
@@ -40,7 +40,7 @@
     {
       "title": "TC_API_01 - GET /health returns application healthy",
       "status": "passed",
-      "durationMs": 215,
+      "durationMs": 234,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -52,13 +52,13 @@
           "webPath": "./artifacts/tc_api_01_-_get__health_returns_application_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:04.487Z\",\n  \"url\": \"https://rag.uwc.world/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:04.637Z\",\n  \"url\": \"https://rag.uwc.world/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_02 - GET /redis/health returns Redis healthy",
       "status": "passed",
-      "durationMs": 41,
+      "durationMs": 42,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -70,13 +70,13 @@
           "webPath": "./artifacts/tc_api_02_-_get__redis_health_returns_redis_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:04.551Z\",\n  \"url\": \"https://rag.uwc.world/redis/health\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:04.702Z\",\n  \"url\": \"https://rag.uwc.world/redis/health\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_03 - GET /vectorstore/health returns vector store healthy",
       "status": "passed",
-      "durationMs": 41,
+      "durationMs": 42,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -88,13 +88,13 @@
           "webPath": "./artifacts/tc_api_03_-_get__vectorstore_health_returns_vector-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:04.609Z\",\n  \"url\": \"https://rag.uwc.world/vectorstore/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:04.760Z\",\n  \"url\": \"https://rag.uwc.world/vectorstore/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_04 - POST /gen-chat returns LLM response",
       "status": "passed",
-      "durationMs": 525,
+      "durationMs": 589,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -106,13 +106,13 @@
           "webPath": "./artifacts/tc_api_04_-_post__gen-chat_returns_llm_response-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:05.142Z\",\n  \"url\": \"https://rag.uwc.world/gen-chat\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:05.358Z\",\n  \"url\": \"https://rag.uwc.world/gen-chat\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
       "error": ""
     },
     {
       "title": "TC_CN_01 - POST append-to-context-v4",
       "status": "passed",
-      "durationMs": 245,
+      "durationMs": 238,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -124,13 +124,13 @@
           "webPath": "./artifacts/tc_cn_01_-_post_append-to-context-v4-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:05.892Z\",\n  \"url\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"body\": {\n    \"message\": \"Transcript is processing.\"\n  },\n  \"id\": \"TC_CN_01\",\n  \"name\": \"append-to-context-v4\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:06.091Z\",\n  \"url\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"body\": {\n    \"message\": \"Transcript is processing.\"\n  },\n  \"id\": \"TC_CN_01\",\n  \"name\": \"append-to-context-v4\"\n}",
       "error": ""
     },
     {
       "title": "TC_CN_02 - POST insert-into-context",
       "status": "passed",
-      "durationMs": 2616,
+      "durationMs": 3490,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -142,13 +142,13 @@
           "webPath": "./artifacts/tc_cn_02_-_post_insert-into-context-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://rag.uwc.world/insert-into-context\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:08.529Z\",\n  \"url\": \"https://rag.uwc.world/insert-into-context\",\n  \"body\": {\n    \"message\": \"644938 inserted\"\n  },\n  \"id\": \"TC_CN_02\",\n  \"name\": \"insert-into-context\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://rag.uwc.world/insert-into-context\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:09.604Z\",\n  \"url\": \"https://rag.uwc.world/insert-into-context\",\n  \"body\": {\n    \"message\": \"644938 inserted\"\n  },\n  \"id\": \"TC_CN_02\",\n  \"name\": \"insert-into-context\"\n}",
       "error": ""
     },
     {
       "title": "TC_CN_03 - GET jwt-clinicalnotes / list-clients?professional_id=152853&count=200",
       "status": "passed",
-      "durationMs": 1984,
+      "durationMs": 5214,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -160,13 +160,13 @@
           "webPath": "./artifacts/tc_cn_03_-_get_jwt-clinicalnotes___list-clients_pr-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:10.527Z\",\n  \"url\": \"https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200\",\n  \"body\": {\n    \"status\": \"success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.W3sidXNlcl9pZCI6ICI2NDQ5MzgiLCAibmFtZSI6ICJZYW1pbmkgU2luZ2ggMTkxIiwgImVtYWlsIjogInlzMTkxX2F1c0B5b3BtYWlsLmNvbSIsICJwaG9uZSI6ICIiLCAiaGlzX251bWJlciI6ICIiLCAiaW1hZ2UiOiAiaHR0cHM6Ly9pbWcuY2xlcmsuY29tL2V5SjBlWEJsSWpvaVpHVm1ZWFZzZENJc0ltbHBaQ0k2SW1sdWMxOHlkazlwWlZwSGFuSmhRWFZLY2tKWk1WaGxSekkzY0ZKTFVtNGlMQ0p5YVdRaU9pSjFjMlZ5WHpNMlltRlZkMGRZVFdSRmVXWnhZalk1VUhaeE5XVk5RbWR2WnlJc0ltbHVhWFJwWVd4eklqb2lXVk1pZlEiLCAic2Vzc2lvbl9jb3VudCI6IDc0MH0sIHsidXNlcl9pZCI6ICI3MDYwNzkiLCAibmFtZSI6ICJUZXN0IHVzZXItNjY5Mzk2IiwgImVtYWlsIjogInRlc3R1c2VyLTY2OTM5NkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNzIiLCAibmFtZSI6ICJUZXN0IHVzZXItOTEzNDA4IiwgImVtYWlsIjogInRlc3R1c2VyLTkxMzQwOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjgiLCAibmFtZSI6ICJUZXN0IHVzZXItMzMwMDM4IiwgImVtYWlsIjogInRlc3R1c2VyLTMzMDAzOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjciLCAibmFtZSI6ICJUZXN0IHVzZXItMTQ1MDc3IiwgImVtYWlsIjogInRlc3R1c2VyLTE0NTA3N0B0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjEiLCAibmFtZSI6ICJUZXN0IHVzZXItNjA3ODM5IiwgImVtYWlsIjogInRlc3R1c2VyLTYwNzgzOUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNTYiLCAibmFtZSI6ICJUZXN0IHVzZXItOTk4ODI2IiwgImVtYWlsIjogInRlc3R1c2VyLTk5ODgyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDkiLCAibmFtZSI6ICJUZXN0IHVzZXItNDE4MzAxIiwgImVtYWlsIjogInRlc3R1c2VyLTQxODMwMUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDMiLCAibmFtZSI6ICJUZXN0IHVzZXItODA0NjA4IiwgImVtYWlsIjogInRlc3R1c2VyLTgwNDYwOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjAwNjk0IiwgImVtYWlsIjogInRlc3R1c2VyLTIwMDY5NEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzUiLCAibmFtZSI6ICJUZXN0IHVzZXItNTQzNjI2IiwgImVtYWlsIjogInRlc3R1c2VyLTU0MzYyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMjkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjMyMzI4IiwgImVtYWlsIjogInRlc3R1c2VyLTIzM...",
+      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:14.830Z\",\n  \"url\": \"https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200\",\n  \"body\": {\n    \"status\": \"success\",\n    \"data\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.W3sidXNlcl9pZCI6ICI2NDQ5MzgiLCAibmFtZSI6ICJZYW1pbmkgU2luZ2ggMTkxIiwgImVtYWlsIjogInlzMTkxX2F1c0B5b3BtYWlsLmNvbSIsICJwaG9uZSI6ICIiLCAiaGlzX251bWJlciI6ICIiLCAiaW1hZ2UiOiAiaHR0cHM6Ly9pbWcuY2xlcmsuY29tL2V5SjBlWEJsSWpvaVpHVm1ZWFZzZENJc0ltbHBaQ0k2SW1sdWMxOHlkazlwWlZwSGFuSmhRWFZLY2tKWk1WaGxSekkzY0ZKTFVtNGlMQ0p5YVdRaU9pSjFjMlZ5WHpNMlltRlZkMGRZVFdSRmVXWnhZalk1VUhaeE5XVk5RbWR2WnlJc0ltbHVhWFJwWVd4eklqb2lXVk1pZlEiLCAic2Vzc2lvbl9jb3VudCI6IDc0MH0sIHsidXNlcl9pZCI6ICI3MDYwNzkiLCAibmFtZSI6ICJUZXN0IHVzZXItNjY5Mzk2IiwgImVtYWlsIjogInRlc3R1c2VyLTY2OTM5NkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNzIiLCAibmFtZSI6ICJUZXN0IHVzZXItOTEzNDA4IiwgImVtYWlsIjogInRlc3R1c2VyLTkxMzQwOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjgiLCAibmFtZSI6ICJUZXN0IHVzZXItMzMwMDM4IiwgImVtYWlsIjogInRlc3R1c2VyLTMzMDAzOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjciLCAibmFtZSI6ICJUZXN0IHVzZXItMTQ1MDc3IiwgImVtYWlsIjogInRlc3R1c2VyLTE0NTA3N0B0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNjEiLCAibmFtZSI6ICJUZXN0IHVzZXItNjA3ODM5IiwgImVtYWlsIjogInRlc3R1c2VyLTYwNzgzOUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNTYiLCAibmFtZSI6ICJUZXN0IHVzZXItOTk4ODI2IiwgImVtYWlsIjogInRlc3R1c2VyLTk5ODgyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDkiLCAibmFtZSI6ICJUZXN0IHVzZXItNDE4MzAxIiwgImVtYWlsIjogInRlc3R1c2VyLTQxODMwMUB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwNDMiLCAibmFtZSI6ICJUZXN0IHVzZXItODA0NjA4IiwgImVtYWlsIjogInRlc3R1c2VyLTgwNDYwOEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjAwNjk0IiwgImVtYWlsIjogInRlc3R1c2VyLTIwMDY5NEB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMzUiLCAibmFtZSI6ICJUZXN0IHVzZXItNTQzNjI2IiwgImVtYWlsIjogInRlc3R1c2VyLTU0MzYyNkB0bWFpbC5jb20iLCAicGhvbmUiOiAiKzYxIiwgImhpc19udW1iZXIiOiAiIiwgImltYWdlIjogIiIsICJzZXNzaW9uX2NvdW50IjogMX0sIHsidXNlcl9pZCI6ICI3MDYwMjkiLCAibmFtZSI6ICJUZXN0IHVzZXItMjMyMzI4IiwgImVtYWlsIjogInRlc3R1c2VyLTIzM...",
       "error": ""
     },
     {
       "title": "TC_CN_04 - GET static / countries",
       "status": "passed",
-      "durationMs": 47,
+      "durationMs": 48,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -178,13 +178,13 @@
           "webPath": "./artifacts/tc_cn_04_-_get_static___countries-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/static/countries\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:10.582Z\",\n  \"url\": \"https://session-note.uwc.world/static/countries\",\n  \"body\": {\n    \"status\": \"success\",\n    \"countries\": [\n      {\n        \"name\": \"Afghanistan\",\n        \"code\": \"AF\",\n        \"dial_code\": \"+93\"\n      },\n      {\n        \"name\": \"Albania\",\n        \"code\": \"AL\",\n        \"dial_code\": \"+355\"\n      },\n      {\n        \"name\": \"Algeria\",\n        \"code\": \"DZ\",\n        \"dial_code\": \"+213\"\n      },\n      {\n        \"name\": \"AmericanSamoa\",\n        \"code\": \"AS\",\n        \"dial_code\": \"+1 684\"\n      },\n      {\n        \"name\": \"Andorra\",\n        \"code\": \"AD\",\n        \"dial_code\": \"+376\"\n      },\n      {\n        \"name\": \"Angola\",\n        \"code\": \"AO\",\n        \"dial_code\": \"+244\"\n      },\n      {\n        \"name\": \"Anguilla\",\n        \"code\": \"AI\",\n        \"dial_code\": \"+1 264\"\n      },\n      {\n        \"name\": \"Antarctica\",\n        \"code\": \"AQ\",\n        \"dial_code\": \"+672\"\n      },\n      {\n        \"name\": \"Antigua and Barbuda\",\n        \"code\": \"AG\",\n        \"dial_code\": \"+1268\"\n      },\n      {\n        \"name\": \"Argentina\",\n        \"code\": \"AR\",\n        \"dial_code\": \"+54\"\n      },\n      {\n        \"name\": \"Armenia\",\n        \"code\": \"AM\",\n        \"dial_code\": \"+374\"\n      },\n      {\n        \"name\": \"Aruba\",\n        \"code\": \"AW\",\n        \"dial_code\": \"+297\"\n      },\n      {\n        \"name\": \"Australia\",\n        \"code\": \"AU\",\n        \"dial_code\": \"+61\"\n      },\n      {\n        \"name\": \"Austria\",\n        \"code\": \"AT\",\n        \"dial_code\": \"+43\"\n      },\n      {\n        \"name\": \"Azerbaijan\",\n        \"code\": \"AZ\",\n        \"dial_code\": \"+994\"\n      },\n      {\n        \"name\": \"Bahamas\",\n        \"code\": \"BS\",\n        \"dial_code\": \"+1 242\"\n      },\n      {\n        \"name\": \"Bahrain\",\n        \"code\": \"BH\",\n        \"dial_code\": \"+973\"\n      },\n      {\n        \"name\": \"Bangladesh\",\n        \"code\": \"BD\",\n        \"dial_code\": \"+880\"\n      },\n      {\n        \"name\": \"Barbados\",\n        \"code\": \"BB\",\n        \"dial_code\": \"+1 246\"\n      },\n      {\n        \"name\": \"Belarus\",\n        \"code\": \"BY\",\n        \"dial_code\": \"+375\"\n      },\n      {\n        \"name\": \"Belgium\",\n        \"code\": \"BE\",\n        \"dial_code\": \"+32\"\n      },\n      {\n        \"name\": \"Belize\",\n        \"code\": \"BZ\",\n        \"dial_code\": \"+501\"\n      },\n      {\n        \"name\": \"Benin\",\n        \"code\": \"BJ\",\n        \"dial_code\": \"+229\"\n      },\n      {\n        \"name\": \"Bermuda\",\n        \"code\": \"BM\",\n        \"dial_code\": \"+1 441\"\n      },\n      {\n        \"name\": \"Bhutan\",\n        \"code\": \"BT\",\n        \"dial_code\": \"+975\"\n      },\n      {\n        \"name\": \"Bolivia, Plurinational State of Bolivia\",\n        \"code\": \"BO\",\n        \"dial_code\": \"+591\"\n      },\n      {\n        \"name\": \"Bosnia and Herzegovina\",\n        \"code\": \"BA\",\n        \"dial_code\": \"+387\"\n      },\n      {\n        \"name\": \"Botswana\",\n        \"code\": \"BW\",\n        \"dial_code\": \"+267\"\n      },\n      {\n        \"name\"...",
+      "apiProof": "{\n  \"endpoint\": \"https://session-note.uwc.world/static/countries\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:14.893Z\",\n  \"url\": \"https://session-note.uwc.world/static/countries\",\n  \"body\": {\n    \"status\": \"success\",\n    \"countries\": [\n      {\n        \"name\": \"Afghanistan\",\n        \"code\": \"AF\",\n        \"dial_code\": \"+93\"\n      },\n      {\n        \"name\": \"Albania\",\n        \"code\": \"AL\",\n        \"dial_code\": \"+355\"\n      },\n      {\n        \"name\": \"Algeria\",\n        \"code\": \"DZ\",\n        \"dial_code\": \"+213\"\n      },\n      {\n        \"name\": \"AmericanSamoa\",\n        \"code\": \"AS\",\n        \"dial_code\": \"+1 684\"\n      },\n      {\n        \"name\": \"Andorra\",\n        \"code\": \"AD\",\n        \"dial_code\": \"+376\"\n      },\n      {\n        \"name\": \"Angola\",\n        \"code\": \"AO\",\n        \"dial_code\": \"+244\"\n      },\n      {\n        \"name\": \"Anguilla\",\n        \"code\": \"AI\",\n        \"dial_code\": \"+1 264\"\n      },\n      {\n        \"name\": \"Antarctica\",\n        \"code\": \"AQ\",\n        \"dial_code\": \"+672\"\n      },\n      {\n        \"name\": \"Antigua and Barbuda\",\n        \"code\": \"AG\",\n        \"dial_code\": \"+1268\"\n      },\n      {\n        \"name\": \"Argentina\",\n        \"code\": \"AR\",\n        \"dial_code\": \"+54\"\n      },\n      {\n        \"name\": \"Armenia\",\n        \"code\": \"AM\",\n        \"dial_code\": \"+374\"\n      },\n      {\n        \"name\": \"Aruba\",\n        \"code\": \"AW\",\n        \"dial_code\": \"+297\"\n      },\n      {\n        \"name\": \"Australia\",\n        \"code\": \"AU\",\n        \"dial_code\": \"+61\"\n      },\n      {\n        \"name\": \"Austria\",\n        \"code\": \"AT\",\n        \"dial_code\": \"+43\"\n      },\n      {\n        \"name\": \"Azerbaijan\",\n        \"code\": \"AZ\",\n        \"dial_code\": \"+994\"\n      },\n      {\n        \"name\": \"Bahamas\",\n        \"code\": \"BS\",\n        \"dial_code\": \"+1 242\"\n      },\n      {\n        \"name\": \"Bahrain\",\n        \"code\": \"BH\",\n        \"dial_code\": \"+973\"\n      },\n      {\n        \"name\": \"Bangladesh\",\n        \"code\": \"BD\",\n        \"dial_code\": \"+880\"\n      },\n      {\n        \"name\": \"Barbados\",\n        \"code\": \"BB\",\n        \"dial_code\": \"+1 246\"\n      },\n      {\n        \"name\": \"Belarus\",\n        \"code\": \"BY\",\n        \"dial_code\": \"+375\"\n      },\n      {\n        \"name\": \"Belgium\",\n        \"code\": \"BE\",\n        \"dial_code\": \"+32\"\n      },\n      {\n        \"name\": \"Belize\",\n        \"code\": \"BZ\",\n        \"dial_code\": \"+501\"\n      },\n      {\n        \"name\": \"Benin\",\n        \"code\": \"BJ\",\n        \"dial_code\": \"+229\"\n      },\n      {\n        \"name\": \"Bermuda\",\n        \"code\": \"BM\",\n        \"dial_code\": \"+1 441\"\n      },\n      {\n        \"name\": \"Bhutan\",\n        \"code\": \"BT\",\n        \"dial_code\": \"+975\"\n      },\n      {\n        \"name\": \"Bolivia, Plurinational State of Bolivia\",\n        \"code\": \"BO\",\n        \"dial_code\": \"+591\"\n      },\n      {\n        \"name\": \"Bosnia and Herzegovina\",\n        \"code\": \"BA\",\n        \"dial_code\": \"+387\"\n      },\n      {\n        \"name\": \"Botswana\",\n        \"code\": \"BW\",\n        \"dial_code\": \"+267\"\n      },\n      {\n        \"name\"...",
       "error": ""
     },
     {
       "title": "TC_CN_05 - POST transcription-file-analyzer / process-document",
       "status": "passed",
-      "durationMs": 8630,
+      "durationMs": 6277,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -196,13 +196,13 @@
           "webPath": "./artifacts/tc_cn_05_-_post_transcription-file-analyzer___proc-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:19.220Z\",\n  \"url\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"body\": {\n    \"id\": \"416870d1-f5b5-40af-a1b7-963f1747c264\",\n    \"response\": \"### Summary of Yamini Singh's Case\\n\\n#### Personal Information\\n- **Name:** Yamini Singh\\n- **Age:** 33 years old\\n- **Occupation:** Unemployed, previously in a sales team at an MNC\\n- **Marital Status:** Separated, Divorced\\n- **Family:** \\n  - Father (deceased, alcoholic)\\n  - Sister (deceased)\\n  - Mother (schizophrenia, liver cirrhosis)\\n- **Education:** Bachelor’s Degree in Computer Science\\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\\n\\n#### Medical and Psychiatric History\\n- **Major Episodes:**\\n  - **2020:** Severe depression after brother's death, hospitalized for six weeks, prescribed Fluoxetine (Prozac) and Olanzapine (Zyprexa), started grief counseling.\\n  - **2016:** Manic episode, hospitalized for three weeks, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\\n  - **2015:** Major depressive episode triggered by brother’s death anniversary, hospitalized for four weeks, medications adjusted, received intensive psychotherapy and Electroconvulsive Therapy (ECT).\\n\\n#### Current Hospitalization\\n- **Reason for Admission:** Suicide attempt via medication overdose, experiencing worsening depression and anxiety.\\n- **Length of Stay:** Currently in the third week of hospitalization in a psychiatric unit.\\n- **Current Symptoms:** Severe insomnia, loss of appetite, weight loss, pervasive feelings of hopelessness, frequent panic attacks.\\n\\n#### Current Medications\\n- **Fluoxetine (Prozac)**\\n- **Sertraline (Zoloft)**\\n- **Lithium**\\n- **Valproate**\\n- **Olanzapine (Zyprexa)**\\n- **Lorazepam (Ativan)**\\n\\n#### Past Medications\\n- **2020:** Aripiprazole (Abilify), Zolpidem (Ambien)\\n- **2017:** Escitalopram (Lexapro), Lamotrigine (Lamictal)\\n- **2015:** Aripiprazole (Abilify), Clonazepam (Klonopin), Zolpidem (Ambien)\\n\\n#### Past Therapies\\n- **2017:** Cognitive Behavioural Therapy (CBT)\\n- **2016-2017:** Dialectical Behaviour Therapy (DBT)\\n- **2020:** Group Therapy, Grief counseling\\n\\n#### Current Therapies\\n- **Intensive CBT**\\n- **Mindfulness-Based Stress Reduction (MBSR)**\\n- **Individual Psychotherapy**\\n- **Occupational Therapy**\\n\\n#### Psychosocial Factors\\n- **Social Support:** Close-knit group of friends and colleagues, strained relationships due to mental health issues.\\n- **Hobbies and Interests:** Reading, playing guitar, hiking (neglected due to mental health).\\n- **Substance Use:** Occasional social alcohol consumption, avoids excessive drinking.\\n\\n#### Current Treatment Goals\\n- **Stabilize Mood:** Through medication and psychotherapy.\\n- **Reduce Symptoms:** Alleviate depression and anxiety.\\n- **Improve Sleep:** Address insomnia.\\n- **Enhance Cop...",
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:21.192Z\",\n  \"url\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"body\": {\n    \"id\": \"dfce5496-23bc-4d7c-a68f-85b482f6da4a\",\n    \"response\": \"### Summary of Yamini Singh's Case\\n\\n**Personal Information:**\\n- **Name:** Yamini Singh\\n- **Age:** 33 years old\\n- **Occupation:** Unemployed, previously worked in a sales team at an MNC\\n- **Marital Status:** Separated, Divorced\\n- **Family:** \\n  - Father: Deceased (alcoholic)\\n  - Sister: Deceased\\n  - Mother: Schizophrenia, liver cirrhosis\\n- **Education:** Bachelor’s Degree in Computer Science\\n- **Residence:** Lives alone in a duplex apartment in a metropolitan city\\n\\n**Medical and Psychiatric History:**\\n- **Major Episodes:**\\n  - **2020:** Severe depression after brother's death, hospitalized for six weeks, treated with Fluoxetine (Prozac) and Olanzapine (Zyprexa), and received grief counseling.\\n  - **2016:** Manic episode, diagnosed with Bipolar Disorder, treated with Lithium and Valproate.\\n  - **2015:** Major depressive episode, hospitalized for four weeks, received Electroconvulsive Therapy (ECT).\\n\\n**Current Hospitalization:**\\n- **Reason for Admission:** Suicide attempt via medication overdose.\\n- **Symptoms:** Severe depression, anxiety, insomnia, loss of appetite, weight loss, hopelessness, panic attacks.\\n- **Length of Stay:** Currently in the third week of hospitalization.\\n\\n**Current Medications:**\\n- Fluoxetine (Prozac)\\n- Sertraline (Zoloft)\\n- Lithium\\n- Valproate\\n- Olanzapine (Zyprexa)\\n- Lorazepam (Ativan)\\n\\n**Past Medications:**\\n- Aripiprazole (Abilify)\\n- Zolpidem (Ambien)\\n- Escitalopram (Lexapro)\\n- Lamotrigine (Lamictal)\\n- Clonazepam (Klonopin)\\n\\n**Therapies:**\\n- **Past:**\\n  - Cognitive Behavioural Therapy (CBT)\\n  - Dialectical Behaviour Therapy (DBT)\\n  - Group Therapy\\n  - Grief Counseling\\n- **Current:**\\n  - Intensive CBT\\n  - Mindfulness-Based Stress Reduction (MBSR)\\n  - Individual Psychotherapy\\n  - Occupational Therapy\\n\\n**Psychosocial Factors:**\\n- **Social Support:** Close-knit group of friends and colleagues, but relationships are strained.\\n- **Hobbies and Interests:** Reading, playing guitar, hiking (neglected recently).\\n- **Substance Use:** Occasional social drinking.\\n\\n**Current Treatment Goals:**\\n- Stabilize mood\\n- Reduce symptoms of depression and anxiety\\n- Improve sleep\\n- Enhance coping mechanisms\\n- Improve work-life balance\\n- Consider family therapy\\n- Develop a reintegration plan\\n\\n**Prognosis:**\\n- Cautiously optimistic with adherence to treatment, regular follow-ups, and a robust support system.\\n\\n**Current Vitals:**\\n- **Height:** 5 feet 10 inches (178 cm)\\n- **Weight:** 150 pounds (68 kg)\\n- **BMI:** 21.5 (Normal weight)\\n- **Blood Pressure:** 130/85 mmHg (Slightly elevated)\\n- **Heart Rate:** 78 beats per minute (Normal)\\n- **Respiratory ...",
       "error": ""
     },
     {
       "title": "TC_AST_GR_01 - GET [graph] Graph — 152853 / clinical_knowledge_graph",
       "status": "passed",
-      "durationMs": 684,
+      "durationMs": 1617,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -214,13 +214,13 @@
           "webPath": "./artifacts/tc_ast_gr_01_-_get__graph__graph___152853___clinic-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:20.398Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"clinical_knowledge_graph\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_GR_01\",\n  \"tab\": \"graph\",\n  \"name\": \"Graph — 152853 / clinical_knowledge_graph\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:23.310Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"clinical_knowledge_graph\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_GR_01\",\n  \"tab\": \"graph\",\n  \"name\": \"Graph — 152853 / clinical_knowledge_graph\"\n}",
       "error": ""
     },
     {
       "title": "TC_AST_GR_02 - POST [graph] Graph — drugs-interaction / graph-fe-user-year",
       "status": "passed",
-      "durationMs": 1989,
+      "durationMs": 3515,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -232,13 +232,13 @@
           "webPath": "./artifacts/tc_ast_gr_02_-_post__graph__graph___drugs-interact-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:22.389Z\",\n  \"url\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"body\": {\n    \"nodes\": [\n      {\n        \"id\": \"644938\",\n        \"parent\": true,\n        \"name\": \"Name\",\n        \"colour\": \"#4169E1\",\n        \"link_name\": \"Has\",\n        \"children\": [\n          {\n            \"id\": \"644938.medicines\",\n            \"name\": \"Medicines\",\n            \"colour\": \"#008080\",\n            \"link_name\": \"Has Taken\",\n            \"children\": [\n              {\n                \"id\": \"644938.medicines.past\",\n                \"name\": \"Past\",\n                \"colour\": \"#008080\",\n                \"link_name\": \"Taken in the\",\n                \"children\": [\n                  {\n                    \"id\": \"644938.medicines.past.448\",\n                    \"name\": \"Quetiapine\",\n                    \"colour\": \"#008080\",\n                    \"link_name\": \"N05AH04 - quetiapine ; Belongs to the class of diazepines, oxazepines and thiazepines antipsychotics.\",\n                    \"children\": [],\n                    \"description\": {\n                      \"Name\": \"Quetiapine\",\n                      \"Drug Interactions\": \"Increased serum concentration with cyp3a4 inhibitors (e.g. ketoconazole, ritonavir, nefazodone). decreased serum concentration with cyp3a4 inducers (e.g. phenytoin, carbamazepine, rifampin). extended-release preparations may antagonise actions of dopaminergics (e.g. levodopa). increased risk of qt prolongation with class ia antiarrhythmics (e.g. quinidine, procainamide), class iii antiarrhythmics (e.g. amiodarone, sotalol), antipsychotic medications (e.g. ziprasidone, chlorpromazine, thioridazine), antibiotics (e.g. gatifloxacin, moxifloxacin), pentamidine, levomethadyl acetate, methadone).\",\n                      \"Dosage Direction For Use\": \"Oralschizophreniaadult:as immediate-release/film-coated tab: initially, 25 mg bid on day 1, followed by 50 mg bid on day 2, 100 mg bid on day 3 and 150 mg bid on day 4. titrate dose according to response between 300-450 mg daily given in 2 divided doses from day 4 onwards. max: 750 mg daily. as extended-release tab: 300 mg once daily on day 1, followed by 600 mg once daily on day 2. adjust according to patient response between 400-800 mg daily. usual dose: 600 mg once daily. max: 800 mg daily.elderly:as immediate-release/film-coated tab: slower rate of dose titration and lower daily therapeutic dose. as modified-release tab: initially, 50 mg once daily, adjusted in increments of 50 mg according to response.hepatic impairment:as immediate-release tab: initially, 25 mg daily, increased in increments of 25-50 mg daily according to patient response.oralacute manic episodes of bipolar disorderadult:as immediate-release/film-coated tab: 50 mg bid for day 1, followed by 100 mg bid for day 2 then 150 mg bid on day 3 and 200 mg bid on day 4. adjust in increments up to 200 ...",
+      "apiProof": "{\n  \"endpoint\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:26.827Z\",\n  \"url\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"body\": {\n    \"nodes\": [\n      {\n        \"id\": \"644938\",\n        \"parent\": true,\n        \"name\": \"Name\",\n        \"colour\": \"#4169E1\",\n        \"link_name\": \"Has\",\n        \"children\": [\n          {\n            \"id\": \"644938.medicines\",\n            \"name\": \"Medicines\",\n            \"colour\": \"#008080\",\n            \"link_name\": \"Has Taken\",\n            \"children\": [\n              {\n                \"id\": \"644938.medicines.past\",\n                \"name\": \"Past\",\n                \"colour\": \"#008080\",\n                \"link_name\": \"Taken in the\",\n                \"children\": [\n                  {\n                    \"id\": \"644938.medicines.past.448\",\n                    \"name\": \"Quetiapine\",\n                    \"colour\": \"#008080\",\n                    \"link_name\": \"N05AH04 - quetiapine ; Belongs to the class of diazepines, oxazepines and thiazepines antipsychotics.\",\n                    \"children\": [],\n                    \"description\": {\n                      \"Name\": \"Quetiapine\",\n                      \"Drug Interactions\": \"Increased serum concentration with cyp3a4 inhibitors (e.g. ketoconazole, ritonavir, nefazodone). decreased serum concentration with cyp3a4 inducers (e.g. phenytoin, carbamazepine, rifampin). extended-release preparations may antagonise actions of dopaminergics (e.g. levodopa). increased risk of qt prolongation with class ia antiarrhythmics (e.g. quinidine, procainamide), class iii antiarrhythmics (e.g. amiodarone, sotalol), antipsychotic medications (e.g. ziprasidone, chlorpromazine, thioridazine), antibiotics (e.g. gatifloxacin, moxifloxacin), pentamidine, levomethadyl acetate, methadone).\",\n                      \"Dosage Direction For Use\": \"Oralschizophreniaadult:as immediate-release/film-coated tab: initially, 25 mg bid on day 1, followed by 50 mg bid on day 2, 100 mg bid on day 3 and 150 mg bid on day 4. titrate dose according to response between 300-450 mg daily given in 2 divided doses from day 4 onwards. max: 750 mg daily. as extended-release tab: 300 mg once daily on day 1, followed by 600 mg once daily on day 2. adjust according to patient response between 400-800 mg daily. usual dose: 600 mg once daily. max: 800 mg daily.elderly:as immediate-release/film-coated tab: slower rate of dose titration and lower daily therapeutic dose. as modified-release tab: initially, 50 mg once daily, adjusted in increments of 50 mg according to response.hepatic impairment:as immediate-release tab: initially, 25 mg daily, increased in increments of 25-50 mg daily according to patient response.oralacute manic episodes of bipolar disorderadult:as immediate-release/film-coated tab: 50 mg bid for day 1, followed by 100 mg bid for day 2 then 150 mg bid on day 3 and 200 mg bid on day 4. adjust in increments up to 200 ...",
       "error": ""
     },
     {
       "title": "TC_AST_AS_01 - GET [assistant] Assistant — 152853 / drug_drug_interaction_alerts",
       "status": "passed",
-      "durationMs": 48,
+      "durationMs": 47,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -250,7 +250,7 @@
           "webPath": "./artifacts/tc_ast_as_01_-_get__assistant__assistant___152853_-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:22.466Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"drug_drug_interaction_alerts\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AS_01\",\n  \"tab\": \"assistant\",\n  \"name\": \"Assistant — 152853 / drug_drug_interaction_alerts\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:26.903Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"drug_drug_interaction_alerts\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AS_01\",\n  \"tab\": \"assistant\",\n  \"name\": \"Assistant — 152853 / drug_drug_interaction_alerts\"\n}",
       "error": ""
     },
     {
@@ -268,7 +268,7 @@
           "webPath": "./artifacts/tc_ast_ak_01_-_get__asksam__asksam___152853___ask_-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T04:15:22.522Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"ask_sam_interactions\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AK_01\",\n  \"tab\": \"asksam\",\n  \"name\": \"Asksam — 152853 / ask_sam_interactions\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-17T06:15:26.959Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"ask_sam_interactions\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AK_01\",\n  \"tab\": \"asksam\",\n  \"name\": \"Asksam — 152853 / ask_sam_interactions\"\n}",
       "error": ""
     }
   ]

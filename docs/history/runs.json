@@ -1,5 +1,44 @@
 [
   {
+    "id": "ff6ced1a-656c-4dbc-b31a-bc8386602d46",
+    "startedAt": "2026-06-18T08:15:04.581Z",
+    "durationMs": 20895.364999999998,
+    "summary": {
+      "total": 13,
+      "passed": 13,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "f1e42b0c-5a3b-4f70-8991-761a24aacd9e",
     "startedAt": "2026-06-18T06:15:04.198Z",
     "durationMs": 18710.137,

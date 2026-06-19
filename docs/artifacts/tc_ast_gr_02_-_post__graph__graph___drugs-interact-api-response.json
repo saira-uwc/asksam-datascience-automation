@@ -2,7 +2,7 @@
   "endpoint": "https://neograph.uwc.world/drugs-interaction/graph-fe-user-year",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-19T04:15:23.343Z",
+  "timestamp": "2026-06-19T06:15:41.279Z",
   "url": "https://neograph.uwc.world/drugs-interaction/graph-fe-user-year",
   "body": {
     "nodes": [
@@ -2404,6 +2404,90 @@
                       "Contraindications": "Unstable seizure disorders/epilepsy. severe renal (gfr <10 ml/min) impairment. concomitant use or within 2 weeks of discontinuing maois (e.g. iproniazid) or within 5 weeks of discontinuing fluoxetine. concurrent use with metoprolol, linezolid, iv methylene blue, pimozide, and thioridazine.",
                       "CIMS Class": "Antidepressants",
                       "Food Interaction": "Increased risk of serotonin syndrome with st. john's wort."
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189338",
+                    "name": "Lipid profile",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Lipid profile",
+                      "Process": "A blood sample is taken from a vein in your arm, the sample is then sent to a lab for analysis, results are usually available within a few days, no special preparation is required on the day of the test, the test is quick and relatively painless",
+                      "Risk": "Increased risk of heart disease, stroke, atherosclerosis, pancreatitis, metabolic syndrome",
+                      "How To Prepare": "Fast for 9-12 hours before the test, avoid alcohol and fatty foods before the test, inform your doctor about any medications you are taking, drink plenty of water before the test, wear loose clothing for easy blood draw",
+                      "Results Interpretation With Values": "Total cholesterol: <200 mg/dl (desirable), ldl cholesterol: <100 mg/dl (optimal), hdl cholesterol: >60 mg/dl (good), triglycerides: <150 mg/dl (normal), total cholesterol/hdl ratio: <4 (low risk)"
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189232",
+                    "name": "Electrolytes",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Electrolytes",
+                      "Process": "The electrolyte test involves taking a blood sample from a vein in your arm. the sample is then sent to a laboratory for analysis",
+                      "Risk": "There are minimal risks associated with an electrolyte test, such as bruising or bleeding at the site of the blood draw",
+                      "How To Prepare": "To prepare for an electrolyte test, you may need to fast for a certain period of time, avoid certain medications, and stay hydrated",
+                      "Results Interpretation With Values": "Normal electrolyte levels are crucial for proper bodily functions. abnormal levels can indicate various health conditions. for example, low sodium levels may indicate dehydration, while high potassium levels may indicate kidney problems"
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189451",
+                    "name": "Thyroid stim immglob",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Thyroid stim immglob",
+                      "Process": "Blood sample collection, no special preparation required, quick and simple procedure, minimal discomfort, results available within a few days",
+                      "Risk": "Bleeding or bruising at the site of blood draw, infection at the site of blood draw, fainting or dizziness during blood draw, allergic reaction to the needle or equipment, discomfort or pain during blood draw",
+                      "How To Prepare": "Fasting for 8-12 hours, avoiding iodine-rich foods, informing about any medications being taken, avoiding strenuous exercise before the test, getting enough rest before the test",
+                      "Results Interpretation With Values": "Normal range: 0.5-5.0 iu/ml, low levels indicate hypothyroidism, high levels indicate hyperthyroidism, values may vary based on age and gender, consult a healthcare provider for interpretation"
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189413",
+                    "name": "Renal function panel",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Renal function panel",
+                      "Process": "Blood sample collection, urine sample collection, no special preparation required, results available in 1-2 days, simple and quick procedure",
+                      "Risk": "Infection at the site of blood draw, bruising or bleeding at the site of blood draw, fainting or dizziness during blood draw, allergic reaction to the needle or equipment, discomfort or pain during blood draw",
+                      "How To Prepare": "Fast for 8-12 hours before the test, avoid excessive exercise before the test, drink plenty of water before the test, inform about any medications being taken, follow any specific instructions given by the healthcare provider",
+                      "Results Interpretation With Values": "Creatinine levels above 1.2 mg/dl may indicate kidney dysfunction, bun levels between 7-20 mg/dl are considered normal, gfr below 60 ml/min may indicate kidney disease, albumin levels below 3.5 g/dl may indicate kidney damage, electrolyte imbalances may indicate kidney problems"
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189289",
+                    "name": "Hepatic function panel",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Hepatic function panel",
+                      "Process": "During a hepatic function panel, blood samples are typically collected and analyzed for various liver function markers. the process may involve the following steps:",
+                      "Risk": "There are certain risks associated with the hepatic function panel, including:",
+                      "How To Prepare": "To prepare for a hepatic function panel, patients should:",
+                      "Results Interpretation With Values": "The results of a hepatic function panel are interpreted based on the following numerical values:"
+                    }
+                  },
+                  {
+                    "id": "644938.timeline.2024.189175",
+                    "name": "Cbc (complete blood count)",
+                    "colour": "#663399",
+                    "link_name": "Taken Test",
+                    "children": [],
+                    "description": {
+                      "Name": "Cbc (complete blood count)",
+                      "Process": "A cbc test involves drawing a blood sample from a vein in your arm. the sample is then analyzed in a laboratory to measure various components of your blood",
+                      "Risk": "There are minimal risks associated with a cbc test, including bruising or bleeding at the site of the blood draw",
+                      "How To Prepare": "No special preparation is required for a cbc test. it is a simple blood test that can be done at any time",
+                      "Results Interpretation With Values": "Normal values for a cbc test include: wbc count (4,500-11,000 cells/mcl), rbc count (4.5-5.9 million cells/mcl), hemoglobin (13.5-17.5 g/dl), hematocrit (41-50%), platelet count (150,000-450,000/mcl)"
                     }
                   },
                   {

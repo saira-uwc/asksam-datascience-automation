@@ -2,7 +2,7 @@
   "endpoint": "https://neograph.uwc.world/drugs-interaction/graph-fe-user-year",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-18T22:15:27.894Z",
+  "timestamp": "2026-06-19T00:15:24.317Z",
   "url": "https://neograph.uwc.world/drugs-interaction/graph-fe-user-year",
   "body": {
     "nodes": [

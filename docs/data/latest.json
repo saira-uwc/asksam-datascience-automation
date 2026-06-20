@@ -1,7 +1,7 @@
 {
-  "id": "44927fa3-3789-45e3-baaa-55a2d543a197",
-  "startedAt": "2026-06-20T08:15:04.070Z",
-  "durationMs": 390153.55000000005,
+  "id": "8c0b3842-8d4f-471d-bb80-3588299ae307",
+  "startedAt": "2026-06-20T12:15:04.150Z",
+  "durationMs": 394142.69899999996,
   "summary": {
     "total": 13,
     "passed": 10,
@@ -40,7 +40,7 @@
     {
       "title": "TC_API_01 - GET /health returns application healthy",
       "status": "passed",
-      "durationMs": 195,
+      "durationMs": 220,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -52,13 +52,13 @@
           "webPath": "./artifacts/tc_api_01_-_get__health_returns_application_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:15:04.756Z\",\n  \"url\": \"https://rag.uwc.world/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:15:04.875Z\",\n  \"url\": \"https://rag.uwc.world/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_02 - GET /redis/health returns Redis healthy",
       "status": "passed",
-      "durationMs": 42,
+      "durationMs": 45,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -70,13 +70,13 @@
           "webPath": "./artifacts/tc_api_02_-_get__redis_health_returns_redis_health-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:15:04.820Z\",\n  \"url\": \"https://rag.uwc.world/redis/health\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/redis/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:15:04.942Z\",\n  \"url\": \"https://rag.uwc.world/redis/health\",\n  \"body\": {\n    \"status\": \"healthy\",\n    \"detail\": \"Redis is running\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_03 - GET /vectorstore/health returns vector store healthy",
       "status": "passed",
-      "durationMs": 42,
+      "durationMs": 43,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -88,13 +88,13 @@
           "webPath": "./artifacts/tc_api_03_-_get__vectorstore_health_returns_vector-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:15:04.878Z\",\n  \"url\": \"https://rag.uwc.world/vectorstore/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
+      "apiProof": "{\n  \"endpoint\": \"/vectorstore/health\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:15:05.004Z\",\n  \"url\": \"https://rag.uwc.world/vectorstore/health\",\n  \"body\": {\n    \"Health\": \"Ok\"\n  }\n}",
       "error": ""
     },
     {
       "title": "TC_API_04 - POST /gen-chat returns LLM response",
       "status": "passed",
-      "durationMs": 487,
+      "durationMs": 520,
       "file": "rag-api-smoke.spec.ts",
       "module": "rag-api-smoke",
       "moduleLabel": "RAG API — Smoke Tests",
@@ -106,13 +106,13 @@
           "webPath": "./artifacts/tc_api_04_-_post__gen-chat_returns_llm_response-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:15:05.373Z\",\n  \"url\": \"https://rag.uwc.world/gen-chat\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"/gen-chat\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:15:05.531Z\",\n  \"url\": \"https://rag.uwc.world/gen-chat\",\n  \"user_id\": \"automation-smoke\",\n  \"response_id\": \"automation-smoke_smoke-session\",\n  \"llm_response\": \"You've pinged me. How can I assist you today?\"\n}",
       "error": ""
     },
     {
       "title": "TC_CN_01 - POST append-to-context-v4",
       "status": "passed",
-      "durationMs": 267,
+      "durationMs": 256,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -124,13 +124,13 @@
           "webPath": "./artifacts/tc_cn_01_-_post_append-to-context-v4-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:15:06.143Z\",\n  \"url\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"body\": {\n    \"message\": \"Transcript is processing.\"\n  },\n  \"id\": \"TC_CN_01\",\n  \"name\": \"append-to-context-v4\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:15:06.299Z\",\n  \"url\": \"https://on-append.uwc.world/append-to-context-v4\",\n  \"body\": {\n    \"message\": \"Transcript is processing.\"\n  },\n  \"id\": \"TC_CN_01\",\n  \"name\": \"append-to-context-v4\"\n}",
       "error": ""
     },
     {
       "title": "TC_CN_02 - POST insert-into-context",
       "status": "failed",
-      "durationMs": 60231,
+      "durationMs": 60235,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -154,13 +154,13 @@
           "webPath": "./artifacts/tc_cn_02_-_post_insert-into-context-trace.zip"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://rag.uwc.world/insert-into-context\",\n  \"method\": \"POST\",\n  \"status\": 504,\n  \"timestamp\": \"2026-06-20T08:17:07.018Z\",\n  \"url\": \"https://rag.uwc.world/insert-into-context\",\n  \"contentType\": \"text\",\n  \"body\": \"<html>\\r\\n<head><title>504 Gateway Time-out</title></head>\\r\\n<body>\\r\\n<center><h1>504 Gateway Time-out</h1></center>\\r\\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\\r\\n</body>\\r\\n</html>\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n\",\n  \"id\": \"TC_CN_02\",\n  \"name\": \"insert-into-context\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://rag.uwc.world/insert-into-context\",\n  \"method\": \"POST\",\n  \"status\": 504,\n  \"timestamp\": \"2026-06-20T12:17:07.196Z\",\n  \"url\": \"https://rag.uwc.world/insert-into-context\",\n  \"contentType\": \"text\",\n  \"body\": \"<html>\\r\\n<head><title>504 Gateway Time-out</title></head>\\r\\n<body>\\r\\n<center><h1>504 Gateway Time-out</h1></center>\\r\\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\\r\\n</body>\\r\\n</html>\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n<!-- a padding to disable MSIE and Chrome friendly error page -->\\r\\n\",\n  \"id\": \"TC_CN_02\",\n  \"name\": \"insert-into-context\"\n}",
       "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m504\u001b[39m\n\n  86 |       });\n  87 |\n> 88 |       expect(response.status()).toBe(endpoint.expectedStatus);\n     |                                 ^\n  89 |       assertBody(endpoint, body);\n  90 |     });\n  91 |   }\n    at /home/saira/asksam-datascience-automation/tests/clinical-notes-api-smoke.spec.ts:88:33"
     },
     {
       "title": "TC_CN_03 - GET jwt-clinicalnotes / list-clients?professional_id=152853&count=200",
       "status": "timedOut",
-      "durationMs": 60064,
+      "durationMs": 60065,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -184,7 +184,7 @@
     {
       "title": "TC_CN_04 - GET static / countries",
       "status": "timedOut",
-      "durationMs": 60064,
+      "durationMs": 60063,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -208,7 +208,7 @@
     {
       "title": "TC_CN_05 - POST transcription-file-analyzer / process-document",
       "status": "passed",
-      "durationMs": 19867,
+      "durationMs": 23007,
       "file": "clinical-notes-api-smoke.spec.ts",
       "module": "clinical-notes-api-smoke",
       "moduleLabel": "Clinical Notes API — Smoke Tests",
@@ -220,13 +220,13 @@
           "webPath": "./artifacts/tc_cn_05_-_post_transcription-file-analyzer___proc-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:21:29.753Z\",\n  \"url\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"body\": {\n    \"id\": \"e05fa98d-abb3-467f-ac09-a5ee43b4f5ca\",\n    \"response\": \"Name: Yamini Singh\\nAge: 33 years old\\nOccupation: Unemployed, was previously attached in a MNC\\nCompany Sales Team\\nMarital Status: Separated, Divorced\\nFamily: Father (deceased, alcoholic), Sister (deceased),\\nMother(schizophrenia, liver cirrhosis)\\nEducation: Bachelor's Degree in Computer Science from a\\nprestigious university\\nResidence: Lives alone in a duplex apartment in a\\nmetropolitan city\\n\\nYamini mentioned in her early discussion, that she had bad\\nsome major episodes on,\\n\\n2020: Severe depression following the sudden death of her\\nbrother. She was hospitalised for six weeks and prescribed\\nFluoxetine (Prozac) and Olanzapine (Zyprexa). During this\\ntime, she also began seeing a therapist for grief\\ncounselling.\\n2016: Experienced a manic episode characterised by\\nexcessive energy, decreased need for sleep, and impulsive\\ndecision-making. Hospitalised for three weeks and diagnosed\\nwith Bipolar Disorder. Treated with Lithium and Valproate.\\n2015: Another major depressive episode triggered by the\\nanniversary of her brother's death. She was hospitalised\\nfor four weeks, during which her medications were adjusted,\\nand she received intensive psychotherapy. Her treatment\\nincluded a brief course of inpatient Electroconvulsive\\nTherapy (ECT).\\n\\nCurrent Hospitalisation:\\nReason for Admission: Yamini was admitted following a\\nsuicide attempt involving an overdose of her prescribed\\nmedications. She has been experiencing worsening symptoms\\nof depression and anxiety, including severe insomnia, loss\\nof appetite, weight loss, pervasive feelings of\\nhopelessness, and frequent panic attacks.\\nLength of Stay: Currently in her third week of\\nhospitalisation in a psychiatric unit.\\n\\nCurrent Medications:\\nFluoxetine (Prozac), Sertraline (Zoloft) Oral, after food\\ntwice daily for 6 months\\nLithium, Valproate Oral, with milk once daily for 6 months\\nOlanzapine (Zyprexa) Oral, after food Once daily for 20\\n\\ndays\\nLorazepam (Ativan) Oral, after food twice daily for 1 year\\n\\nMedication on 2020:\\nAripiprazole (Abilify) 5 mg daily oral once after food\\nZolpidem (Ambien) 5 mg as needed once everyday, with milk\\norally\\n\\nMedication on 2017:\\nEscitalopram (Lexapro) 20 mg daily Oral, after food Once\\ndaily for 10 days\\nLamotrigine (Lamictal) 200 mg daily Oral, after food once\\na week for 3 weeks\\n\\nMedication on 2015:\\nAripiprazole (Abilify) 10 mg daily oral for 30 days\\nClonazepam (Klonopin) 0.5 mg oral once in a week after\\nfood\\nZolpidem (Ambien) 10 mg once everyday, with milk orally\\nfor 3 months\\n\\nPast Therapies:\\n2017 Cognitive Behavioural Therapy (CBT) focusing on\\nmanaging depressive and anxious thoughts\\n2016-2017 ...",
+      "apiProof": "{\n  \"endpoint\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:21:33.036Z\",\n  \"url\": \"https://on-append.uwc.world/transcription-file-analyzer/process-document\",\n  \"body\": {\n    \"id\": \"6897dc2a-a7da-4afa-9b6a-8baccd6f8414\",\n    \"response\": \"Name: Yamini Singh\\nAge: 33 years old\\nOccupation: Unemployed, was previously attached in a MNC\\nCompany Sales Team\\nMarital Status: Separated, Divorced\\nFamily: Father (deceased, alcoholic), Sister (deceased),\\nMother(schizophrenia, liver cirrhosis)\\nEducation: Bachelor's Degree in Computer Science from a\\nprestigious university\\nResidence: Lives alone in a duplex apartment in a\\nmetropolitan city\\n\\nYamini mentioned in her early discussion, that she had bad\\nsome major episodes on,\\n\\n2020: Severe depression following the sudden death of her\\nbrother. She was hospitalised for six weeks and prescribed\\nFluoxetine (Prozac) and Olanzapine (Zyprexa). During this\\ntime, she also began seeing a therapist for grief\\ncounselling.\\n2016: Experienced a manic episode characterised by\\nexcessive energy, decreased need for sleep, and impulsive\\ndecision-making. Hospitalised for three weeks and diagnosed\\nwith Bipolar Disorder. Treated with Lithium and Valproate.\\n2015: Another major depressive episode triggered by the\\nanniversary of her brother's death. She was hospitalised\\nfor four weeks, during which her medications were adjusted,\\nand she received intensive psychotherapy. Her treatment\\nincluded a brief course of inpatient Electroconvulsive\\nTherapy (ECT).\\n\\nCurrent Hospitalisation:\\nReason for Admission: Yamini was admitted following a\\nsuicide attempt involving an overdose of her prescribed\\nmedications. She has been experiencing worsening symptoms\\nof depression and anxiety, including severe insomnia, loss\\nof appetite, weight loss, pervasive feelings of\\nhopelessness, and frequent panic attacks.\\nLength of Stay: Currently in her third week of\\nhospitalisation in a psychiatric unit.\\n\\nCurrent Medications:\\nFluoxetine (Prozac), Sertraline (Zoloft) Oral, after food\\ntwice daily for 6 months\\nLithium, Valproate Oral, with milk once daily for 6 months\\nOlanzapine (Zyprexa) Oral, after food Once daily for 20\\n\\ndays\\nLorazepam (Ativan) Oral, after food twice daily for 1 year\\n\\nMedication on 2020:\\nAripiprazole (Abilify) 5 mg daily oral once after food\\nZolpidem (Ambien) 5 mg as needed once everyday, with milk\\norally\\n\\nMedication on 2017:\\nEscitalopram (Lexapro) 20 mg daily Oral, after food Once\\ndaily for 10 days\\nLamotrigine (Lamictal) 200 mg daily Oral, after food once\\na week for 3 weeks\\n\\nMedication on 2015:\\nAripiprazole (Abilify) 10 mg daily oral for 30 days\\nClonazepam (Klonopin) 0.5 mg oral once in a week after\\nfood\\nZolpidem (Ambien) 10 mg once everyday, with milk orally\\nfor 3 months\\n\\nPast Therapies:\\n2017 Cognitive Behavioural Therapy (CBT) focusing on\\nmanaging depressive and anxious thoughts\\n2016-2017 ...",
       "error": ""
     },
     {
       "title": "TC_AST_GR_01 - GET [graph] Graph — 152853 / clinical_knowledge_graph",
       "status": "passed",
-      "durationMs": 694,
+      "durationMs": 1707,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -238,13 +238,13 @@
           "webPath": "./artifacts/tc_ast_gr_01_-_get__graph__graph___152853___clinic-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:21:30.961Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"clinical_knowledge_graph\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_GR_01\",\n  \"tab\": \"graph\",\n  \"name\": \"Graph — 152853 / clinical_knowledge_graph\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:21:35.258Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"clinical_knowledge_graph\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_GR_01\",\n  \"tab\": \"graph\",\n  \"name\": \"Graph — 152853 / clinical_knowledge_graph\"\n}",
       "error": ""
     },
     {
       "title": "TC_AST_GR_02 - POST [graph] Graph — drugs-interaction / graph-fe-user-year",
       "status": "passed",
-      "durationMs": 3093,
+      "durationMs": 2865,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -256,13 +256,13 @@
           "webPath": "./artifacts/tc_ast_gr_02_-_post__graph__graph___drugs-interact-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:21:34.055Z\",\n  \"url\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"body\": {\n    \"nodes\": [\n      {\n        \"id\": \"644938\",\n        \"parent\": true,\n        \"name\": \"Name\",\n        \"colour\": \"#4169E1\",\n        \"link_name\": \"Has\",\n        \"children\": [\n          {\n            \"id\": \"644938.medicines\",\n            \"name\": \"Medicines\",\n            \"colour\": \"#008080\",\n            \"link_name\": \"Has Taken\",\n            \"children\": [\n              {\n                \"id\": \"644938.medicines.past\",\n                \"name\": \"Past\",\n                \"colour\": \"#008080\",\n                \"link_name\": \"Taken in the\",\n                \"children\": [\n                  {\n                    \"id\": \"644938.medicines.past.448\",\n                    \"name\": \"Quetiapine\",\n                    \"colour\": \"#008080\",\n                    \"link_name\": \"N05AH04 - quetiapine ; Belongs to the class of diazepines, oxazepines and thiazepines antipsychotics.\",\n                    \"children\": [],\n                    \"description\": {\n                      \"Name\": \"Quetiapine\",\n                      \"Drug Interactions\": \"Increased serum concentration with cyp3a4 inhibitors (e.g. ketoconazole, ritonavir, nefazodone). decreased serum concentration with cyp3a4 inducers (e.g. phenytoin, carbamazepine, rifampin). extended-release preparations may antagonise actions of dopaminergics (e.g. levodopa). increased risk of qt prolongation with class ia antiarrhythmics (e.g. quinidine, procainamide), class iii antiarrhythmics (e.g. amiodarone, sotalol), antipsychotic medications (e.g. ziprasidone, chlorpromazine, thioridazine), antibiotics (e.g. gatifloxacin, moxifloxacin), pentamidine, levomethadyl acetate, methadone).\",\n                      \"Dosage Direction For Use\": \"Oralschizophreniaadult:as immediate-release/film-coated tab: initially, 25 mg bid on day 1, followed by 50 mg bid on day 2, 100 mg bid on day 3 and 150 mg bid on day 4. titrate dose according to response between 300-450 mg daily given in 2 divided doses from day 4 onwards. max: 750 mg daily. as extended-release tab: 300 mg once daily on day 1, followed by 600 mg once daily on day 2. adjust according to patient response between 400-800 mg daily. usual dose: 600 mg once daily. max: 800 mg daily.elderly:as immediate-release/film-coated tab: slower rate of dose titration and lower daily therapeutic dose. as modified-release tab: initially, 50 mg once daily, adjusted in increments of 50 mg according to response.hepatic impairment:as immediate-release tab: initially, 25 mg daily, increased in increments of 25-50 mg daily according to patient response.oralacute manic episodes of bipolar disorderadult:as immediate-release/film-coated tab: 50 mg bid for day 1, followed by 100 mg bid for day 2 then 150 mg bid on day 3 and 200 mg bid on day 4. adjust in increments up to 200 ...",
+      "apiProof": "{\n  \"endpoint\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"method\": \"POST\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:21:38.125Z\",\n  \"url\": \"https://neograph.uwc.world/drugs-interaction/graph-fe-user-year\",\n  \"body\": {\n    \"nodes\": [\n      {\n        \"id\": \"644938\",\n        \"parent\": true,\n        \"name\": \"Name\",\n        \"colour\": \"#4169E1\",\n        \"link_name\": \"Has\",\n        \"children\": [\n          {\n            \"id\": \"644938.medicines\",\n            \"name\": \"Medicines\",\n            \"colour\": \"#008080\",\n            \"link_name\": \"Has Taken\",\n            \"children\": [\n              {\n                \"id\": \"644938.medicines.past\",\n                \"name\": \"Past\",\n                \"colour\": \"#008080\",\n                \"link_name\": \"Taken in the\",\n                \"children\": [\n                  {\n                    \"id\": \"644938.medicines.past.448\",\n                    \"name\": \"Quetiapine\",\n                    \"colour\": \"#008080\",\n                    \"link_name\": \"N05AH04 - quetiapine ; Belongs to the class of diazepines, oxazepines and thiazepines antipsychotics.\",\n                    \"children\": [],\n                    \"description\": {\n                      \"Name\": \"Quetiapine\",\n                      \"Drug Interactions\": \"Increased serum concentration with cyp3a4 inhibitors (e.g. ketoconazole, ritonavir, nefazodone). decreased serum concentration with cyp3a4 inducers (e.g. phenytoin, carbamazepine, rifampin). extended-release preparations may antagonise actions of dopaminergics (e.g. levodopa). increased risk of qt prolongation with class ia antiarrhythmics (e.g. quinidine, procainamide), class iii antiarrhythmics (e.g. amiodarone, sotalol), antipsychotic medications (e.g. ziprasidone, chlorpromazine, thioridazine), antibiotics (e.g. gatifloxacin, moxifloxacin), pentamidine, levomethadyl acetate, methadone).\",\n                      \"Dosage Direction For Use\": \"Oralschizophreniaadult:as immediate-release/film-coated tab: initially, 25 mg bid on day 1, followed by 50 mg bid on day 2, 100 mg bid on day 3 and 150 mg bid on day 4. titrate dose according to response between 300-450 mg daily given in 2 divided doses from day 4 onwards. max: 750 mg daily. as extended-release tab: 300 mg once daily on day 1, followed by 600 mg once daily on day 2. adjust according to patient response between 400-800 mg daily. usual dose: 600 mg once daily. max: 800 mg daily.elderly:as immediate-release/film-coated tab: slower rate of dose titration and lower daily therapeutic dose. as modified-release tab: initially, 50 mg once daily, adjusted in increments of 50 mg according to response.hepatic impairment:as immediate-release tab: initially, 25 mg daily, increased in increments of 25-50 mg daily according to patient response.oralacute manic episodes of bipolar disorderadult:as immediate-release/film-coated tab: 50 mg bid for day 1, followed by 100 mg bid for day 2 then 150 mg bid on day 3 and 200 mg bid on day 4. adjust in increments up to 200 ...",
       "error": ""
     },
     {
       "title": "TC_AST_AS_01 - GET [assistant] Assistant — 152853 / drug_drug_interaction_alerts",
       "status": "passed",
-      "durationMs": 49,
+      "durationMs": 50,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -274,13 +274,13 @@
           "webPath": "./artifacts/tc_ast_as_01_-_get__assistant__assistant___152853_-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:21:34.134Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"drug_drug_interaction_alerts\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AS_01\",\n  \"tab\": \"assistant\",\n  \"name\": \"Assistant — 152853 / drug_drug_interaction_alerts\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:21:38.204Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"drug_drug_interaction_alerts\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AS_01\",\n  \"tab\": \"assistant\",\n  \"name\": \"Assistant — 152853 / drug_drug_interaction_alerts\"\n}",
       "error": ""
     },
     {
       "title": "TC_AST_AK_01 - GET [asksam] Asksam — 152853 / ask_sam_interactions",
       "status": "passed",
-      "durationMs": 49,
+      "durationMs": 47,
       "file": "assistant-api-smoke.spec.ts",
       "module": "assistant-api-smoke",
       "moduleLabel": "Stella Assistant Panel API — Smoke Tests",
@@ -292,7 +292,7 @@
           "webPath": "./artifacts/tc_ast_ak_01_-_get__asksam__asksam___152853___ask_-api-response.json"
         }
       ],
-      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T08:21:34.193Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"ask_sam_interactions\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AK_01\",\n  \"tab\": \"asksam\",\n  \"name\": \"Asksam — 152853 / ask_sam_interactions\"\n}",
+      "apiProof": "{\n  \"endpoint\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"method\": \"GET\",\n  \"status\": 200,\n  \"timestamp\": \"2026-06-20T12:21:38.262Z\",\n  \"url\": \"https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions\",\n  \"body\": {\n    \"success\": true,\n    \"data\": {\n      \"flag_name\": \"ask_sam_interactions\",\n      \"value\": true,\n      \"completed\": true\n    }\n  },\n  \"id\": \"TC_AST_AK_01\",\n  \"tab\": \"asksam\",\n  \"name\": \"Asksam — 152853 / ask_sam_interactions\"\n}",
       "error": ""
     }
   ]

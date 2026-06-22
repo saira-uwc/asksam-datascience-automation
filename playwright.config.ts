@@ -72,9 +72,9 @@ export default defineConfig({
         ...devices['Desktop Chrome'],
         storageState: 'playwright/.auth/user.json',
         viewport: { width: 1440, height: 900 },
-        trace: 'retain-on-failure',
-        video: 'retain-on-failure',
-        screenshot: 'only-on-failure',
+        trace: 'on',
+        video: 'on',
+        screenshot: 'on',
       },
     },
     {

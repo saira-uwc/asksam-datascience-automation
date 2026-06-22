@@ -48,6 +48,7 @@ const MODULE_MAP = {
   'rag-api-smoke': 'RAG API — Smoke Tests',
   'clinical-notes-api-smoke': 'Clinical Notes API — Smoke Tests',
   'assistant-api-smoke': 'Stella Assistant Panel API — Smoke Tests',
+  'asr-api-smoke': 'ASR API — Smoke Tests',
   'z-logout': 'Logout',
 };
 

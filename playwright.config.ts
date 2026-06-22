@@ -46,6 +46,14 @@ export default defineConfig({
       testMatch: /assistant-api-smoke\.spec\.ts/,
     },
     {
+      name: 'asr-api',
+      testMatch: /asr-api-smoke\.spec\.ts/,
+      use: {
+        userAgent:
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+      },
+    },
+    {
       name: 'discover',
       testMatch: /discover-clinical-notes-apis\.spec\.ts/,
       dependencies: ['setup'],
@@ -86,6 +94,7 @@ export default defineConfig({
         /rag-api-smoke\.spec\.ts/,
         /clinical-notes-api-smoke\.spec\.ts/,
         /assistant-api-smoke\.spec\.ts/,
+        /asr-api-smoke\.spec\.ts/,
         /discover-clinical-notes-apis\.spec\.ts/,
         /discover-assistant-apis\.spec\.ts/,
         /ds-ui-journey-record\.spec\.ts/,

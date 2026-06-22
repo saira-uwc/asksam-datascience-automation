@@ -25,6 +25,8 @@ export class LoginPage extends BasePage {
     });
     await this.page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
 
+    const copilotSignIn = `${TEST_CONFIG.urls.base.replace(/\/$/, '')}/sign-in`;
+
     // Legacy account register page still needs role selection; prod Copilot /sign-in goes straight to email.
     const loginHere = this.page.getByRole('button', { name: 'Log in here' });
     if (await loginHere.isVisible({ timeout: 3000 }).catch(() => false)) {
@@ -41,7 +43,15 @@ export class LoginPage extends BasePage {
       await this.page.waitForTimeout(800);
     }
 
-    await this.emailInput.waitFor({ state: 'visible', timeout: 30000 });
+    if (!(await this.emailInput.isVisible({ timeout: 10000 }).catch(() => false))) {
+      await this.page.goto(copilotSignIn, {
+        waitUntil: 'domcontentloaded',
+        timeout: 60000,
+      });
+      await this.page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+    }
+
+    await this.emailInput.waitFor({ state: 'visible', timeout: 60000 });
     await this.emailInput.fill(clinicianEmail);
     await this.page.waitForTimeout(500);
 

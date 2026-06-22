@@ -1,11 +1,17 @@
 import { test as setup, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 import { TEST_CONFIG } from '../utils/testData';
+import * as fs from 'fs';
 import * as path from 'path';
 
 const authFile = path.join(__dirname, '../playwright/.auth/user.json');
 
 setup('authenticate', async ({ page }) => {
+  if (process.env.SKIP_AUTH_SETUP === 'true' && fs.existsSync(authFile)) {
+    console.log(`Skipping auth setup — using existing ${authFile}`);
+    return;
+  }
+
   if (!TEST_CONFIG.credentials.email) {
     throw new Error('TEST_EMAIL is required in .env for auth setup');
   }

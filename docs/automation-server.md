@@ -34,6 +34,18 @@ grep -q '^REPORT_RECIPIENTS=' .env \
 
 Requires `EMAIL_WEB_APP_URL` in the same `.env`. Email sends only when tests fail.
 
+## Required `.env` for 4h DS API cron
+
+| Variable | Purpose |
+|----------|---------|
+| `GOOGLE_APPS_SCRIPT_URL` | Google Sheet updates |
+| `EMAIL_WEB_APP_URL` | Failure email |
+| `REPORT_RECIPIENTS` | Email recipients |
+| `ASR_API_KEY` | ASR `transcribe-from-url-v2` (TC_ASR_01) |
+| `playwright/.auth/ds-api-headers.json` | Clinical Notes + Assistant auth tokens |
+
+Optional ASR overrides: `ASR_AUDIO_URL`, `ASR_LANGUAGE` (defaults in `.env.example`).
+
 
 | Mode | Command | Schedule suggestion | Log file |
 |------|---------|---------------------|----------|
@@ -54,8 +66,8 @@ Add:
 15 */4 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run-rag-api' >> "$HOME/automation-cron-asksam-rag-api.log" 2>&1
 ```
 
-Tests: `GET /health`, `GET /redis/health`, `GET /vectorstore/health`, `POST /gen-chat`  
-No Chromium, no `TEST_EMAIL` required.
+Tests: **14 API smokes** in one run — RAG (4), Clinical Notes (5), Assistant (4), **ASR (1)**  
+Requires `ASR_API_KEY` in `.env`. No Chromium, no `TEST_EMAIL` required.
 
 ---
 
@@ -76,7 +88,7 @@ Every cron run uses `npm run automation:run-rag-api` (or `automation:run-ds-api`
 1. `git fetch origin main`
 2. `git reset --hard origin/main` — always runs latest code from GitHub
 3. `npm ci` — reinstall deps to match that commit
-4. Run **RAG (4) + Clinical Notes (5) API tests in one Playwright run** → one Sheet row set → one dashboard push
+4. Run **14 API smokes** (RAG 4 + Clinical Notes 5 + Assistant 4 + ASR 1) in one Playwright run → one Sheet row set → one dashboard push
 
 You only need `git pull` manually if you run tests **outside** the automation script (e.g. `npm run test:ds-api` alone).
 

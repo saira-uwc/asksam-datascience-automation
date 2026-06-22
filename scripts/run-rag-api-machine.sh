@@ -38,6 +38,11 @@ if [[ ! -s playwright/.auth/ds-api-headers.json ]]; then
   exit 1
 fi
 
+if ! grep -qE '^ASR_API_KEY=.+' .env 2>/dev/null; then
+  echo "Missing ASR_API_KEY in .env — required for TC_ASR_01 (transcribe-from-url-v2) in every cron run."
+  exit 1
+fi
+
 BRANCH="$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "")"
 if [[ "$BRANCH" != "main" ]]; then
   echo "Checking out main (was on: $BRANCH)"

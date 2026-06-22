@@ -37,11 +37,15 @@ export function extractTranscriptionText(body: unknown): string {
 export function asrRequestHeaders(): Record<string, string> {
   return {
     'content-type': 'application/json',
-    'x-api-key': ASR_API.apiKey,
+    authorization: `Bearer ${ASR_API.apiKey}`,
     'user-agent':
       process.env.ASR_USER_AGENT ||
       'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
   };
+}
+
+function asrCurlAuthHeader(): string {
+  return `Authorization: Bearer ${ASR_API.apiKey}`;
 }
 
 /** POST transcribe-from-url-v2 via curl (matches tech-team recipe; avoids Cloudflare blocking Playwright TLS). */
@@ -59,7 +63,7 @@ export function postAsrTranscribe(): { status: number; bodyText: string } {
       '-H',
       'content-type: application/json',
       '-H',
-      `x-api-key: ${ASR_API.apiKey}`,
+      asrCurlAuthHeader(),
       '--data-raw',
       payload,
     ],

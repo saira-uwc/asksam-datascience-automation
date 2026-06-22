@@ -26,6 +26,7 @@
     "test:rag-api": "playwright test tests/rag-api-smoke.spec.ts --project=api",
     "discover:clinical-notes-apis": "playwright test tests/discover-clinical-notes-apis.spec.ts --project=discover",
     "discover:assistant-apis": "playwright test tests/discover-assistant-apis.spec.ts --project=discover-assistant",
+    "record:ds-journeys": "playwright test tests/ds-ui-journey-record.spec.ts --project=journey-record",
     "test:clinical-notes-api": "playwright test tests/clinical-notes-api-smoke.spec.ts --project=clinical-notes-api",
     "test:assistant-api": "playwright test tests/assistant-api-smoke.spec.ts --project=assistant-api",
     "test:ds-api": "playwright test --project=api --project=clinical-notes-api --project=assistant-api",

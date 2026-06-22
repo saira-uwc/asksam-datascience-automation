@@ -65,6 +65,19 @@ export default defineConfig({
       },
     },
     {
+      name: 'journey-record',
+      testMatch: /ds-ui-journey-record\.spec\.ts/,
+      dependencies: ['setup'],
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/user.json',
+        viewport: { width: 1440, height: 900 },
+        trace: 'retain-on-failure',
+        video: 'retain-on-failure',
+        screenshot: 'only-on-failure',
+      },
+    },
+    {
       name: 'chromium',
       testMatch: /.*\.spec\.ts/,
       testIgnore: [
@@ -75,6 +88,7 @@ export default defineConfig({
         /assistant-api-smoke\.spec\.ts/,
         /discover-clinical-notes-apis\.spec\.ts/,
         /discover-assistant-apis\.spec\.ts/,
+        /ds-ui-journey-record\.spec\.ts/,
       ],
       use: {
         ...devices['Desktop Chrome'],

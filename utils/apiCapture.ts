@@ -133,10 +133,14 @@ export function attachDataScienceApiCapture(
     if (!meta) return;
 
     let responseBody: unknown;
+    const status = response.status();
     try {
       const contentType = response.headers()['content-type'] || '';
-      if (contentType.includes('application/json')) {
-        responseBody = parseJsonSafe(await response.text());
+      const text = await response.text();
+      if (contentType.includes('application/json') || text.trim().startsWith('{') || text.trim().startsWith('[')) {
+        responseBody = parseJsonSafe(text);
+      } else if (status >= 400 && text) {
+        responseBody = text.length > 4000 ? `${text.slice(0, 4000)}...` : text;
       }
     } catch {
       responseBody = undefined;
@@ -149,7 +153,7 @@ export function attachDataScienceApiCapture(
       path: meta.path,
       requestHeaders: meta.headers,
       requestBody: meta.body,
-      responseStatus: response.status(),
+      responseStatus: status,
       responseBody,
       capturedAt: new Date().toISOString(),
     });

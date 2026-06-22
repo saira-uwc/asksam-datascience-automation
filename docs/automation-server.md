@@ -22,13 +22,14 @@ Set in `.env` as comma-separated addresses (`REPORT_RECIPIENTS`). Current list:
 5. sb@shunyalabs.ai  
 6. ritu@shunyalabs.ai  
 7. ayushbar@shunyalabs.ai  
+8. ravulamk@shunyalabs.ai  
 
 ```bash
 # On VM — update before next cron run
 cd ~/asksam-datascience-automation
 grep -q '^REPORT_RECIPIENTS=' .env \
-  && sed -i 's|^REPORT_RECIPIENTS=.*|REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai|' .env \
-  || echo 'REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai' >> .env
+  && sed -i 's|^REPORT_RECIPIENTS=.*|REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai,ravulamk@shunyalabs.ai|' .env \
+  || echo 'REPORT_RECIPIENTS=arti@shunyalabs.ai,sumit@shunyalabs.ai,yamini@shunyalabs.ai,saira@unitedwecare.com,sb@shunyalabs.ai,ritu@shunyalabs.ai,ayushbar@shunyalabs.ai,ravulamk@shunyalabs.ai' >> .env
 ```
 
 Requires `EMAIL_WEB_APP_URL` in the same `.env`. Email sends only when tests fail.
@@ -36,8 +37,8 @@ Requires `EMAIL_WEB_APP_URL` in the same `.env`. Email sends only when tests fai
 
 | Mode | Command | Schedule suggestion | Log file |
 |------|---------|---------------------|----------|
-| **RAG API only** (recommended to start) | `npm run automation:run-rag-api` | Every 2h at `:15` | `~/automation-cron-asksam-rag-api.log` |
-| **Full suite** (UI + API) | `npm run automation:run` | Every 2h at `:45` or daily | `~/automation-cron-asksam-datascience-automation.log` |
+| **RAG API only** (recommended to start) | `npm run automation:run-rag-api` | Every 4h at `:15` | `~/automation-cron-asksam-rag-api.log` |
+| **Full suite** (UI + API) | `npm run automation:run` | Every 4h at `:45` or daily | `~/automation-cron-asksam-datascience-automation.log` |
 
 ---
 
@@ -50,7 +51,7 @@ crontab -e
 Add:
 
 ```bash
-15 */2 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run-rag-api' >> "$HOME/automation-cron-asksam-rag-api.log" 2>&1
+15 */4 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run-rag-api' >> "$HOME/automation-cron-asksam-rag-api.log" 2>&1
 ```
 
 Tests: `GET /health`, `GET /redis/health`, `GET /vectorstore/health`, `POST /gen-chat`  
@@ -61,7 +62,7 @@ No Chromium, no `TEST_EMAIL` required.
 ## Cron — Full suite (optional, UI + API)
 
 ```bash
-45 */2 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run' >> "$HOME/automation-cron-asksam-datascience-automation.log" 2>&1
+45 */4 * * * /bin/bash -lc 'export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 20 >/dev/null && cd "$HOME/asksam-datascience-automation" && npm run automation:run' >> "$HOME/automation-cron-asksam-datascience-automation.log" 2>&1
 ```
 
 Requires `TEST_EMAIL` in `.env` and Playwright Chromium.

@@ -1,11 +1,20 @@
 {
   "endpoint": "/transcriptions/transcribe-from-url-v2",
   "method": "POST",
-  "status": 502,
-  "timestamp": "2026-06-23T16:16:39.842Z",
+  "status": 200,
+  "timestamp": "2026-06-23T20:16:02.507Z",
   "url": "https://cauth.unitedwecare.com/transcriptions/transcribe-from-url-v2",
-  "contentType": "text",
-  "body": "error code: 502\n",
+  "body": {
+    "success": true,
+    "status": 200,
+    "message": "Transcription completed",
+    "data": {
+      "text": "Hello, mic check. Testing 1 2 3.",
+      "language": "en",
+      "model": "SHUNYAG"
+    },
+    "timestamp": "2026-06-23T20:16:02.471Z"
+  },
   "service": "ASR",
   "audioUrl": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/uploads%2Frecording_1782127426430_644938.webm?alt=media&token=fce69d88-e7ee-45a5-b079-f69183582299",
   "language": "en"

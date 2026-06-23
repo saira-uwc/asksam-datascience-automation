@@ -2,7 +2,7 @@
   "endpoint": "https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-23T12:15:13.907Z",
+  "timestamp": "2026-06-23T16:15:14.604Z",
   "url": "https://session-note.uwc.world/jwt-clinicalnotes/list-clients?professional_id=152853&count=200",
   "body": {
     "status": "success",

@@ -2,7 +2,7 @@
   "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-24T08:15:53.728Z",
+  "timestamp": "2026-06-24T12:15:32.941Z",
   "url": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/drug_drug_interaction_alerts",
   "body": {
     "success": true,

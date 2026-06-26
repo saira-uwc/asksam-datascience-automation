@@ -2,7 +2,7 @@
   "endpoint": "/transcriptions/transcribe-from-url-v2",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-26T12:15:42.179Z",
+  "timestamp": "2026-06-26T16:16:11.715Z",
   "url": "https://cauth.unitedwecare.com/transcriptions/transcribe-from-url-v2",
   "body": {
     "success": true,
@@ -13,7 +13,7 @@
       "language": "en",
       "model": "SHUNYAG"
     },
-    "timestamp": "2026-06-26T12:15:42.146Z"
+    "timestamp": "2026-06-26T16:16:11.679Z"
   },
   "service": "ASR",
   "audioUrl": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/uploads%2Frecording_1782127426430_644938.webm?alt=media&token=fce69d88-e7ee-45a5-b079-f69183582299",

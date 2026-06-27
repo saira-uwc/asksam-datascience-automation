@@ -2,18 +2,18 @@
   "endpoint": "/transcriptions/transcribe-from-url-v2",
   "method": "POST",
   "status": 200,
-  "timestamp": "2026-06-27T04:15:41.842Z",
+  "timestamp": "2026-06-27T08:15:39.442Z",
   "url": "https://cauth.unitedwecare.com/transcriptions/transcribe-from-url-v2",
   "body": {
     "success": true,
     "status": 200,
     "message": "Transcription completed",
     "data": {
-      "text": "Hello, mic check. Testing 1 2 3.",
+      "text": "Hello, mic check. Testing 123.",
       "language": "en",
       "model": "SHUNYAG"
     },
-    "timestamp": "2026-06-27T04:15:41.813Z"
+    "timestamp": "2026-06-27T08:15:39.408Z"
   },
   "service": "ASR",
   "audioUrl": "https://firebasestorage.googleapis.com/v0/b/united-for-her.appspot.com/o/uploads%2Frecording_1782127426430_644938.webm?alt=media&token=fce69d88-e7ee-45a5-b079-f69183582299",

@@ -2,7 +2,7 @@
   "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-06-28T16:15:36.769Z",
+  "timestamp": "2026-06-28T20:15:34.250Z",
   "url": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/ask_sam_interactions",
   "body": {
     "success": true,

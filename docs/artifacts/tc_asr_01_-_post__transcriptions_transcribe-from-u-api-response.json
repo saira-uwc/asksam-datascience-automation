@@ -2,7 +2,7 @@
   "endpoint": "/transcriptions/transcribe-from-url-v2",
   "method": "POST",
   "status": 502,
-  "timestamp": "2026-07-02T04:16:35.665Z",
+  "timestamp": "2026-07-02T08:16:36.897Z",
   "url": "https://cauth.unitedwecare.com/transcriptions/transcribe-from-url-v2",
   "contentType": "text",
   "body": "error code: 502\n",

@@ -1,5 +1,52 @@
 [
   {
+    "id": "ce03f255-f47d-4572-a4b3-97d2fb399151",
+    "startedAt": "2026-07-09T12:15:04.443Z",
+    "durationMs": 45499.678,
+    "summary": {
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "asr-api-smoke": {
+        "label": "ASR API — Smoke Tests",
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "5d2672b3-3336-4c06-91fe-71400cb19361",
     "startedAt": "2026-07-09T08:15:03.678Z",
     "durationMs": 63137.974,
@@ -9075,75 +9122,6 @@
     "id": "d54cce9c-a1a9-4479-bd46-10d1af60a1ef",
     "startedAt": "2026-06-09T14:15:04.759Z",
     "durationMs": 1386.214,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "a1d455b2-de06-4527-a546-866a3f36ba6e",
-    "startedAt": "2026-06-09T12:15:04.282Z",
-    "durationMs": 1439.8049999999998,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "255b1050-40bd-4c6f-8a55-1e9f645a61ae",
-    "startedAt": "2026-06-09T11:31:36.974Z",
-    "durationMs": 3472.6979999999994,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "f3837637-c79a-47c3-a8e2-3022f1348083",
-    "startedAt": "2026-06-09T11:22:06.313Z",
-    "durationMs": 2178.4030000000002,
     "summary": {
       "total": 4,
       "passed": 4,

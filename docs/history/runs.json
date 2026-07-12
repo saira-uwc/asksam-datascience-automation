@@ -1,5 +1,52 @@
 [
   {
+    "id": "01f5df40-e5e5-42e2-a293-1b3a5a54193a",
+    "startedAt": "2026-07-12T12:15:03.764Z",
+    "durationMs": 38566.754,
+    "summary": {
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "asr-api-smoke": {
+        "label": "ASR API — Smoke Tests",
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "eb38e67e-9a33-4c2d-a2d0-7b0739d91f61",
     "startedAt": "2026-07-12T08:15:04.229Z",
     "durationMs": 44170.306000000004,
@@ -9093,52 +9140,6 @@
     "id": "4f494df1-f80e-4d23-b992-afcef302325b",
     "startedAt": "2026-06-12T14:15:03.980Z",
     "durationMs": 1507.109,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "efcbe848-cabb-4a9f-b226-28d38b886fe6",
-    "startedAt": "2026-06-12T12:15:04.288Z",
-    "durationMs": 1409.933,
-    "summary": {
-      "total": 4,
-      "passed": 4,
-      "failed": 0,
-      "skipped": 0,
-      "timedOut": 0
-    },
-    "passRate": 100,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "1ddb3a5b-eeda-4c01-b2a7-5cf6dfe339d9",
-    "startedAt": "2026-06-12T10:15:03.754Z",
-    "durationMs": 1413.0629999999999,
     "summary": {
       "total": 4,
       "passed": 4,

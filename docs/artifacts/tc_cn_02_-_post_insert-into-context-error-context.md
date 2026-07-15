@@ -6,7 +6,7 @@
 
 # Test info
 
-- Name: clinical-notes-api-smoke.spec.ts >> Clinical Notes API smoke >> TC_CN_05 - POST transcription-file-analyzer / process-document
+- Name: clinical-notes-api-smoke.spec.ts >> Clinical Notes API smoke >> TC_CN_02 - POST insert-into-context
 - Location: tests/clinical-notes-api-smoke.spec.ts:51:9
 
 # Error details
@@ -15,7 +15,7 @@
 Error: expect(received).toBe(expected) // Object.is equality
 
 Expected: 200
-Received: 500
+Received: 504
 ```
 
 # Test source

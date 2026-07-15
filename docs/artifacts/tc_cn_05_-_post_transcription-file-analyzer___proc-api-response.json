@@ -1,11 +1,12 @@
 {
   "endpoint": "https://on-append.uwc.world/transcription-file-analyzer/process-document",
   "method": "POST",
-  "status": 502,
-  "timestamp": "2026-07-15T16:16:15.800Z",
+  "status": 500,
+  "timestamp": "2026-07-15T20:21:58.829Z",
   "url": "https://on-append.uwc.world/transcription-file-analyzer/process-document",
-  "contentType": "text",
-  "body": "<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n",
+  "body": {
+    "detail": "Both OpenAI and Vertex AI processing failed."
+  },
   "id": "TC_CN_05",
   "name": "transcription-file-analyzer / process-document"
 }

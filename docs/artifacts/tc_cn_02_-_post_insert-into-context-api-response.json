@@ -1,11 +1,12 @@
 {
   "endpoint": "https://rag.uwc.world/insert-into-context",
   "method": "POST",
-  "status": 504,
-  "timestamp": "2026-07-16T04:17:06.578Z",
+  "status": 200,
+  "timestamp": "2026-07-16T08:15:10.542Z",
   "url": "https://rag.uwc.world/insert-into-context",
-  "contentType": "text",
-  "body": "<html>\r\n<head><title>504 Gateway Time-out</title></head>\r\n<body>\r\n<center><h1>504 Gateway Time-out</h1></center>\r\n<hr><center>nginx/1.18.0 (Ubuntu)</center>\r\n</body>\r\n</html>\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n<!-- a padding to disable MSIE and Chrome friendly error page -->\r\n",
+  "body": {
+    "message": "644938 inserted"
+  },
   "id": "TC_CN_02",
   "name": "insert-into-context"
 }

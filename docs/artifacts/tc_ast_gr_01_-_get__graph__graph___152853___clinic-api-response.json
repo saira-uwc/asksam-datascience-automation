@@ -2,7 +2,7 @@
   "endpoint": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph",
   "method": "GET",
   "status": 200,
-  "timestamp": "2026-07-17T12:15:40.956Z",
+  "timestamp": "2026-07-17T16:16:10.513Z",
   "url": "https://ws-stella.unitedwecare.com/api/v1/app/user_flags/152853/clinical_knowledge_graph",
   "body": {
     "success": true,

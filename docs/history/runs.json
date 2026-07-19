@@ -1,5 +1,52 @@
 [
   {
+    "id": "2818025a-95ef-4ea6-af99-8bf5c0d49a83",
+    "startedAt": "2026-07-19T16:15:04.410Z",
+    "durationMs": 41686.4,
+    "summary": {
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "asr-api-smoke": {
+        "label": "ASR API — Smoke Tests",
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "87b35749-3914-4642-8200-9a5ff1edbf3b",
     "startedAt": "2026-07-19T12:15:03.969Z",
     "durationMs": 38952.146,
@@ -8202,45 +8249,6 @@
     "id": "5517dfa3-d711-4f45-a903-07ce22afdf62",
     "startedAt": "2026-06-19T20:15:03.657Z",
     "durationMs": 388636.174,
-    "summary": {
-      "total": 13,
-      "passed": 10,
-      "failed": 1,
-      "skipped": 0,
-      "timedOut": 2
-    },
-    "passRate": 77,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "clinical-notes-api-smoke": {
-        "label": "Clinical Notes API — Smoke Tests",
-        "total": 5,
-        "passed": 2,
-        "failed": 1,
-        "skipped": 0,
-        "timedOut": 2
-      },
-      "assistant-api-smoke": {
-        "label": "Stella Assistant Panel API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "1ef09fb5-14d5-4e76-99c5-7cd849ecd26d",
-    "startedAt": "2026-06-19T16:15:04.458Z",
-    "durationMs": 388433.927,
     "summary": {
       "total": 13,
       "passed": 10,

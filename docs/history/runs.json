@@ -1,5 +1,52 @@
 [
   {
+    "id": "baaea89f-1319-45c4-8b3a-0c70b3698fa7",
+    "startedAt": "2026-07-21T04:15:04.033Z",
+    "durationMs": 40511.904,
+    "summary": {
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "asr-api-smoke": {
+        "label": "ASR API — Smoke Tests",
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "72545dee-2e78-46ee-aad7-f11952960b29",
     "startedAt": "2026-07-21T00:15:04.076Z",
     "durationMs": 39610.112,
@@ -8274,45 +8321,6 @@
     "id": "1e3c6b7d-b3ed-418a-87ce-aaf4202dc9e7",
     "startedAt": "2026-06-21T08:15:04.185Z",
     "durationMs": 389483.38999999996,
-    "summary": {
-      "total": 13,
-      "passed": 10,
-      "failed": 1,
-      "skipped": 0,
-      "timedOut": 2
-    },
-    "passRate": 77,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "clinical-notes-api-smoke": {
-        "label": "Clinical Notes API — Smoke Tests",
-        "total": 5,
-        "passed": 2,
-        "failed": 1,
-        "skipped": 0,
-        "timedOut": 2
-      },
-      "assistant-api-smoke": {
-        "label": "Stella Assistant Panel API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "4790084a-2821-4d3e-b8cf-02df311ca739",
-    "startedAt": "2026-06-21T04:15:04.037Z",
-    "durationMs": 385922.57200000004,
     "summary": {
       "total": 13,
       "passed": 10,

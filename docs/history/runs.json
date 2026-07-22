@@ -1,5 +1,52 @@
 [
   {
+    "id": "46e951d7-9cd5-4ad0-9c7c-452435a30fd9",
+    "startedAt": "2026-07-22T04:15:04.079Z",
+    "durationMs": 27064.416,
+    "summary": {
+      "total": 14,
+      "passed": 14,
+      "failed": 0,
+      "skipped": 0,
+      "timedOut": 0
+    },
+    "passRate": 100,
+    "modules": {
+      "rag-api-smoke": {
+        "label": "RAG API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "clinical-notes-api-smoke": {
+        "label": "Clinical Notes API — Smoke Tests",
+        "total": 5,
+        "passed": 5,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "assistant-api-smoke": {
+        "label": "Stella Assistant Panel API — Smoke Tests",
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      },
+      "asr-api-smoke": {
+        "label": "ASR API — Smoke Tests",
+        "total": 1,
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "timedOut": 0
+      }
+    }
+  },
+  {
     "id": "a2713094-f6f9-4031-af1b-2bfd4882fca1",
     "startedAt": "2026-07-22T00:15:03.727Z",
     "durationMs": 28280.404,
@@ -8346,45 +8393,6 @@
         "failed": 0,
         "skipped": 0,
         "timedOut": 0
-      },
-      "assistant-api-smoke": {
-        "label": "Stella Assistant Panel API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      }
-    }
-  },
-  {
-    "id": "21a2566d-721e-4d5c-bffc-d10c6f55eb5f",
-    "startedAt": "2026-06-22T04:15:04.632Z",
-    "durationMs": 389341.619,
-    "summary": {
-      "total": 13,
-      "passed": 10,
-      "failed": 1,
-      "skipped": 0,
-      "timedOut": 2
-    },
-    "passRate": 77,
-    "modules": {
-      "rag-api-smoke": {
-        "label": "RAG API — Smoke Tests",
-        "total": 4,
-        "passed": 4,
-        "failed": 0,
-        "skipped": 0,
-        "timedOut": 0
-      },
-      "clinical-notes-api-smoke": {
-        "label": "Clinical Notes API — Smoke Tests",
-        "total": 5,
-        "passed": 2,
-        "failed": 1,
-        "skipped": 0,
-        "timedOut": 2
       },
       "assistant-api-smoke": {
         "label": "Stella Assistant Panel API — Smoke Tests",
